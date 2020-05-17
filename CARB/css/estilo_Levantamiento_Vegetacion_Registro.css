@@ -1,0 +1,86 @@
+body {
+	margin:2.4%; 
+	border: 2px solid #A4A4A4;
+	padding:2px;
+}
+.container{
+	
+	width: 96%;
+	
+}
+.distancia{
+	
+	width:30%
+}
+
+.boton-center{
+	text-align: center;
+}
+
+.etiqueta-col1{
+	margin-top:-1%;
+	text-align: right;
+}
+
+.row{
+	margin-top: 1%;
+}
+
+.etiqueta{
+	text-align: center;
+	margin-top: 1.5%;
+
+}
+.etiqueta-bottom{
+	margin-bottom: 2.4%;
+}
+.dato{
+	padding: 0%;
+}
+.encabezado{
+	
+	color: #A4A4A4;
+	font-size: small;
+	margin-top: -1%;
+}
+input[type=number]::-webkit-outer-spin-button,
+
+input[type=number]::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
+
+}
+
+ 
+
+input[type=number] {
+
+    -moz-appearance:textfield;
+
+}
+
+.Estacion{
+	border: 1px solid #A4A4A4;
+	margin-top:1.5px;
+	border-radius: 3px;
+}
+.Cuadrante{
+	border: 1px solid #A4A4A4;
+	margin-top:1.5px;
+	border-radius: 3px;
+}
+.margen-top{
+	margin-top: 3px;
+}
+
+.margen-left{
+	padding-left: 0;
+}
+.editar{
+	border: 1px solid #A4A4A4;
+	margin-top:1.5px;
+	border-radius: 3px;
+	text-align: center;
+}

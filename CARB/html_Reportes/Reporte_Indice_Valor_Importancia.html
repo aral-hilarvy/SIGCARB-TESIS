@@ -1,0 +1,142 @@
+<html>
+	<head>
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/estilo-Grupos_Funcionales.css">
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+	<!-- Titulo -->
+	<title>SIG | SIGCARB</title>
+	<!--Fin titulo -->
+	<style type="text/css">
+		.center{
+			text-align: center;
+		}
+	</style>
+	</head>
+
+	<body>
+		<div class="container"  id="resporte_html_valor_importancia">
+			<!--Logo UNEG -->
+				<div align="center">
+					 <img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+    			</div>
+			<!--Fin logo UNEG -->
+
+			<!-- Encabezado -->
+				<div align="center">
+	 				<div> Universidad Nacional Experimental de Guayana. </div>
+	 				<div> Proyecto: Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+				</div>
+			<!-- Fin del Encabezado -->
+
+			<!-- Tìtulo de la encuesta -->
+				<div align="center">
+	 				 <div >Resultado de Procesamiento de las Parcelas del Bosque.</div>
+				</div>
+				</BR>
+				<div align="center">
+	 				 <div style="font-weight: bold; text-decoration:underline;">Índice de Valor de Importancia de las Especies del Fragmento <label>00</label></div>
+				</div>
+			<!-- Fin tìtulo de la encuesta -->
+			</BR>
+			<div class="row">
+					<div id="" class="col-xs-4"></div>
+					<div id="" class="col-xs-4">
+						<div class="form-group">
+						  <label for="sel1">Seleccione Fragmento:</label>
+						  <select class="form-control" id="sel1" v-model="id_espacio_muestreo" @change="onChange($event)">
+						    <option v-for="(item, index) in espacio_muestreo" :value="item.id"> {{item.tipo_bosque}} - {{item.cod_espacio_muestreo}} </option>
+
+						  </select>
+						</div>
+					</div>
+					<div id="" class="col-xs-4">
+						<div align="right" v-if="mostrar">
+							<button type="button" class="btn btn-success" id="pdf" v-on:click="pruebaDivAPdf()">Pasar a PDF</button>
+						</div>
+					</div>
+			</div>
+
+			<div class="row">
+							<div id="" class="col-xs-4"></div>
+							<div id="" class="col-xs-3 etiqueta-col1" ><label>Latitud:</label>{{latitud}}</div>
+							<div id="" class="col-xs-3 etiqueta-col1" ><label>Longitud:</label>{{longitud}}</div>
+
+
+					</div>
+
+
+
+			</BR>
+			<table class="table">
+                                    <thead>
+                                         <tr>
+                                            <th style="text-align: center; font-size: 12px">Nombre Vulgar</th>
+                                            <th style="text-align: center; font-size: 12px">Nombre Científico</th>
+                                            <th style="text-align: center; font-size: 12px">Densidad Relativa</th>
+                                            <th style="text-align: center; font-size: 12px">Domin. Relativa</th>
+                                            <th style="text-align: center; font-size: 12px">Frec. Relativa</th>
+                                            <th style="text-align: center; font-size: 12px">IVI</th>
+                                            <th style="text-align: center; font-size: 12px">IVI%</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="(item, index) in grupo">
+                                            <td style="text-align: center; font-size: 12px">{{item.contenido[0].Especie.nombre_comun}}</td>
+                                            <td style="text-align: center; font-size: 12px">{{item.contenido[0].Especie.nombre_cientifico}}</td>
+																						<td style="text-align: center; font-size: 12px">{{densidad_relativa_p[index] | redondeo}}</td>
+                                            <td style="text-align: center; font-size: 12px">{{dominancia_relativa[index]}}</td>
+                                            <td style="text-align: center; font-size: 12px">{{frecuencia_relativa[index] | redondeo}}</td>
+                                            <td style="text-align: center; font-size: 12px">{{ivi[index]}}</td>
+                                            <td style="text-align: center; font-size: 12px">{{ivi_porcentaje[index]}}</td>
+                                        </tr>
+                                         <tr>
+                                         	<th style="text-align: center; font-size: 12px"></th>
+                                            <th style="text-align: center; font-size: 12px"></th>
+                                            <th style="text-align: center; font-size: 12px">100,00</th>
+                                            <th style="text-align: center; font-size: 12px">100,00</th>
+                                            <th style="text-align: center; font-size: 12px">100,00</th>
+                                            <th style="text-align: center; font-size: 12px">300,00</th>
+                                            <th style="text-align: center; font-size: 12px">100,00</th>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+		</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js "> </script>
+
+<script src="../Librerias/js/lodash.js"> </script>
+	<script src="../Librerias/js/vue.js"></script>
+
+	<script src="../js/Reportes/valor_importancia.js"> </script>
+
+	</body>
+</html>

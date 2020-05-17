@@ -1,0 +1,395 @@
+<html>
+
+<head>
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Valor_Economico/style_Valor_Economico.css ">
+
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="formularioOchoValorEconomico">
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Rìo Botanamo. </div>
+		</div>
+
+
+		<!-- Fin del Encabezado -->
+
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Encuesta sobre el valor econòmico de los árboles con uso medicinal en la Cuenca Alta del Rìo Botanamo
+				en la RFI estado Bolìvar.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<div align="center">
+			<!-- Datos basicos de la encuesta -->
+
+			<div class="row">
+
+				<div class="inline" align="center">
+
+					<div class="col-xs-1" style=" border:padding:0%" align="right">
+					</div>
+
+					<!--Columna 2 del encabezado de la encuesta Nro de la encuesta-->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong>Nro de encuesta : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{numero_encuesta | agregar}}</p>
+					</div>
+
+					<!--Columna 1 del encabezado de la encuesta Nombre del encuestador -->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong> Encuestador : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{nombre_encuestador}}</p>
+					</div>
+
+
+					<div class="col-xs-1" style="padding:0%">
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Fin datos bàsicos -->
+
+
+			<!-- Datos basicos de la encuesta -->
+
+			<div class="row">
+
+				<div class="inline">
+
+					<div class="col-xs-1" style=" border:padding:0%" align="right">
+					</div>
+
+					<!--Columna 2 del encabezado de la encuesta Nro de la encuesta-->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong>Comunidad : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{comunidad}}</p>
+					</div>
+
+					<!--Columna 1 del encabezado de la encuesta Nombre del encuestador -->
+
+					<div class="col-xs-3" style="padding:0%" align=right><strong>Tipo de asentamiento : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p> {{tipo_asentamiento}}</p>
+					</div>
+
+
+					<div class="col-xs-1" style="padding:0%">
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Fin datos bàsicos -->
+
+
+		</div>
+
+
+		<h4 align="center"> Parte III:</h3>
+
+
+			<!-- Introducciòn breve -->
+
+
+			<div class="form-inline">
+				<div class="form-group" align="justify">
+					Las siguientes son muy importantes para el estudio. De nuevo le recuerdo, todas sus respuestas son
+					estrictamente confidenciales <p>Después de esta explicación, le haré un breve comentario para
+						responder a la siguiente pregunta. Actualmente el uso de la medicina natural se ha ido
+						incrementando, y los árboles ubicados en la Cuenca Alta del Río Botanamo tienen diferentes usos
+						medicinales actuales y potenciales</p>
+
+				</div>
+			</div>
+
+			<!-- Fin de la introducciòn breve -->
+
+			<!--Pregunta -->
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="justify">
+				<p> 5.Tomando en cuenta lo anterior ¿Estaria usted dispuesto a pagar 15.000 bs mensuales, para que se
+					protejan y desarrollen los bosques de la Reserva Forestal Imataca, de tal manera que a esta se le
+					asegure la permanencia de árboles con propiedades medicinales en la Cuenca Alta del Rio Botanamo,
+					para su familia actual y futura?</p>
+			</div>
+
+			<!-- Fila 1 del formulario  alimentos-->
+
+			<div class="row">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+
+					<div class="col-xs-1" style="padding:0%" align=right><label align="right">1.Si</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								v-model="respuestas[0].opcion" value="SI" align="center"></label></div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+					<div class="col-xs-1" style="padding:0%" align=right>
+						<p align="right"></p>
+					</div>
+					<div class="col-xs-5" style="padding:0%" align=right>
+						<p align="left">(Si el entrevistado está dispuesto a pagar pase a la No.7)</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+					<div class="col-xs-1" style="padding:0%" align=right><label align="right">0.No</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								v-model="respuestas[0].opcion" value="NO" align="center"></label></div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="inline" align="center">
+
+					<div class="col-xs-1" style="padding:0%" align=right>
+						<p align="right"></p>
+					</div>
+					<div class="col-xs-7" style="padding:0%" align=left>
+						<p align="left">(Si el entrevistado no está dispuesto a pagar pase a la No.6 saltando la No.7)
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!--Fin fila1-->
+
+			<!--Pregunta 6 -->
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="left">
+				<p> 6.¿Porque motivo no está dispuesto a pagar?</p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div class="row">
+				<div class="inline" align="center">
+					<div class="col-xs-2" style="padding:0%" align=right><label align="right">1.No le interesa</label>
+					</div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								value="No le interesa" v-model="respuestas[1].opcion" align="center"></label></div>
+					<div class="col-xs-3" style="padding:0%" align=right><label align="right">2.Razones
+							económicas</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								value="Razones económicas" v-model="respuestas[1].opcion" align="center"></label></div>
+					<div class="col-xs-3" style="padding:0%" align=right><label align="right">3.El gobierno debería
+							pagar</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								value="El gobierno debería pagar" v-model="respuestas[1].opcion" align="center"></label>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="inline" align="center">
+					<div class="col-xs-2" style="padding:0%" align=center><label align="right">4.Otros:</label></div>
+					<div class="col-xs-5" style="padding:0%" align="left"><input type="text" class="form-control"
+							id="otro" placeholder="Introduzca el motivo por el cuál no está dispuesto a pagar"
+							v-model="respuestas[1].texto" /></div>
+				</div>
+			</div>
+
+
+			<!--Fin de la pregunta No.6-->
+
+			<!-- Pregunta No.7-->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="left">
+				<p> 7.¿Qué institución institución cree usted que es la más apropiada para recibir el pago?</p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div class="row">
+				<div class="inline" align="center">
+					<div class="col-xs-3" style="padding:0%" align=right><label align="right">1.ONG encargada del
+							proyecto</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								v-model="respuestas[2].opcion" value="ONG encargada del proyecto"
+								align="center"></label></div>
+					<div class="col-xs-4" style="padding:0%" align=right><label align="right">2.La gerencia de ambiente
+							de la CVG</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								v-model="respuestas[2].opcion" value="La gerencia de ambiente de la CVG"
+								align="center"></label></div>
+					<div class="col-xs-2" style="padding:0%" align=right><label align="right">3.Alcaldía</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								v-model="respuestas[2].opcion" value="Alcaldía" align="center"></label></div>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="inline" align="center">
+					<div class="col-xs-3" style="padding:0%" align=right><label align="right">4. Ministerio del
+							ambiente</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								v-model="respuestas[2].opcion" value="Ministerio del ambiente" align="center"></label>
+					</div>
+					<div class="col-xs-4" style="padding:0%" align=right><label align="right">5.La gobernación del
+							estado Bolívar</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								v-model="respuestas[2].opcion" value="La gobernación del estado Bolívar"
+								align="center"></label></div>
+					<div class="col-xs-2" style="padding:0%" align=right><label align="right">6. Privados</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								v-model="respuestas[2].opcion" value="Privados" align="center"></label></div>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="inline" align="center">
+					<div class="col-xs-2" style="padding:0%" align=center><label align="right">7.Otros:</label></div>
+					<div class="col-xs-5" style="padding:0%" align="left"><input type="text" class="form-control"
+							id="otro" placeholder="Introduzca el nombre de la institución"
+							v-model="respuestas[2].texto" /></div>
+				</div>
+			</div>
+
+
+			<!-- Fin de la pregunta No.7-->
+
+			<!-- Pregunta No.8-->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="left">
+				<p> 8.¿En cuanto valora usted la pérdida para siempre de los árboles medicinales y los demás bienes y
+					servicios que proporciona el bosque(abierta, sin rango de valoración para permitir todo tipo de
+					respuesta)?</p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<input type="text" id=valoracion
+					placeholder="Introduzca la valoración de la pérdida de los árboles medicinales y los demás bienes y servicios que proporciona el bosque"
+					v-model="respuestas[3].texto" class="form-control">
+			</div>
+
+
+			<!-- Fin de la pregunta No.8-->
+
+
+			<!-- Fin puntuacion-->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<!--Botones -->
+
+			<div align="center">
+
+
+				<input class="btn btn-success" type="submit" value="Siguiente" v-on:click="Registrar()">
+
+			</div>
+
+			<!-- Fin botones -->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Valor_Economico/encuesta_valor_economico8.js"></script>
+</body>
+
+</html>

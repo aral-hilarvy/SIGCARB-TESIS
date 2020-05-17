@@ -1,0 +1,332 @@
+<html>
+
+<head>
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Valor_Economico/style_Valor_Economico.css ">
+
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="formularioNueveValorEconomico">
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Rìo Botanamo. </div>
+		</div>
+
+
+		<!-- Fin del Encabezado -->
+
+
+		<!-- Tìtulo de la encuesta -->
+		<div class="form-inline">
+			<div class="form-group" align="justify">
+				Las siguientes son muy importantes para el etudio. De nuevo le recuerdo, todas sus respuestas son
+				estrictamente confidenciales
+			</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<div align="center">
+			<!-- Datos basicos de la encuesta -->
+
+			<div class="row">
+
+				<div class="inline" align="center">
+
+					<div class="col-xs-1" style=" border:padding:0%" align="right">
+					</div>
+
+					<!--Columna 2 del encabezado de la encuesta Nro de la encuesta-->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong>Nro de encuesta : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{numero_encuesta | agregar}}</p>
+					</div>
+
+					<!--Columna 1 del encabezado de la encuesta Nombre del encuestador -->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong> Encuestador : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{nombre_encuestador}}</p>
+					</div>
+
+
+					<div class="col-xs-1" style="padding:0%">
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Fin datos bàsicos -->
+
+
+			<!-- Datos basicos de la encuesta -->
+
+			<div class="row">
+
+				<div class="inline">
+
+					<div class="col-xs-1" style=" border:padding:0%" align="right">
+					</div>
+
+					<!--Columna 2 del encabezado de la encuesta Nro de la encuesta-->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong>Comunidad : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{comunidad}}</p>
+					</div>
+
+					<!--Columna 1 del encabezado de la encuesta Nombre del encuestador -->
+
+					<div class="col-xs-3" style="padding:0%" align=right><strong>Tipo de asentamiento : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p> {{tipo_asentamiento}}</p>
+					</div>
+
+
+					<div class="col-xs-1" style="padding:0%">
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Fin datos bàsicos -->
+
+
+		</div>
+
+
+		<h4 align="center"> Parte III:</h3>
+
+
+			<!-- Introducciòn breve -->
+
+			<div class="form-inline">
+				<div class="form-group" align="justify">
+					Las siguientes preguntas son muy importantes para el estudio. De nuevo le recuerdo, todas sus
+					respuestas son estrictamente confidenciales
+				</div>
+			</div>
+
+
+			<!-- Fin de la introducciòn breve -->
+
+			<!--Pregunta -->
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="justify">
+				<p> 9.El entrevistado es:</p>
+			</div>
+
+			<!-- Fila 1 del formulario  alimentos-->
+
+			<div class="row">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+
+					<div class="col-xs-1" style="padding:0%" align=right><label align="right">1.Mujer</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio" value="Mujer"
+								v-model="respuestas[0].opcion" align="center"></label></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label align="right">0.Hombre</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio" value="Hombre"
+								v-model="respuestas[0].opcion" align="center"></label></div>
+
+				</div>
+			</div>
+
+
+			<!--Fin fila1-->
+
+			<!--Pregunta 10 -->
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="left">
+				<p> 10.¿Año de nacimiento?</p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div> <input type="text" id="año_nacimiento" class="form-control"
+					placeholder="Introduzca el año de nacimiento del encuestado" v-model="respuestas[1].texto" /> </div>
+
+
+			<!--Fin de la pregunta No.6-->
+
+			<!-- Pregunta No.7-->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="left">
+				<p> 11.Estudios realizados</p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div class="row">
+				<div class="inline" align="center">
+					<div class="col-xs-2" style="padding:0%" align=right><label align="right">1.Primaria</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio" value="Primaria"
+								v-model="respuestas[2].opcion" align="center"></label></div>
+					<div class="col-xs-3" style="padding:0%" align=right><label align="right">2.Bachillerato
+							básico</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								value="Bachillerato básico" v-model="respuestas[2].opcion" align="center"></label></div>
+					<div class="col-xs-3" style="padding:0%" align=right><label align="right">3.Bachillerato
+							diversificado</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								value="Bachillerato diversificado" v-model="respuestas[2].opcion"
+								align="center"></label></div>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="inline" align="center">
+					<div class="col-xs-2" style="padding:0%" align=right><label align="right">4. Universitario</label>
+					</div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio"
+								value="Universitario" v-model="respuestas[2].opcion" align="center"></label></div>
+					<div class="col-xs-3" style="padding:0%" align=right><label align="right">5.Ninguno</label></div>
+					<div class="col-xs-1" style="padding:0%" align=right><label><input type="radio" value="Ninguno"
+								v-model="respuestas[2].opcion" align="center"></label></div>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="inline" align="center">
+					<div class="col-xs-2" style="padding:0%" align=center><label align="right">6.Otros:</label></div>
+					<div class="col-xs-10" style="padding:0%" align="left"><input type="text" class="form-control"
+							id="otro" placeholder="Introduzca el nombre del estudio realizado"
+							v-model="respuestas[2].texto" /></div>
+				</div>
+			</div>
+
+
+			<!-- Fin de la pregunta No.11-->
+
+			<!-- Pregunta No.12-->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="left">
+				<p> 12.¿Cuál es su ocupación?</p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div class="row">
+				<div class="inline" align="center">
+					<div class="col-xs-2" style="padding:0%" align=right><label align="right">1.Posee empleo:</label>
+					</div>
+					<div class="col-xs-10" style="padding:0%" align=left><input type="text"
+							v-model="respuestas[3].texto" class="form-control" align="center"
+							placeholder="Introduzca el nombre de la ocupación"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="inline" align="center">
+					<div class="col-xs-2" style="padding:0%" align=right><label align="right">0.No tiene empleo:</label>
+					</div>
+					<div class="col-xs-1" style="padding:0%" align=left><label><input type="checkbox"
+								v-model="respuestas[3].opcion" value="NO TIENE EMPLEO" align="center"></label></div>
+
+				</div>
+			</div>
+
+			<!-- Fin de la pregunta No.12-->
+
+
+			<!-- Fin puntuacion-->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<!--Botones -->
+
+			<div align="center">
+
+
+
+				<input class="btn btn-success" type="submit" value="Siguiente" v-on:click="Registrar()">
+
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<!-- Fin botones -->
+
+
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Valor_Economico/encuesta_valor_economico9.js"></script>
+</body>
+
+</html>

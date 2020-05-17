@@ -1,0 +1,258 @@
+<html>
+	<head>
+	
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/estilo-Observacion_Fauna_Registro.css">
+
+	
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+	
+	<title> Observacion de Fauna </title>
+	
+	<!--Fin titulo -->
+	<script src="..js/custom.js"></script>
+
+	<script type="text/javascript">
+		function deshabilitaRetroceso(){
+    window.location.hash="no-back-button";
+    window.location.hash="Again-No-back-button" //chrome
+    window.onhashchange=function(){window.location.hash="no-back-button";}
+}
+	</script>
+	
+	</head>
+
+	<body onload="deshabilitaRetroceso()">
+		<div class="container">
+	
+			<!--Logo UNEG -->
+					<div align="center">
+						 <img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+    				</div>
+			<!--Fin logo UNEG -->
+	
+			<!-- Encabezado -->
+					<div align="center">
+	 						 <div> Universidad Nacional Experimental de Guayana. </div>
+	 						 <div> Proyecto: Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+					</div>		
+			<!-- Fin del Encabezado -->
+	
+			<!-- Tìtulo de la encuesta -->
+					<div align="center">
+	 						 <div> Ecología Aplicada - Observación de Fauna - Datos Crudos.</div>
+					</div>
+			<!-- Fin tìtulo de la encuesta -->
+				
+					
+
+					<div class="row">
+					        <div id="etiqueta-col1" class="col-xs-3" ><label> Nro. Observación:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							<div id="etiqueta-col1" class="col-xs-3"><label>Observador:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							
+					</div>
+
+					<div class="row">
+							<div class="col-xs-1" ></div>
+					        <div id="etiqueta-col1" class="col-xs-2" ><label>Localidad:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							<div id="etiqueta-col1" class="col-xs-3"><label>Sector:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							
+					</div>
+					<div class="row">
+							<div class="col-xs-1"></div>
+							<div id="etiqueta-col1" class="col-xs-2" ><label>Fecha:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							<div id="etiqueta-col1" class="col-xs-3" ><label>Paisaje Funcional:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							
+					</div>
+					</BR></BR>
+
+					<div class="row">
+							<div id="etiqueta" class="col-xs-1"><label>ID</label></div>
+							<div id="etiqueta" class="col-xs-2"><label>Especie</label></div>
+							<div id="etiqueta" class="col-xs-1"><label>Hora</label></div>
+							<div id="etiqueta" class="col-xs-1"><label>Latitud</label></div>
+							<div id="etiqueta" class="col-xs-1"><label>Longitud</label></div>
+							<div id="etiqueta" class="col-xs-2"><label>Micro Hábitat</label></div>
+							<div id="etiqueta" class="col-xs-2"><label>Actividad</label></div>
+							<div id="etiqueta" class="col-xs-2"><label>Observación</label></div>
+					</div>
+
+					<div class="row" id="grupo">
+							<div id="id" class="col-xs-1"><label id="cod">1</label></div>
+							<div  id="dato" class="col-xs-2">
+								<select id="especie_1" class="form-control">
+			       						<option> Seleccione</option>
+			       						<option> especie</option>
+			    					</select>
+							</div>
+							<div  id="dato" class="col-xs-1"><input id="hora_1" type="time" class="form-control hora" placeholder="Hora"></div>
+							<div  id="dato" class="col-xs-1"><input id="latitud_1" type="number" class="form-control" placeholder="Latitud"> </div>
+							<div  id="dato" class="col-xs-1"><input id="longitud_1" type="number" class="form-control" placeholder="Longitud"></div>
+							<div  id="dato" class="col-xs-2">
+								<select id="microhab_1" class="form-control">
+			       					<option> Seleccione</option>
+			       					<option> micro habitat </option>
+			    				</select>
+							</div>
+							<div  id="dato" class="col-xs-2">
+								<select id="actividad_1" class="form-control">
+			       						<option> Seleccione</option>
+			       						<option> Actividad</option>
+			    					</select>
+							</div>
+							<div  id="dato" class="col-xs-2"><input type="text" id="observacion_1" class="form-control" placeholder="Observación"></div>
+					</div>
+					</BR>
+					<div class="row">
+							<div class="col-xs-12" style="text-align: center;">							
+								<button type="button" id="Cancelar" class="btn btn-danger"  title="Cancelar Registro" onClick="window.location.href='indexUsuarioComun.html'">Cancelar</button>&nbsp;
+								<button type="button" id="Registrar" class="btn btn-success"  title="Registrar Datos">Registrar</button>&nbsp;			
+								<button type="button" id="agregar" class="btn btn-info btn-circle" data-toggle="tooltip"  title="Añadir Registro"> <i class="fa fa-plus boton-agregar"></i></button>
+							</div>
+					</div> 
+					</BR>
+		</div>
+			<!--Modal Confirmación Registrar-->
+<div id="modal_confirmacion_registrar" class="modal" tabindex="-1" role="dialog">
+ 	<div class="modal-dialog modal-sm" role="document">
+   		<div class="modal-content">
+      		<div id="header_confirm" class="modal-header">
+      		<div class="row">
+      		<div class="col-xs-2">
+       			</div>
+      			<div class="col-xs-8">
+       				<h5 class="modal-title">CONFIRMACIÓN</h5>
+       			</div>
+       			
+       			<div class="col-xs-2">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+       			</button>
+       			</div>
+      		</div>
+      		</div>
+     		<div class="modal-body">
+        		<p>¿Desea registrar los datos en este momento?.</p>
+        		<BR/> 
+        		<p id="nota"> NOTA: "Una vez ejecutado el proceso de registro de datos, deberá dirigirse a la sección EDITAR si desea efectuar modificaciones o añadir registros a esta planilla"</p>
+      		</div>
+      		<div  class="modal-footer">
+        		<button type="button" class="btn btn-success">SI</button>
+        		<button type="button" class="btn btn-danger" data-dismiss="modal" >NO</button>
+     		 </div>
+    	</div>
+  	</div>
+</div>
+	
+	<script type="text/javascript">
+	var contador_id=1;
+		$("#agregar").click(function(){
+			var especie = $('#especie_'+contador_id).val();
+			var hora = $('#hora_'+contador_id).val();
+			var latitud = $('#latitud_'+contador_id).val();
+			var longitud = $('#longitud_'+contador_id).val();
+			var microhab = $('#microhab_'+contador_id).val();
+			var actividad = $('#actividad_'+contador_id).val();
+			var observacion = $('#observacion_'+contador_id).val();
+			
+		if((especie === 'Seleccione')|| (hora === '') || (latitud === '')||(longitud === '')||(microhab === 'Seleccione')||(actividad === 'Seleccione')){
+ 				swal("¡ATENCIÓN!", "Debe introducir todos los datos solicitados.", "error");
+				return false;
+			}else{
+
+				var contador=contador_id+1;
+				contador_id++;
+				var componente=`<br/><br/><div id="grupo"><div id="id" class="col-xs-1"><label id="cod">${contador}</label></div>
+							<div  id="dato" class="col-xs-2">
+								<select id="especie_${contador_id}" class="form-control">
+			       						<option> Seleccione</option>
+			       						<option> especie</option>
+			    					</select>
+							</div>
+							<div  id="dato" class="col-xs-1"><input id="hora_${contador_id}" type="time" class="form-control hora" placeholder="Hora"></div>
+							<div  id="dato" class="col-xs-1"><input id="latitud_${contador_id}" type="number" class="form-control" placeholder="Latitud"></div>
+							<div  id="dato" class="col-xs-1"><input id="longitud_${contador_id}" type="number" class="form-control" placeholder="Longitud"></div>
+							<div  id="dato" class="col-xs-2">
+									<select id="microhab_${contador_id}" class="form-control">
+			       						<option> Seleccione</option>
+			       						<option> micro habitat</option>
+			    					</select>
+							</div>
+							<div  id="dato" class="col-xs-2">
+								<select id="actividad_${contador_id}" class="form-control">
+			       						<option> Seleccione</option>
+			       						<option> Actividad</option>
+			    					</select>
+							</div>
+							<div  id="dato" class="col-xs-2"><input type="text" id="observacion_${contador_id}" class="form-control" placeholder="Observación"></div>`;
+
+
+				$("#grupo").append(componente);
+				
+			}
+
+		});
+	</script>
+	<script type="text/javascript">
+	var contador_id=1;
+	var	contar=1;
+	
+	$("#Registrar").click(function(){
+			var aux=0;
+			var especie = $('#especie_'+contador_id).val();
+			var hora = $('#hora_'+contador_id).val();
+			var latitud = $('#latitud_'+contador_id).val();
+			var longitud = $('#longitud_'+contador_id).val();
+			var microhab = $('#microhab_'+contador_id).val();
+			var actividad = $('#actividad_'+contador_id).val();
+			var observacion = $('#observacion_'+contador_id).val();
+		if((especie != 'Seleccione')&& (hora != '') && (latitud != '')&&(longitud != '')&&(microhab != 'Seleccione')&&(actividad != 'Seleccione')){
+ 				contador_id++;
+ 				contar++;
+ 				aux=1
+
+			}
+		if(aux===0){
+			swal("¡ATENCIÓN!","Debe completar la data a registrar.","error");
+		}
+		else{
+			contador_id--;
+			$('#modal_confirmacion_registrar').modal('show');
+
+		}
+	});
+		
+	</script>
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js "> </script> 
+
+	</body>
+	
+	</html>

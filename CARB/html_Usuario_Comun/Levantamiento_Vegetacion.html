@@ -1,0 +1,157 @@
+<html>
+
+<head>
+
+
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/estilo_Levantamiento_Vegetacion.css">
+
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="Encabezado_Levantamiento_Flora">
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto: Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Ecología Aplicada - Levantamiento de Vegetación - Transecta.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<div class="row">
+			<div id="" class="col-xs-12 etiqueta-center">
+				<label>Nº Levantamiento:</label><label>{{nro_levantamiento | agregar}}</label></div>
+		</div>
+		<br>
+		<div class="row">
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Localidad:</label></div>
+			<div class="col-xs-2"><input type="text" class="form-control" placeholder="Localidad" v-model="localidad">
+			</div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Uso Asociado:</label></div>
+			<div class="col-xs-2">
+				<select class="form-control" id="encuestador" v-model="uso_asociado">
+					<option disabled>Seleccione</option>
+					<option value="Forestal">Forestal</option>
+					<option value="Pecuario">Pecuario</option>
+					<option value="Agricola">Agricola</option>
+					<option value="Urbano">Urbano</option>
+					<option value="Periurbano">Periurbano</option>
+					<option value="Minero">Minero</option>
+					<option value="Sin uso aparente">Sin uso aparente</option>
+				</select>
+			</div>
+			<div id="" class="col-xs-1 etiqueta-col1"><label>Fecha:</label></div>
+			<div class="col-xs-3"><input type="date" class="form-control" v-model="fecha"></div>
+		</div>
+
+		<div class="row">
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Tipo&nbsp;Perturbación:</label></div>
+			<div class="col-xs-2">
+				<select class="form-control" v-model="tipo_perturbacion">
+					<option disabled> Seleccione</option>
+					<option> Quema</option>
+					<option> Ganado</option>
+					<option> Extracción de Madera</option>
+				</select>
+			</div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Tipo Bosque:</label></div>
+			<div class="col-xs-2">
+				<select class="form-control" v-model="tipo_bosque" v-on:change="AccionTipoBosque">
+					<option disabled> Seleccione</option>
+					<option value="Bosque Continuo">Bosque Continuo</option>
+					<option value="Bosque Fragmentado">Bosque Fragmentado</option>
+				</select>
+			</div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Tipo Muestreo:</label></div>
+			<div class="col-xs-2">
+				<select class="form-control" v-model="tipo_muestreo" :disabled="band" v-on:change="AccionTipoMuestreo">
+					<option disabled> Seleccione</option>
+					<option v-for="item in e_m" :value="item.id"> {{item.cod_espacio_muestreo}}
+					</option>
+				</select>
+			</div>
+
+		</div>
+
+
+		<div class="row">
+
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Dir. Transecta:</label></div>
+			<div class="col-xs-2"><input type="text" class="form-control" placeholder="Dir. Transecta"
+					v-model="direccion_transecta"></div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Latitud:</label></div>
+			<div class="col-xs-2"><input type="number" min="1" class="form-control" v-model="latitud"></div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Longitud:</label></div>
+			<div class="col-xs-2"><input type="number" min="1" class="form-control" v-model="longitud"></div>
+
+
+		</div>
+		<div class="row">
+			<div class="col-xs-4 etiqueta-col1"></div>
+			<div id="" class=" col-xs-2 etiqueta-col1"><label>Pendiente&nbsp;Gral:</label></div>
+			<div class="col-xs-2"><input type="number" min="1" class="form-control" v-model="pendiente_general"></div>
+		</div>
+		<BR>
+		<div class="row etiqueta-bottom">
+			<div class="col-xs-12 boton-center">
+				<a href="indexUsuarioComun.html" class=" btn btn-danger" role="button">Cancelar</a>&nbsp;
+				<a class=" btn btn-success" role="button" v-on:click="Registrar_Esp_Mues()">Continuar</a>
+			</div>
+
+		</div>
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="../plugins/sweetalert.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="../js/Encabezado_Levantamiento_Flora/registrar.js"></script>
+
+
+</body>
+
+</html>

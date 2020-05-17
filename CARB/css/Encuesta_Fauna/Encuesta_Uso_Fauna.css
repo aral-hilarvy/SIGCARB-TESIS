@@ -1,0 +1,35 @@
+body {
+	margin:2.4%; 
+	border: 2px solid #A4A4A4;
+	padding:2px;
+}
+.container{
+	
+	width: 95%;
+	
+}
+label{
+	margin-top:8px;
+	margin-left:1px
+	
+}
+
+.che{
+	
+		margin-top:0px;
+
+}
+#dato{
+	padding: 0%;
+}
+.check{
+	
+		margin-top:1%;
+	}
+.edad{
+	font-size: 60%
+}
+
+.ingreso{
+	font-size: 8%
+}

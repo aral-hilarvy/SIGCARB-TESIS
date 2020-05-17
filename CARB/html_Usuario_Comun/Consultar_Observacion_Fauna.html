@@ -1,0 +1,131 @@
+<html>
+	<head>
+	
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/estilo-Observacion_Fauna_Registro.css">
+
+	
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+	
+	<title> Observacion de Fauna </title>
+	
+	<!--Fin titulo -->
+	<script src="../js/custom.js"></script>
+
+	<script type="text/javascript">
+		function deshabilitaRetroceso(){
+    window.location.hash="no-back-button";
+    window.location.hash="Again-No-back-button" //chrome
+    window.onhashchange=function(){window.location.hash="no-back-button";}
+}
+	</script>
+	
+	</head>
+
+	<body onload="deshabilitaRetroceso()">
+		<div class="container">
+	
+			<!--Logo UNEG -->
+					<div align="center">
+						 <img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+    				</div>
+			<!--Fin logo UNEG -->
+	
+			<!-- Encabezado -->
+					<div align="center">
+	 						 <div> Universidad Nacional Experimental de Guayana. </div>
+	 						 <div> Proyecto: Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+					</div>		
+			<!-- Fin del Encabezado -->
+	
+			<!-- Tìtulo de la encuesta -->
+					<div align="center">
+	 						 <div> Ecología Aplicada - Observación de Fauna - Datos Crudos.</div>
+					</div>
+			<!-- Fin tìtulo de la encuesta -->
+				
+					
+
+					<div class="row">
+					        <div id="etiqueta-col1" class="col-xs-3" ><label> Nro. Observación:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							<div id="etiqueta-col1" class="col-xs-3"><label>Observador:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							
+					</div>
+
+					<div class="row">
+							<div class="col-xs-1" ></div>
+					        <div id="etiqueta-col1" class="col-xs-2" ><label>Localidad:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							<div id="etiqueta-col1" class="col-xs-3"><label>Sector:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							
+					</div>
+					<div class="row">
+							<div class="col-xs-1"></div>
+							<div id="etiqueta-col1" class="col-xs-2" ><label>Fecha:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							<div id="etiqueta-col1" class="col-xs-3" ><label>Paisaje Funcional:</label></div>
+							<div class="col-xs-3 encabezado"><label class="etiqueta">prueba</label></div>
+							
+					</div>
+					</BR></BR>
+
+					<div class="row">
+							<div id="etiqueta" class="col-xs-1"><label>ID</label></div>
+							<div id="etiqueta" class="col-xs-2"><label>Especie</label></div>
+							<div id="etiqueta" class="col-xs-1"><label>Hora</label></div>
+							<div id="etiqueta" class="col-xs-1"><label>Latitud</label></div>
+							<div id="etiqueta" class="col-xs-1"><label>Longitud</label></div>
+							<div id="etiqueta" class="col-xs-2"><label>Micro Hábitat</label></div>
+							<div id="etiqueta" class="col-xs-2"><label>Actividad</label></div>
+							<div id="etiqueta" class="col-xs-2"><label>Observación</label></div>
+					</div>
+
+					<div class="row" id="grupo">
+							<div  id="dato" class="col-xs-1 editar"><label></label></div>
+							<div  id="dato" class="col-xs-2 editar"><label></label></div>
+							<div  id="dato" class="col-xs-1 editar"><label></label></div>
+							<div  id="dato" class="col-xs-1 editar"><label></label></div>
+							<div  id="dato" class="col-xs-1 editar"><label></label></div>
+							<div  id="dato" class="col-xs-2 editar"><label></label></div>
+							<div  id="dato" class="col-xs-2 editar"><label></label></div>
+							<div  id="dato" class="col-xs-2 editar"><label></label></div>
+					</div>
+					</BR>
+					<div class="row">
+							<div class="col-xs-12" style="text-align:center;">							
+								<button type="button" id="Cancelar" class="btn btn-danger"  title="" onClick="window.location.href='indexUsuarioComun.html'">Cancelar</button>
+							</div>
+					</div> 
+					</BR>
+		</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js "> </script> 
+	
+
+	</body>
+	</html>

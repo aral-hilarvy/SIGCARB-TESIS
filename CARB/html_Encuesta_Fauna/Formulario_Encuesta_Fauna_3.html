@@ -1,0 +1,357 @@
+<html>
+
+<head>
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Fauna/Encuesta_Uso_Fauna.css ">
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="formularioSegundoFauna">
+
+		<!-- Espacio -->
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Encuesta estudio del uso de la fauna.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<!--Datos bàsicos -->
+		<!-- Fila 1 del formulario -->
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=left><label></label></div>
+				<div class="col-xs-5" align=left><label>Nº Encuesta : {{numero_encuesta | agregar}}</label></div>
+				<div class="col-xs-4" align=left><label>Fecha : {{fecha}}</label></div>
+			</div>
+		</div>
+		<!--Fin de la Fila2 del formulario-->
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=right><label></label></div>
+				<div class="col-xs-5" align=left><label>Localidad : {{localidad}}</label></div>
+				<div class="col-xs-4" align=left><label>Zona : {{zona}}</label></div>
+			</div>
+		</div>
+		<!--Fin datos bàsicos-->
+
+		<BR />
+
+		<div align="left">
+			10.¿Para que caza?
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>1.Alimentación:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="alimentacion" value="Alimentación"
+						v-model="respuestas[0].opcion"></div>
+				<div class="col-xs-2" align="center"><label>2.Venta de carne:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="venta_carne" value="Venta de carne"
+						v-model="respuestas[0].opcion"></div>
+				<div class="col-xs-2" align="center"><label>3.Venta de pieles:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="venta_pieles" value="Venta de pieles"
+						v-model="respuestas[0].opcion"></div>
+				<div class="col-xs-2" align="center"><label>4.Uso medicinal:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="uso_medicinal" value="Uso medicinal"
+						v-model="respuestas[0].opcion"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align="left"><label>5.Por ser animales dañinos:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="animales_dañinos"
+						value="Por ser animales dañinos" v-model="respuestas[0].opcion"></div>
+				<div class="col-xs-1" align="right"><label>6.Mascota:</label></div>
+				<div class="col-xs-1 check" align="right"><input type="radio" id="mascotas" value="Mascota"
+						v-model="respuestas[0].opcion"></div>
+				<div class="col-xs-2" align="center"><label>7.Por Ornato:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="ornato" value="Por Ornato"
+						v-model="respuestas[0].opcion"></div>
+				<div class="col-xs-2" align="center"><label>8.Deporte:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="deporte" value="Deporte"
+						v-model="respuestas[0].opcion"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align="left"><label>9.Fines religiosos:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="fines_religiosos"
+						value="Fines religiosos" v-model="respuestas[0].opcion"></div>
+				<div class="col-xs-4" align="center"><label>10.Comercio de mascota/ornato</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="comercio"
+						value="Comercio de mascota/ornato" v-model="respuestas[0].opcion"></div>
+				<div class="col-xs-1" align="center"><label>11.Otro:</label></div>
+				<div id="dato" class="col-xs-2" align="left"><input class="form-control" id="otro_caza"
+						v-model="respuestas[0].texto"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-5" align="left">
+				11.¿Cada cuanto tiempo sale usted de cacería?
+			</div>
+			<div id="dato" class="col-xs-7" align="left">
+				<input type="text" id="caceria" class="form-control" v-model="respuestas[1].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				12.¿Qué sitio prefiere?
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>1.Nuria:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="nuria" value="Nuria"
+						v-model="respuestas[2].opcion">
+				</div>
+				<div class="col-xs-2"></div>
+				<div class="col-xs-1" align="center"><label>2.Fundos</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="fundos" value="Fundos"
+						v-model="respuestas[2].opcion">
+				</div>
+				<div class="col-xs-2"></div>
+				<div class="col-xs-3" align="center"><label>3.Alrededores de Tumeremo:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="tumeremo"
+						value="Alrededores de Tumeremo" v-model="respuestas[2].opcion"></div>
+			</div>
+		</div>
+
+
+		<!-- Si hace click en esta opciòn se deberia desplegar un -->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align="left"><label>4.Reserva forestal:</label></div>
+				<div id="dato" class="col-xs-4" align="left"><input class="form-control" id="reserva_forestal"
+						v-model="reserva_forestal"></div>
+				<div class="col-xs-1" align="left"><label align="right">5.Otro:</label></div>
+				<div id="dato" class="col-xs-4" align="left"><input class="form-control" id="Otros_lugares"
+						v-model="otros"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-7" align="left">
+				13. ¿Cuál tipo de animal le gusta más ¿Podria nombrarnos algunos?
+			</div>
+			<div id="dato" class="col-xs-5" align="left">
+				<input type="text" id="alguno_animales_q_l_gusta" class="form-control" v-model="respuestas[3].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" align="left">
+				14. ¿Cuál tipo de animal de monte caza más?
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4" align="left">
+				14.1 ¿Podría nombrarnos algunos?
+			</div>
+			<div id="dato" class="col-xs-8" align="left">
+				<input type="text" id="algunos_animales" class="form-control" v-model="respuestas[4].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2" align="left">
+				14.2 ¿Porqué?
+			</div>
+			<div id="dato" class="col-xs-10" align="left">
+				<input type="text" id="porque" class="form-control" v-model="respuestas[5].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div align="left">
+			<p> 15.¿Consume toda su familia animales de monte? (Si la respuesta es no, ¿Porqué?)</p>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>1. Si:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="si_consume" value="si"
+						v-model="respuestas[6].opcion"></div>
+				<div class="col-xs-1" align="center"><label>2. No:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="no_consume" value="no"
+						v-model="respuestas[6].opcion"></div>
+				<div id="dato" class="col-xs-8" align="left"><input type="text" class="form-control" id="justificacion"
+						placeholder="Justifique la respuesta" v-model="respuestas[6].texto"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div align="left">
+			<p> 16.¿Sepesca en la zona?</p>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>1. Si:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="si_pesca" value="si pesca"
+						v-model="respuestas[7].opcion"></div>
+				<div class="col-xs-1" align="center"><label>2. No:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="no_pesca" value="no pesca"
+						v-model="respuestas[7].opcion"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-5" align="left">
+				17.¿En que época del año pesca para alimentarse?
+			</div>
+			<div id="dato" class="col-xs-7" align="left">
+				<input type="text" id="porque" class="form-control" v-model="respuestas[8].texto" />
+			</div>
+		</div>
+
+		<BR />
+
+		<!--Botones -->
+		<div align="center">
+			<input class="btn btn-success" type="submit" value="Siguiente" v-on:click="Registrar()">
+		</div>
+		<!-- Fin botones -->
+
+		<BR />
+
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Fauna/encuesta_fauna3.js"></script>
+
+</body>
+
+</html>
