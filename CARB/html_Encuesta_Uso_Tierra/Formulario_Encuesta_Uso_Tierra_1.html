@@ -1,0 +1,363 @@
+<html>
+
+<head>
+
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Uso_Tierra/Encuesta_Uso_Tierra.css ">
+
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+	<title>SIG | SIGCARB</title>
+	<!--Fin titulo -->
+
+</head>
+
+<body>
+	<div class="container" id="formularioPrimeroUsoTierra">
+
+		<!-- Espacio -->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+		<!-- Objetivo de la encuesta -->
+		<div align="center">
+			<div> Objetivo: Estudio del uso de la tierra y dinámica de cambio de la cobertura vegetal en la Cuenca Alta
+				del Río Botanamo.</div>
+		</div>
+		<!-- Fin tìtulo del objetivo -->
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Encuesta uso de la tierra.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<!--Datos bàsicos -->
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<!-- Fila 1 del formulario -->
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=left></div>
+				<div class="col-xs-5" align=left><label>Nº Encuesta: {{numero_encuesta | agregar}}</label></div>
+				<div class="col-xs-4" align=left><label>Fecha: {{fecha}}</label></div>
+			</div>
+		</div>
+		<!--Fin de la Fila2 del formulario-->
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=right></div>
+				<div class="col-xs-5" align=left><label>Latitud: {{latitud}}</label></div>
+				<div class="col-xs-4" align=left><label>Longitud: {{longitud}}</label></div>
+			</div>
+		</div>
+		<!--Fin datos bàsicos-->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<h3> SOCIOECONÓMICO.</h3>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3" align="left">
+				1.¿Nombre de la comunidad?
+			</div>
+			<div id="dato" class="col-xs-4" align="left">
+				<input type="text" id="nombre_comunidad" class="form-control" v-model="respuestas[0].texto" />
+			</div>
+			<div class="col-xs-2" align="right">
+				¿Pueblo indígena?
+			</div>
+			<div id="dato" class="col-xs-3" align="left">
+				<input type="text" id="pueblo_indigena" class="form-control" v-model="respuestas[1].texto" />
+			</div>
+		</div>
+		<!--Fin de la Fila4 del formulario-->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3" align="left">
+				2.¿Tipo de asentamiento?
+			</div>
+			<div id="dato" class="col-xs-9" align="left">
+				<input type="text" id="tipo_asentamiento" class="form-control" v-model="respuestas[2].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				3.¿Tipo de vivienda?
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align=center><label>1.Concreto:</label></div>
+				<div class="col-xs-1 check" align="center"><input type="radio" id="concreto"
+						v-model="respuestas[2].opcion" value="Concreto"></div>
+				<div class="col-xs-1" align=center><label>2.Boque:</label></div>
+				<div class="col-xs-1 check" align="center"><input type="radio" id="concreto" value="Boque"
+						v-model="respuestas[2].opcion"></div>
+				<div class="col-xs-1" align=center><label>3.Adobe:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" id="adobe" value="Adobe"
+						v-model="respuestas[2].opcion">
+				</div>
+				<div class="col-xs-1" align=center><label>4.Madera:</label></div>
+				<div class="col-xs-1 check" align="center"><input type="radio" id="madera" value="Madera"
+						v-model="respuestas[3].opcion"></div>
+				<div class="col-xs-1" align=center><label align="left">5.Otro:</label></div>
+				<div id="dato" class="col-xs-3" align=left><input type="text" class="form-control" id="otra_vivienda"
+						align="center" v-model="respuestas[3].texto"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+
+		<div class="row">
+			<div class="col-xs-3" align="left">
+				4.¿Año de nacimiento?
+			</div>
+			<div id="dato" class="col-xs-9"><input type="number" id="año_nacimiento" class="form-control"
+					v-model="respuestas[4].texto">
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="left">
+				<div class="col-xs-2 "><label>Entre 0-15 años:</label></div>
+				<div class="col-xs-1 check" align="center"><input type="radio" value="Entre 0-15 años" id="edad1"
+						v-model="respuestas[4].opcion"></div>
+				<div class="col-xs-2 "><label>Entre 16-45 años:</label></div>
+				<div class="col-xs-1 check" align="center"><input type="radio" value="Entre 16-45 años" id="edad2"
+						v-model="respuestas[4].opcion"></div>
+				<div class="col-xs-2 "><label>Entre 46-65 años:</label></div>
+				<div class="col-xs-1 check" align="center"><input type="radio" value="Entre 46-65 años" id="edad3"
+						v-model="respuestas[4].opcion"></div>
+				<div class="col-xs-2 "><label>Mayor a 65 años:</label></div>
+				<div class="col-xs-1 check" align="center"><input type="radio" value="Mayor a 65 años" id="edad4"
+						v-model="respuestas[4].opcion"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3" align="left">
+				5.¿Lugar de nacimiento?
+			</div>
+			<div id="dato" class="col-xs-9" align="left">
+				<input type="text" id="lugar_nacimiento" class="form-control" v-model="respuestas[5].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3" align="left">
+				6. Sexo
+			</div>
+			<div class="col-xs-2 "><label>Femenino:</label></div>
+			<div class="col-xs-1 check" align="center"><input type="radio" value="Femenino"
+					v-model="respuestas[6].opcion" id="femenino"></div>
+			<div class="col-xs-2 "><label>Masculino:</label></div>
+			<div class="col-xs-1 check" align="center"><input type="radio" value="Masculino"
+					v-model="respuestas[6].opcion" id="masculino"></div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				7.¿Número de personas que conforman el grupo familiar?
+			</div>
+			<div id="dato" class="col-xs-6" align="left">
+				<input type="number" id="nro_personas_grupo_fam" class="form-control" v-model="respuestas[7].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3" align="left">
+				8.¿Estado civil?
+			</div>
+			<div class="col-xs-2 " align="right"><label>Soltero(a):</label></div>
+			<div class="col-xs-1 check" align="center"><input type="radio" value="Soltero(a)"
+					v-model="respuestas[8].opcion" id="soltero"></div>
+			<div class="col-xs-2 " align="right"><label>Casado(a):</label></div>
+			<div class="col-xs-1 check" align="center"><input type="radio" value="Casado(a)"
+					v-model="respuestas[8].opcion" id="casado"></div>
+			<div class="col-xs-2 " align="right"><label>Viudo(a):</label></div>
+			<div class="col-xs-1 check" align="center"><input type="radio" value="Viudo(a)"
+					v-model="respuestas[8].opcion" id="viudo"></div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2 " align="left"><label>Divorciado(a):</label></div>
+			<div class="col-xs-1 check" align="center"><input type="radio" value="Divorciado(a)" id="divorciado"
+					v-model="respuestas[8].opcion"></div>
+			<div class="col-xs-2 " align="right"><label>Pareja:</label></div>
+			<div class="col-xs-1 check" align="center"><input type="radio" value="Pareja" id="pareja"
+					v-model="respuestas[8].opcion"></div>
+			<div class="col-xs-2 " align="right"><label>Otro:</label></div>
+			<div id="dato" class="col-xs-4" align="center"><input type="text" id="otro_estado" class="form-control"
+					v-model="respuestas[8].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				9.Estudios
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3 "><label>Primera etapa:(1º a 3º grado)</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Primera etapa:(1º a 3º grado)"
+						v-model="respuestas[9].opcion" id="etapa1"></div>
+				<div class="col-xs-3"></div>
+				<div class="col-xs-4 "><label>Segunda etapa (4º a 6º grado)</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Segunda etapa (4º a 6º grado)"
+						v-model="respuestas[9].opcion" id="etapa2"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3 " align="left"><label>Tercera etapa (7º, 8º y 9º)</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Tercera etapa (7º, 8º y 9º)"
+						v-model="respuestas[9].opcion" id="etapa3"></div>
+				<div class="col-xs-3"></div>
+				<div class="col-xs-4 "><label>Cuarta etapa (1º y 2º diversificado)</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio"
+						value="Cuarta etapa (1º y 2º diversificado)" v-model="respuestas[9].opcion" id="etapa4"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Botones -->
+		<div align="center">
+			<input class="btn btn-success" type="submit" value="Siguiente" v-on:click="Registrar()">
+		</div>
+		<!-- Fin botones -->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Uso_Tierra/encuesta_uso_tierra1.js"></script>
+</body>
+
+</html>

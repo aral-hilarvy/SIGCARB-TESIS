@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/menus.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Favicon-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <!-- Titulo -->
+
+    <title>SIG | SIGCARB</title>
+
+    <!--Fin titulo -->
+
+</head>
+
+
+<body>
+    <div class="page-wrapper" id="wrapper">
+
+        <!--Header Upper-->
+        <section class="header-uper">
+            <div class="container clearfix">
+                <div class="row">
+                    <div class="logo logo-left col-xs-2 ">
+
+                        <figure>
+                            <a href="index.html">
+                                <img src="./Imagenes/logoUNEG.png" alt="" width="70">
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="col-xs-2">
+                    </div>
+                    <div class="titulo col-xs-4">
+                        <figure>
+                            <a href="index.html">
+                                <img src="./Imagenes/titulo.png" alt="" width="300">
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="col-xs-2">
+                    </div>
+                    <div class=" logo logo-right col-xs-2">
+                        <figure>
+                            <a href="index.html">
+                                <img src="./Imagenes/logoCIEG.png" alt="" width="70">
+                            </a>
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--Header Upper-->
+
+
+        <!--Menu-->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav margin-menu">
+                        <li class="active">
+                            <a href="index.html" class="margin-section">Inicio</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section" data-toggle="dropdown">Análisis Espacial
+                                <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="hover-color"
+                                        onclick="window.open('./mapa.html', '_blank')">Visualizar
+                                        Mapa</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section " data-toggle="dropdown">Reportes<b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#" class="hover-color" onclick="window.open('./html_Reportes/Reporte_Especies_Fauna.html', '_blank')">
+                                        Especies Fauna
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover-color" onclick="window.open('./html_Reportes/Reporte_Especies_Flora.html', '_blank')">
+                                        Especies Flora
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover-color" onclick="window.open('./html_Reportes/Reporte_Grupos_Funcionales.html', '_blank')">
+                                        Grupos Funcionales
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover-color">
+                                        Indice Valor Importancia
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section " data-toggle="dropdown">Inf.
+                                Complementaria<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown" v-on:click="setearRedireccionar(2)">
+                                    <a href="#" class="hover-color">
+                                        Fauna</a>
+                                </li>
+                                <li class="dropdown" v-on:click="setearRedireccionar(3)">
+                                    <a href="#" class="hover-color">
+                                        Suelo</a>
+                                </li>
+                                <li class="dropdown" v-on:click="setearRedireccionar(12)">
+                                    <a href="#" class="hover-color">
+                                        Vegetacion</a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section" data-toggle=" dropdown">Ayuda</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </nav>
+
+
+        <!-- Carousel-->
+        <div class="hero-slider">
+            <!-- Slider Item -->
+            <div class="slider-item slide1" style="background-image:url(Imagenes/slider/slider-1.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content style text-center">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(Imagenes/slider/slider-2.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start-->
+                            <div class="content style text-center">
+                                <h2 class="text-white">SIGCARB</h2>
+                                <p class="tag-text">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo. </p>
+                            </div>
+                            <!-- Slide Content End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(Imagenes/slider/slider-3.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(Imagenes/slider/slider-4.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(Imagenes/slider/slider-5.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(Imagenes/slider/slider-6.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- footer-->
+        <footer class="footer-main">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-logo">
+                    </div>
+                    <ul class="location-link">
+                        <li class="item">
+                            <p><i class="fa fa-map-marker"></i> &nbsp; Urbanización Chilemex, Calle Chile, Sede UNEG,
+                                Puerto Ordaz, Estado Bolívar, Venezuela.</p>
+                        </li>
+                        <li class="item">
+
+                            <a href="#">
+                                <p> <i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; cieg@uneg.edu.ve</p>
+                            </a>
+                        </li>
+                        <li class="item">
+
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; 0286-9234786</p>
+                        </li>
+                    </ul>
+                    <ul class="list-inline social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container clearfix">
+                    <div class="copyright-text ">
+                        <p>&copy; Copyright 2019. SIGCARB.
+                            <a href="index.html">Todos los derechos reservados.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!--End pagewrapper-->
+
+    <div class="scroll-to-top scroll-to-target" data-target=".header-top">
+        <span class="icon fa fa-angle-up"></span>
+    </div>
+
+    <script src="./plugins/jquery.js"></script>
+    <script src="./plugins/bootstrap.min.js"></script>
+    <script src="./plugins/bootstrap-select.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="./plugins/slick/slick.min.js"></script>
+    <!-- FancyBox -->
+    <script src="./plugins/fancybox/jquery.fancybox.min.js"></script>
+
+    <script src="./plugins/validate.js"></script>
+    <script src="./plugins/wow.js"></script>
+    <script src="./plugins/jquery-ui.js"></script>
+    <script src="./plugins/timePicker.js"></script>
+    <script src="./js/script.js"></script>
+
+    <script src="./Librerias/js/vue.js"></script>
+    <script src="./js/Invitado/recurso_natural.js"></script>
+
+</body>
+
+</html>

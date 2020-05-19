@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="../plugins/slick/slick.css">
+    <link rel="stylesheet" href="../plugins/slick/slick-theme.css">
+
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="../plugins/fancybox/jquery.fancybox.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/menus.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modales.css">
+
+    <!-- Titulo -->
+
+    <title>SIG | SIGCARB</title>
+
+    <!--Fin titulo -->
+
+</head>
+
+
+<body>
+    <div class="page-wrapper" id="wrapper">
+
+        <!--Header Upper-->
+        <section class="header-uper">
+            <div class="container clearfix">
+                <div class="row">
+                    <div class="logo logo-left col-xs-2 ">
+
+                        <figure>
+                            <a href="indexUsuarioComun.html">
+                                <img src="../Imagenes/logoUNEG.png" alt="" width="70">
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="col-xs-2">
+                    </div>
+                    <div class="titulo col-xs-4">
+                        <figure>
+                            <a href="indexUsuarioComun.html">
+                                <img src="../Imagenes/titulo.png" alt="" width="300">
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="col-xs-2">
+                    </div>
+                    <div class=" logo logo-right col-xs-2">
+                        <figure>
+                            <a href="indexUsuarioComun.html">
+                                <img src="../Imagenes/logoCIEG.png" alt="" width="70">
+                            </a>
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--Header Upper-->
+
+
+        <!--Menu-->
+        <nav class="navbar navbar-default" id="sesiones">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav margin-menu">
+                        <li class="active">
+                            <a href="indexUsuarioComun.html" class="margin-section">Inicio</a>
+                        </li>
+
+                        <li v-if="recurso_natural=='Vegetacion'">
+                            <a href="#" class="dropdown-toggle margin-section" data-toggle="dropdown">Vegetación<b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Levantamiento
+                                        de Vegetación</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-submenu">
+                                            <a href="#" class="dropdown-toggle hover-color"
+                                                data-toggle="dropdown">Espacio de Muestreo</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="Levantamiento_Vegetacion.html" class="hover-color"
+                                                        data-toggle="modal"
+                                                        data-target="#modal_registro_EspacioMuestreo"
+                                                        id="RegistrarEspacioMuestreo">Registrar Espacio de Muestreo</a>
+                                                </li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_consultar_EspacioMuestreo"
+                                                        id="ConsultarEspacioMuestreo"
+                                                        onclick="ConsultarEspacioMuestreo()">Consultar Espacio de
+                                                        Muestreo</a>
+                                                </li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_eliminar_EspacioMuestreo"
+                                                        id="EliminarEspacioMuestreo"
+                                                        onclick="ConsultarEliminarEspacioMuestreo()">Eliminar Espacio de
+                                                        Muestreo</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Datos
+                                                Crudos</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="Levantamiento_Vegetacion.html"
+                                                        class="hover-color">Registrar Levantamiento</a></li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_editar_levantamiento"
+                                                        id="EditarLevantamiento">Editar
+                                                        Levantamiento</a></li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_consultar_levantamiento"
+                                                        id="ConsultarLevantamiento">Consultar Levantamiento</a>
+                                                </li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_eliminar_levantamiento"
+                                                        id="EliminarLevantamiento">Eliminar Levantamiento</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Datos
+                                                Procesados</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="Grupos_Funcionales.html" class="hover-color">Registrar
+                                                        Grupo Funcional</a></li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_editar_GrupoFuncional"
+                                                        id="EditarGrupoFuncional"
+                                                        onclick="EditarGrupoFuncional()">Editar Grupo Funcional</a></li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_consultar_GrupoFuncional"
+                                                        id="ConsultarGrupoFuncional"
+                                                        onclick="ConsultarGrupoFuncional()">Consultar Grupo
+                                                        Funcional</a></li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_eliminar_GrupoFuncional"
+                                                        id="EliminarGrupoFuncional"
+                                                        onclick="EliminarGrupoFuncional()">Eliminar Grupo
+                                                        Funcional</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li v-if="recurso_natural=='Fauna'">
+                            <a href="#" class="dropdown-toggle margin-section" data-toggle="dropdown">Fauna <b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Levantamiento
+                                        de Fauna</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-submenu">
+                                            <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Datos
+                                                Crudos</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="Observacion_Fauna.html" class="hover-color">Registrar
+                                                        Observación</a></li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_editar_observacion"
+                                                        id="EditarObservacion">Editar Observación</a></li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_consultar_observacion"
+                                                        id="ConsultarObservacion">Consultar Observación</a></li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_eliminar_observacion"
+                                                        id="EliminarObservacion">Eliminar Observación</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section" data-toggle="dropdown">Análisis Espacial
+                                <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="hover-color"
+                                        onclick="window.open('../mapa.html', '_blank')">Visualizar
+                                        Mapa</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section " data-toggle="dropdown">Encuestas<b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Gestión de
+                                        Encuestas</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown">
+                                            <a href="../html_Encuesta_Fauna/Formulario_Encuesta_Fauna_1.html"
+                                                class="dropdown-toggle hover-color">Uso de la Fauna</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="../html_Encuesta_Uso_Tierra/Formulario_Encuesta_Uso_Tierra_Introduccion.html"
+                                                class="dropdown-toggle hover-color">Uso de la Tierra</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="../html_Encuesta_Valor_Economico/Formulario_Encuesta_1_Introduccion.html"
+                                                class="dropdown-toggle hover-color">Valor Económico de los Arboles</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section " data-toggle="dropdown">Reportes<b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Visualización
+                                        de Reportes</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown">
+                                            <a href="../html_Reportes/Reporte_Grupos_Funcionales.html" target="_blank"
+                                                class="dropdown-toggle hover-color">Grupos Funcionales</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="../html_Reportes/Reporte_Especies_Flora.html" target="_blank"
+                                                class="dropdown-toggle hover-color">Listado Floristico</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="../html_Reportes/Reporte_Especies_Fauna.html" target="_blank"
+                                                class="dropdown-toggle hover-color">Listado de Fauna</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="" class="dropdown-toggle hover-color" data-toggle="modal"
+                                                data-target="#modal_consultar_reporte" id="Consultareporte">Índice de
+                                                Valor de Importancia</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section " data-toggle="dropdown">Inf.
+                                Complementaria<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown">
+                                    <a href="../html_info_complementaria/index_info_complementaria.html" target="_blank"
+                                        class="dropdown-toggle hover-color">Gestion de Informacion Complementaria</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section" data-toggle=" dropdown">Ayuda</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" style="margin-top:1.5%">
+                        <li><button type="button" id="agregar" style="margin-left: 1%" class="btn btn-danger btn-circle"
+                                data-toggle="tooltip" title="Cerrar Sesion" v-on:click="logout()"> <i
+                                    class="glyphicon glyphicon-off"></i></button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </nav>
+
+
+        <!-- Carousel-->
+        <div class="hero-slider">
+            <!-- Slider Item -->
+            <div class="slider-item slide1" style="background-image:url(../Imagenes/slider/slider-1.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content style text-center">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(../Imagenes/slider/slider-2.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start-->
+                            <div class="content style text-center">
+                                <h2 class="text-white">SIGCARB</h2>
+                                <p class="tag-text">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo. </p>
+                            </div>
+                            <!-- Slide Content End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(../Imagenes/slider/slider-3.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(../Imagenes/slider/slider-4.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(../Imagenes/slider/slider-5.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(../Imagenes/slider/slider-6.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- footer-->
+        <footer class="footer-main">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-logo">
+                    </div>
+                    <ul class="location-link">
+                        <li class="item">
+                            <p><i class="fa fa-map-marker"></i> &nbsp; Urbanización Chilemex, Calle Chile, Sede UNEG,
+                                Puerto Ordaz, Estado Bolívar, Venezuela.</p>
+                        </li>
+                        <li class="item">
+
+                            <a href="#">
+                                <p> <i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; cieg@uneg.edu.ve</p>
+                            </a>
+                        </li>
+                        <li class="item">
+
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; 0286-9234786</p>
+                        </li>
+                    </ul>
+                    <ul class="list-inline social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container clearfix">
+                    <div class="copyright-text ">
+                        <p>&copy; Copyright 2019. SIGCARB.
+                            <a href="index.html">Todos los derechos reservados.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!--End pagewrapper-->
+
+    <div class="scroll-to-top scroll-to-target" data-target=".header-top">
+        <span class="icon fa fa-angle-up"></span>
+    </div>
+
+    <!--Modal Eliminar Levantamiento-->
+    <div id="modal_eliminar_levantamiento" class="modal fade" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN DE LEVANTAMIENTO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nº Levantamiento:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="Eli_levantamiento" class="form-control" v-model="id_encab_lev_fl">
+                                            <option v-for="item in enc_lev_fl" :value="item.id">
+                                                {{item.nro_levantamiento | agregar}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_levantamiento"
+                        v-on:click="Eliminar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_levantamiento">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Editar Levantamiento-->
+    <div id="modal_editar_levantamiento" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICIÓN DE LEVANTAMIENTO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nº Levantamiento:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="ED_levantamiento" class="form-control" v-model="id_encab_lev_fl">
+                                            <option v-for="item in enc_lev_fl" :value="item.id">
+                                                {{item.nro_levantamiento | agregar}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="ED_levantamiento"
+                        v-on:click="Ir()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_ED_levantamiento">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Consultar Levantamiento-->
+    <div id="modal_consultar_levantamiento" class="modal fade" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">CONSULTA DE LEVANTAMIENTO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nº Levantamiento:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="Consult_levantamiento" class="form-control"
+                                            v-model="id_encab_lev_fl">
+                                            <option v-for="item in enc_lev_fl" :value="item.id">
+                                                {{item.nro_levantamiento | agregar}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Consult_levantamiento"
+                        v-on:click="Ir()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Consult_levantamiento">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Modal Eliminar GRUPO FUNCIONAL-->
+    <div id="modal_eliminar_GrupoFuncional" class="modal fade" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN DE GRUPO FUNCIONAL</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-1"><span>Nº&nbsp;Col:</span></div>
+                                    <div class="col-sm-11">
+                                        <select id="Eli_GrupoFuncional" class="form-control"
+                                            v-model="id_EDGrupoFuncional">
+                                            <option v-for="item in g_funcional" :value="item.id">
+                                                {{item.nro_coleccion | agregar}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_GrupoFuncional"
+                        v-on:click="Eliminar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_GrupoFuncional">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Editar Grupo Funcional-->
+    <div id="modal_editar_GrupoFuncional" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICIÓN DE GRUPO FUNCIONAL</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-1"><span>Nº&nbsp;Col:</span></div>
+                                    <div class="col-sm-11">
+                                        <select id="ED_GrupoFuncional" class="form-control"
+                                            v-model="id_EDGrupoFuncional">
+                                            <option v-for="item in g_funcional" :value="item.id">
+                                                {{item.nro_coleccion | agregar}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="ED_GrupoFuncional"
+                        v-on:click="Edit">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_ED_GrupoFuncional">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Consultar Grupo Funcional-->
+    <div id="modal_consultar_GrupoFuncional" class="modal fade" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">CONSULTA DE Grupo FUNCIONAL</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-1"><span>Nº&nbsp;Col:</span></div>
+                                    <div class="col-sm-11">
+                                        <select id="Consult_GrupoFuncional" class="form-control"
+                                            v-model="id_EDGrupoFuncional">
+                                            <option v-for="item in g_funcional" :value="item.id">
+                                                {{item.nro_coleccion | agregar}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Consult_GrupoFuncional"
+                        v-on:click="Consult">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Consult_GrupoFuncional">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Modal Eliminar Observacion-->
+    <div id="modal_eliminar_observacion" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN DE OBSERVACIÓN</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoFau" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Fauna</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nº Observación:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="Eli_observacion" class="form-control" v-model="id_observacion">
+                                            <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_observacion"
+                        v-on:click="Eliminar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_observacion">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Editar Observacion-->
+    <div id="modal_editar_observacion" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICIÓN DE OBSERVACIÓN</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoFau" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Fauna</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nº Observación:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="ED_observacion" class="form-control" v-model="id_EDobservacion">
+                                            <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="ED_observacion"
+                        onClick="window.location.href='Editar_Observacion_Fauna.html'">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_ED_observacion">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Consultar Observacion-->
+    <div id="modal_consultar_observacion" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">CONSULTA DE OBSERVACIÓN</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoFau" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Fauna</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nº Observación:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="Consult_observacion" class="form-control"
+                                            v-model="id_Consultobservacion">
+                                            <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Consult_observacion"
+                        onClick="window.location.href='Consultar_Observacion_Fauna.html'">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Consult_observacion">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Registro Espacio Muestreo-->
+    <div id="modal_registro_EspacioMuestreo" class="modal fade" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="registro" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">REGISTRO DE ESPACIO DE MUESTREO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Tipo de bosque:</span></div>
+                                    <div class="col-sm-8">
+                                        <select id="Espacio_Muestreo" class="form-control" v-model="tipo_bosque">
+                                            <option disabled seleted>Seleccione</option>
+                                            <option value="1">Bosque Continuo</option>
+                                            <option value="2">Bosque Fragmentado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Grado Perturbación:</span></div>
+                                    <div class="col-sm-8">
+                                        <select id="Grado_Perturbacion" class="form-control"
+                                            v-model="id_grado_perturbacion">
+                                            <option disabled seleted>Seleccione</option>
+                                            <option v-for="item in grad_perturb" :value="item.id">{{item.descripcion}}
+                                            </option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Latitud:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="latitud_EM" placeholder="Latitud"
+                                            required="true" v-model="latitud" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Longitud:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="longitud_EM"
+                                            placeholder="Longitud" required="true" v-model="longitud" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="registrar_EspacioMuestreo"
+                        v-on:click="Registrar_Esp_Mues()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Rg_EspacioMuestreo">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal seleccionar Espacio Muestreo a CONSULTAR-->
+    <div id="modal_consultar_EspacioMuestreo" class="modal fade" role="dialog" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">CONSULTA ESPACIO DE MUESTREO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-6">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="tabla-bold tabla-just">Bosque Continuo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="item in muestreos_continuo">
+                                            <td class="tabla-just"><span>{{item.cod_espacio_muestreo}}</span>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="colum" class="col-md-6">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="tabla-bold tabla-just">Bosque Fragmentado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="item in muestreos_fragmentado">
+                                            <td class="tabla-just"><span>{{item.cod_espacio_muestreo}}</span>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Eliminar Espacio de Muestreo-->
+    <div id="modal_eliminar_EspacioMuestreo" class="modal fade" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN ESPACIO DE MUESTREO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Espacio de Muestreo:</span></div>
+                                    <div class="col-sm-8">
+                                        <select id="Eli_EspacioMuestreo" class="form-control"
+                                            v-model="id_Espaciomuestreo">
+                                            <option v-for="item in espacio_muestreos" :value="item.id">
+                                                {{item.cod_espacio_muestreo}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_EspacioMuestreo"
+                        v-on:click="Eliminar_Esp_Mues()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_EspacioMuestreo">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal seleccionar Fragmento para reporte Indice de Valor de importancia-->
+    <div id="modal_consultar_reporte" class="modal fade" role="dialog" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ÍNDICE DE VALOR DE IMPORTANCIA</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="etiqueta" class="col-sm-6"><span>Nº Fragmento:</span></div>
+                            <div class="col-sm-6">
+                                <select id="fragmento_reporte" class="form-control">
+                                    <option>
+                                        {{item.cod_espacio_muestreo}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal"
+                        onclick="window.open('../html_Reportes/Reporte_Indice_Valor_Importancia.html', '_blank');">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Consultar_reporte">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../plugins/jquery.js"></script>
+    <script src="../plugins/bootstrap.min.js"></script>
+    <script src="../plugins/bootstrap-select.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="../plugins/slick/slick.min.js"></script>
+    <!-- FancyBox -->
+    <script src="../plugins/fancybox/jquery.fancybox.min.js"></script>
+    <!-- Google Map -->
+    <!--<script src="../https://maps.googleapis.com/maps/api/js?key=AIzaSyCLuWemUhh8dHFt_enjYa5wTyRQyfiOmvk"></script>
+    <script src="../plugins/google-map/gmap.js"></script>-->
+
+    <script src="../plugins/validate.js"></script>
+    <script src="../plugins/wow.js"></script>
+    <script src="../plugins/jquery-ui.js"></script>
+    <script src="../plugins/timePicker.js"></script>
+    <script src="../plugins/sweetalert.js"></script>
+    <script src="../js/script.js"></script>
+    <!--Favicon-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="../js/GestionUsuarios/sesiones.js"></script>
+    <script src="../js/EspacioMuestreo/registrar.js"></script>
+    <script src="../js/EspacioMuestreo/consultar.js"></script>
+    <script src="../js/EspacioMuestreo/eliminar.js"></script>
+
+    <script src="../js/Encabezado_Levantamiento_Flora/modal_editar_levantamiento.js"></script>
+    <script src="../js/Encabezado_Levantamiento_Flora/modal_consultar_levantamiento.js"></script>
+    <script src="../js/Encabezado_Levantamiento_Flora/modal_eliminar_levantamiento.js"></script>
+    <script src="../js/Grupo_Funcional/modal_editar.js"></script>
+    <script src="../js/Grupo_Funcional/modal_consultar.js"></script>
+    <script src="../js/Grupo_Funcional/eliminar.js"></script>
+
+    <script>
+        function ConsultarEspacioMuestreo() {
+            modal_consultar_EspacioMuestreo.contadorRegistros();
+        }
+
+        function ConsultarEliminarEspacioMuestreo() {
+            modal_eliminar_EspacioMuestreo.initRegistros();
+        }
+
+        function EditarGrupoFuncional() {
+            modal_editar_GrupoFuncional.ConteoNumeroCol();
+        }
+
+        function ConsultarGrupoFuncional() {
+            modal_consultar_GrupoFuncional.ConteoNumeroCol();
+        }
+
+        function EliminarGrupoFuncional() {
+            modal_eliminar_GrupoFuncional.ConteoNumeroCol();
+        }
+    </script>
+
+    <!--CANCELAR ELIMINAR LEVANTAMIENTO -->
+    <script type="text/javascript">
+        $("#Reset_Eli_levantamiento").click(function () {
+            $('#Eli_levantamiento').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR EDITAR LEVANTAMIENTO -->
+    <script type="text/javascript">
+        $("#Reset_ED_levantamiento").click(function () {
+            $('#ED_levantamiento').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR CONSULTAR LEVANTAMIENTO -->
+    <script type="text/javascript">
+        $("#Reset_Consult_levantamiento").click(function () {
+            $('#Consult_levantamiento').val("Seleccione");
+        });
+    </script>
+
+
+    <!--CANCELAR ELIMINAR GRUPO FUNCIONAL -->
+    <script type="text/javascript">
+        $("#Reset_Eli_GrupoFuncional").click(function () {
+            $('#Eli_GrupoFuncional').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR EDITAR GRUPO FUNCIONAL -->
+    <script type="text/javascript">
+        $("#Reset_ED_GrupoFuncional").click(function () {
+            $('#ED_GrupoFuncional').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR CONSULTAR GRUPO FUNCIONAL-->
+    <script type="text/javascript">
+        $("#Reset_Consult_GrupoFuncional").click(function () {
+            $('#Consult_GrupoFuncional').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR ELIMINAR GRUPO FUNCIONAL -->
+    <script type="text/javascript">
+        $("#Reset_Eli_observacion").click(function () {
+            $('#Eli_observacion').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR EDITAR OBSERVACIÓN -->
+    <script type="text/javascript">
+        $("#Reset_ED_observacion").click(function () {
+            $('#ED_observacion').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR CONSULTAR OBSERVACIÓN-->
+    <script type="text/javascript">
+        $("#Reset_Consult_observacion").click(function () {
+            $('#Consult_observacion').val("Seleccione");
+        });
+    </script>
+    <!--Cancelar registro Espacio de muestreo vegetación-->
+    <script type="text/javascript">
+        $("#Reset_Rg_EspacioMuestreo").click(function () {
+            $('#Espacio_Muestreo').val("Seleccione");
+            $('#Grado_Perturbacion').val("Seleccione");
+            $('#latitud_EM').val("");
+            $('#longitud_EM').val("");
+        });
+    </script>
+
+    <!--Cancelar Eliminar Espacio de muestreo vegetación-->
+    <script type="text/javascript">
+        $("#Reset_Eli_EspacioMuestreo").click(function () {
+            $('#Eli_EspacioMuestreo').val("Seleccione");
+        });
+    </script>
+    <!--Cancelar consultar reporte-->
+    <script type="text/javascript">
+        $("#Reset_Consultar_reporte").click(function () {
+            $('#fragmento_reporte').val("Seleccione");
+        });
+    </script>
+
+</body>
+
+</html>

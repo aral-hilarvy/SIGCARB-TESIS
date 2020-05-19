@@ -1,0 +1,523 @@
+<html>
+
+<head>
+
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Uso_Tierra/Encuesta_Uso_Tierra.css">
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+	<title>SIG | SIGCARB</title>
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="formularioQuintoUsoTierra">
+
+		<!-- Espacio -->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+		<!-- Objetivo de la encuesta -->
+		<div align="center">
+			<div> Objetivo: Estudio del uso de la tierra y dinámica de cambio de la cobertura vegetal en la Cuenca Alta
+				del Río Botanamo.</div>
+		</div>
+
+		<!-- Fin tìtulo del objetivo -->
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Encuesta uso de la tierra.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+
+		<!--Datos bàsicos -->
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!-- Fila 1 del formulario -->
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=left></div>
+				<div class="col-xs-5" align=left><label>Nº Encuesta: {{numero_encuesta | agregar}}</label></div>
+				<div class="col-xs-4" align=left><label>Fecha: {{fecha}}</label></div>
+			</div>
+		</div>
+		<!--Fin de la Fila2 del formulario-->
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=right></div>
+				<div class="col-xs-5" align=left><label>Latitud: {{latitud}}</label></div>
+				<div class="col-xs-4" align=left><label>Longitud: {{longitud}}</label></div>
+			</div>
+		</div>
+		<!--Fin datos bàsicos-->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<h3> SOCIOECONÓMICO.</h3>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<h4 align="center"> Dinamica de cambios de la cobertura y uso de la tierra </h4>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				1.¿Cuál fue el uso inicial de la tierra?
+			</div>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>1. Agrícola:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Agrícola"
+						v-model="respuestas[0].opcion" id="agricola"></div>
+				<div class="col-xs-2" align="center"><label>2. Pecuario:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Pecuario"
+						v-model="respuestas[0].opcion" id="pecuario"></div>
+				<div class="col-xs-2" align="center"><label>3. Forestal:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Forestal"
+						v-model="respuestas[0].opcion" id="forestal"></div>
+				<div class="col-xs-2" align="center"><label>4. Minero:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Minero"
+						v-model="respuestas[0].opcion" id="minero"></div>
+			</div>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>5. Residencial:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Residencial"
+						v-model="respuestas[0].opcion" id="residencial"></div>
+				<div class="col-xs-2" align="center"><label>6. Turistico:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Turistico"
+						v-model="respuestas[0].opcion" id="turistico"></div>
+				<div class="col-xs-2" align="center"><label>7. Otros:</label></div>
+				<div id="dato" class="col-xs-4" align="left"><input class="form-control" id="otros_usos"
+						v-model="respuestas[0].texto"></div>
+			</div>
+
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				2.¿Realizó usted algun cambio de uso?
+			</div>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>1. Si:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="SI" v-model="respuestas[1].opcion"
+						id="si_cambio"></div>
+				<div class="col-xs-1" align="center"><label>2. No:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="NO" v-model="respuestas[1].opcion"
+						id="no_cambio"></div>
+			</div>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>1. Agrícola:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Agrícola"
+						v-model="respuesta_cambio[0].opcion" id="cambio_agricola"></div>
+				<div class="col-xs-2" align="center"><label>2. Pecuario:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Pecuario"
+						v-model="respuesta_cambio[0].opcion" id="cambio_pecuario"></div>
+				<div class="col-xs-2" align="center"><label>3. Forestal:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Forestal"
+						v-model="respuesta_cambio[0].opcion" id="cambio_forestal"></div>
+				<div class="col-xs-2" align="center"><label>4. Minero:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Minero"
+						v-model="respuesta_cambio[0].opcion" id="cambio_minero"></div>
+			</div>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>5. Residencial:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Residencial"
+						v-model="respuesta_cambio[0].opcion" id="cambio_residencial"></div>
+				<div class="col-xs-2" align="center"><label>6. Turistico:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Turistico"
+						v-model="respuesta_cambio[0].opcion" id="cambio_turistico"></div>
+				<div class="col-xs-2" align="center"><label>7. Otros:</label></div>
+				<div id="dato" class="col-xs-4" align="left"><input class="form-control" id="otros_cambios"
+						v-model="respuesta_cambio[0].texto"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>En que año:</label></div>
+				<div id="dato" class="col-xs-10" align="left"><input type="number" class="form-control" id="año_cambio"
+						v-model="respuesta_cambio[1].texto">
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" align="left">
+				3.¿Qué tipo de actividades realizó para desarrollar sus actividades productivas?
+			</div>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align="left"><label>1.Extracción selectiva:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Extracción selectiva"
+						v-model="respuestas[2].opcion" id="act_extraccion"></div>
+				<div class="col-xs-2" align="center"><label>2.Deforestación:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Deforestación"
+						v-model="respuestas[2].opcion" id="act_deforestacion"></div>
+				<div class="col-xs-1" align="center"><label>3.Quema:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Quema"
+						v-model="respuestas[2].opcion" id="act_quema"></div>
+				<div class="col-xs-1" align="center"><label>4.Otros:</label></div>
+				<div id="dato" class="col-xs-2" align="left"><input class="form-control" id="otra_act_productiva"
+						v-model="respuestas[2].texto"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" align="left">
+				4.¿Qué motivó el cambio de uso?
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div id="dato" class="col-xs-12" align="left">
+				<input type="text" id="motivo_cambio" class="form-control" v-model="respuestas[3].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" align="left">
+				5.¿Cree usted que las actividades que realiza modifica las condiciones natuarales del sector?
+			</div>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>1.Suelo:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Suelo"
+						v-model="respuestas[4].opcion" id="suelo"></div>
+				<div class="col-xs-1" align="center"><label>2.Agua:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Agua" v-model="respuestas[4].opcion"
+						id="agua"></div>
+				<div class="col-xs-1" align="center"><label>3.Bosque:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Bosque"
+						v-model="respuestas[4].opcion" id="bosque"></div>
+				<div class="col-xs-1" align="center"><label>4.Otros:</label></div>
+				<div id="dato" class="col-xs-5" align="left"><input class="form-control" id="otros_modifican"
+						v-model="respuestas[4].texto"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" align="left">
+				Explique
+			</div>
+			<div id="dato" class="col-xs-12" align="left">
+				<input type="text" id="exp_motivo_cambio" class="form-control" v-model="respuestas[5].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" align="left">
+				6.¿De qué manera los cambios en el paisaje afectan su proceso productivo?
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div id="dato" class="col-xs-12" align="left">
+				<input type="text" id="afectan_cambios" class="form-control" v-model="respuestas[6].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" align="left">
+				7.¿Considera usted importante conservar áreas boscosas dentro de su propiedad?
+			</div>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>1. Si:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="SI" v-model="respuestas[7].opcion"
+						id="si_conservar_area"></div>
+				<div class="col-xs-1" align="center"><label>2. No:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="NO" v-model="respuestas[7].opcion"
+						id="no_conservar_area"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				¿Por qué?
+			</div>
+			<div id="dato" class="col-xs-12" align="left">
+				<input type="text" id="porque" class="form-control" v-model="respuestas[8].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" align="left">
+				8.¿Qué productos extraes del bosque?
+			</div>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>1.Madera:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Madera"
+						v-model="respuestas[9].opcion" id="madera"></div>
+				<div class="col-xs-1" align="center"><label>2.Fauna:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Fauna"
+						v-model="respuestas[9].opcion" id="fauna"></div>
+				<div class="col-xs-3" align="center"><label>3.Productos medicinales:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Productos medicinales"
+						v-model="respuestas[9].opcion" id="productos_medicinales"></div>
+				<div class="col-xs-2" align="center"><label>4.Alimentos:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Alimentos"
+						v-model="respuestas[9].opcion" id="alimentos"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-1" align="left">
+				<label> 5.Otros:</label>
+			</div>
+			<div id="dato" class="col-xs-11" align="left">
+				<input type="text" id="otros_productos" class="form-control" v-model="respuestas[9].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				9.¿De donde cree usted que proviene el agua que utiliza?
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>1.Lluvias:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Lluvias"
+						v-model="respuestas[10].opcion" id="lluvias"></div>
+				<div class="col-xs-2" align="center"><label>2.Lagunas:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Lagunas"
+						v-model="respuestas[10].opcion" id="lagunas"></div>
+				<div class="col-xs-2" align="center"><label>3.Ríos:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Ríos"
+						v-model="respuestas[10].opcion" id="rios"></div>
+				<div class="col-xs-2" align="center"><label>4.Nivel freático:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Nivel freático"
+						v-model="respuestas[10].opcion" id="nivel_freatico"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				10.¿Visualmente, cual es el paisaje que prefiere en su entorno?
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align="left"><label>1.Bosque continuo:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Bosque continuo"
+						v-model="respuestas[11].opcion" id="bosque_continuo"></div>
+				<div class="col-xs-3" align="center"><label>2.Sabana continua:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Sabana continua"
+						v-model="respuestas[11].opcion" id="sabana_continua"></div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-2" align="center"><label>3.Paisaje mixto:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" value="Paisaje mixto"
+						v-model="respuestas[11].opcion" id="paisaje_mixto"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" align="left">
+				Explique
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="dato" class="col-xs-12" align="left">
+				<input type="text" id="explicacion" class="form-control" v-model="respuestas[11].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Botones -->
+		<div align="center">
+			<input class="btn btn-success" type="submit" value="Finalizar" v-on:click="Registrar()">
+		</div>
+		<!-- Fin botones -->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Uso_Tierra/encuesta_uso_tierra5.js"></script>
+</body>
+
+</html>

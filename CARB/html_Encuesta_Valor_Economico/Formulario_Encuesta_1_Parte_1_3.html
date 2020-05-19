@@ -1,0 +1,500 @@
+<html>
+
+<head>
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Valor_Economico/style_Valor_Economico.css ">
+
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="formularioSieteValorEconomico">
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Rìo Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Encuesta sobre el valor econòmico de los árboles con uso medicinal en la Cuenca Alta del Rìo Botanamo
+				en la RFI estado Bolìvar.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<div align="center">
+			<!-- Datos basicos de la encuesta -->
+
+			<div class="row">
+
+				<div class="inline" align="center">
+
+					<div class="col-xs-1" style=" border:padding:0%" align="right">
+					</div>
+
+					<!--Columna 2 del encabezado de la encuesta Nro de la encuesta-->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong>Nro de encuesta : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{numero_encuesta | agregar}}</p>
+					</div>
+
+					<!--Columna 1 del encabezado de la encuesta Nombre del encuestador -->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong> Encuestador : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{nombre_encuestador}}</p>
+					</div>
+
+
+					<div class="col-xs-1" style="padding:0%">
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Fin datos bàsicos -->
+
+
+			<!-- Datos basicos de la encuesta -->
+
+			<div class="row">
+
+				<div class="inline">
+
+					<div class="col-xs-1" style=" border:padding:0%" align="right">
+					</div>
+
+					<!--Columna 2 del encabezado de la encuesta Nro de la encuesta-->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong>Comunidad : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{comunidad}}</p>
+					</div>
+
+					<!--Columna 1 del encabezado de la encuesta Nombre del encuestador -->
+
+					<div class="col-xs-3" style="padding:0%" align=right><strong>Tipo de asentamiento : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p> {{tipo_asentamiento}}</p>
+					</div>
+
+
+					<div class="col-xs-1" style="padding:0%">
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Fin datos bàsicos -->
+
+
+		</div>
+
+
+		<!--Introducciòn-->
+
+		<h4 align="center"> Parte I:</h3>
+
+			<!--Pregunta -->
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="left">
+				<p> 3.Si le pidiera calificar del 1 al 5 la importancia de los bosques con respecto a la existencia de
+					árboles con usos medicinales, que calificación le pondría?(Mencione escala)</p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<!-- Fila 1 del formulario  alimentos-->
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+					<div class="col-xs-2" style="padding:0%" align=center><label align="center"> 5. Valioso</label>
+					</div>
+					<div class="col-xs-2" style="padding:0%" align=center><label align="center"> 4. Muy
+							importante</label></div>
+					<div class="col-xs-2" style="padding:0%" align=center><label align="center"> 3. Importante</label>
+					</div>
+					<div class="col-xs-2" style="padding:0%" align=center><label align="center"> 2. Poco
+							importante</label></div>
+					<div class="col-xs-2" style="padding:0%" align=center><label align="center"> 1. No es
+							importante</label></div>
+					<div class="col-xs-2" style="padding:0%" align=center></div>
+
+
+				</div>
+			</div>
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+					<div class="col-xs-2" style="padding:0%" align=center><input type="radio"
+							v-model="respuestas[0].opcion" id="checkboxEnLinea1" value="Valioso"></div>
+					<div class="col-xs-2" style="padding:0%" align=center><input type="radio"
+							v-model="respuestas[0].opcion" id="checkboxEnLinea1" value="Muy importante"></div>
+					<div class="col-xs-2" style="padding:0%" align=center><input type="radio"
+							v-model="respuestas[0].opcion" id="checkboxEnLinea1" value="Importante"></div>
+					<div class="col-xs-2" style="padding:0%" align=center><input type="radio"
+							v-model="respuestas[0].opcion" id="checkboxEnLinea1" value="Poco importante"></div>
+					<div class="col-xs-2" style="padding:0%" align=center><input type="radio"
+							v-model="respuestas[0].opcion" id="checkboxEnLinea1" value="No es importante"></div>
+					<div class="col-xs-2" style="padding:0%" align=center></div>
+
+
+				</div>
+			</div>
+			<!--Fin fila1-->
+
+			<!--Pregunta 2 -->
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="left">
+				<p> 4.De los siguientes bienes relacionados al uso de los árboles, ¿Cual es la calificación que usted le
+					pondría de acuerdo a la intensidad de uso?(Coloque número según la calificación de uso, mostrar
+					actividades y tabla de calificación).</p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+
+			<!-- Inicio Tabla de usos-->
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center><label align="center">
+							Intensidad de uso</label></div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center><label align="center">
+							Calificación</label></div>
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+				</div>
+			</div>
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center>
+						<p> La uso mucho</p>
+					</div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center>
+						<p> 5 </p>
+					</div>
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+				</div>
+			</div>
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center>
+						<p> La uso regularmente</p>
+					</div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center>
+						<p> 4 </p>
+					</div>
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+				</div>
+			</div>
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center>
+						<p> La uso pocas veces</p>
+					</div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center>
+						<p> 3 </p>
+					</div>
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+				</div>
+			</div>
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center>
+						<p> La uso ocasionalmente</p>
+					</div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center>
+						<p> 2 </p>
+					</div>
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+				</div>
+			</div>
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center>
+						<p> Nunca la uso</p>
+					</div>
+					<div class="col-xs-3" style=" border:1px solid #A4A4A4 " align=center>
+						<p> 1 </p>
+					</div>
+					<div class="col-xs-3" style="padding:0%" align=center></div>
+				</div>
+			</div>
+
+
+			<!--Fin Tabla de uso-->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<!-- Inicio puntuacion-->
+
+			<div class="row" align="left">
+
+				<div class="inline" align="left">
+					<div class="col-xs-4" style="padding:0%" align="right"><label>1. Alimentos:</label></div>
+					<div class="col-xs-1" style="padding:0%"><input type="text" class="form-control" id="alimentos"
+							placeholder="Puntos" v-model="respuestas[1].texto"></div>
+				</div>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div class="row" align="left">
+
+				<div class="inline" align="left">
+					<div class="col-xs-4" style="padding:0%" align="right"><label>2. Medicinales:</label></div>
+					<div class="col-xs-1" style="padding:0%"><input type="text" class="form-control" id="medicinales"
+							placeholder="Puntos" v-model="respuestas[2].texto"></div>
+				</div>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<div class="row" align="left">
+
+				<div class="inline" align="left">
+					<div class="col-xs-4" style="padding:0%" align="right"><label>3. Forrajes:</label></div>
+					<div class="col-xs-1" style="padding:0%"><input type="text" class="form-control" id="forrajes"
+							placeholder="Puntos" v-model="respuestas[3].texto"></div>
+				</div>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<div class="row" align="left">
+
+				<div class="inline" align="left">
+					<div class="col-xs-4" style="padding:0%" align="right"><label>4.
+							Colorantes&nbsp;y&nbsp;taninos:</label></div>
+					<div class="col-xs-1" style="padding:0%"><input type="text" class="form-control" id="colorantes"
+							placeholder="Puntos" v-model="respuestas[4].texto"></div>
+				</div>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<div class="row" align="left">
+
+				<div class="inline" align="left">
+					<div class="col-xs-4" style="padding:0%" align="right"><label>5.
+							Fibras&nbsp;y&nbsp;artesanías:</label></div>
+					<div class="col-xs-1" style="padding:0%"><input type="text" class="form-control" id="forrajes"
+							placeholder="Puntos" v-model="respuestas[5].texto"></div>
+				</div>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<div class="row" align="left">
+
+				<div class="inline" align="left">
+					<div class="col-xs-4" style="padding:0%" align="right"><label>6.
+							Materiales&nbsp;para&nbsp;la&nbsp;construcción:</label></div>
+					<div class="col-xs-1" style="padding:0%"><input type="text" class="form-control" id="materiales"
+							placeholder="Puntos" v-model="respuestas[6].texto"></div>
+				</div>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div class="row" align="left">
+
+				<div class="inline" align="left">
+					<div class="col-xs-4" style="padding:0%" align="right"><label>7. Ornamentales:</label></div>
+					<div class="col-xs-1" style="padding:0%"><input type="text" class="form-control" id="ornamental"
+							placeholder="Puntos" v-model="respuestas[7].texto"></div>
+				</div>
+			</div>
+
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div class="row" align="left">
+
+				<div class="inline" align="left">
+					<div class="col-xs-4" style="padding:0%" align="right"><label>7. Otros:</label></div>
+					<div class="col-xs-1" style="padding:0%"><input type="text" class="form-control" id="otros"
+							placeholder="Puntos" v-model="respuestas[8].texto"></div>
+				</div>
+			</div>
+
+			<!-- Fin puntuacion-->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<!--Botones -->
+
+			<div align="center">
+
+				<input class="btn btn-success" type="submit" value="Siguiente" v-on:click="Registrar()">
+
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<!-- Fin botones -->
+
+
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Valor_Economico/encuesta_valor_economico7.js"></script>
+</body>
+
+</html>

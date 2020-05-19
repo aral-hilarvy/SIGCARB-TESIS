@@ -1,0 +1,137 @@
+<html>
+
+<head>
+
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Fauna/style_Uso_Fauna.css ">
+
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="encabezado">
+
+		<!-- Espacio-->
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Encuesta estudio del uso de la fauna.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<!--Datos bàsicos -->
+		<BR />
+		<h4 align="center">Datos básicos:</h3>
+			<BR />
+			<div class="row" align="center">
+				<div class="inline" align="center">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-2" align="right"><label>Nº Encuesta:</label></div>
+					<div class="col-xs-2" align="left"><label>{{numero_encuesta | agregar}}</label></div>
+					<div class="col-xs-2" align="right"><label>Localidad:</label></div>
+					<div id="dato" class="col-xs-4" align="left"><input class="form-control" id="localidad"
+							v-model="localidad"></div>
+					<div class="col-xs-1"></div>
+				</div>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div class="row" align="center">
+				<div class="inline" align="center">
+					<div class="col-xs-1" align="left"><label>Zona:</label></div>
+					<div class="col-xs-1" align="right"><label>Este:</label></div>
+					<div class="col-xs-1 check" align="left"><input type="radio" id="este" value="Este" v-model="zona">
+					</div>
+					<div class="col-xs-1" align="right"><label>Norte:</label></div>
+					<div class="col-xs-1 check" align="left"><input type="radio" id="norte" value="Norte"
+							v-model="zona"></div>
+					<div class="col-xs-3" align="right"><label>Cabeza de Familia:</label></div>
+					<div class="col-xs-1" align="right"><label>Hombre:</label></div>
+					<div class="col-xs-1 check" align="left"><input type="radio" id="hombre" value="Hombre"
+							v-model="cabeza_familia"></div>
+					<div class="col-xs-1" align="right"><label>Mujer:</label></div>
+					<div class="col-xs-1 check" align="left"><input type="radio" id="mujer" value="Mujer"
+							v-model="cabeza_familia"></div>
+				</div>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<!--Fin datos bàsicos-->
+
+			<BR />
+
+			<!--Botones -->
+			<div align="center">
+				<input type="button" class="btn btn-danger" type="reset" value="Cancelar"
+					onClick="window.location='../html_Usuario_Comun/indexUsuarioComun.html'">&nbsp;
+				<input type="button" class="btn btn-success" type="submit" value="Siguiente" v-on:click="Registrar()">
+			</div>
+			<!-- Fin botones -->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Fauna/encabezado.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<html>
+
+<head>
+
+    <!--Permite el uso de Caracteres especiales-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!--Fuentes de letras Topografias-->
+    <link rel="stylesheet" href="../Librerias/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="../Librerias/css/font-awesome.css ">
+
+    <!--Estilos css para iconos de social-media-->
+    <link rel="stylesheet" href="../Librerias/css/bootstrap-social.css">
+
+    <!-- Estilos css de bootstrap minificados-->
+    <link rel="stylesheet" href="../Librerias/css/bootstrap.min.css">
+
+    <!--Estilo css personalizado -->
+    <link rel="stylesheet" href="../css/estilo_Levantamiento_Vegetacion_Registro.css">
+
+    <!--Temas css de bootstrap minificados-->
+    <link rel="stylesheet" href="../Librerias/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="../css/modales.css">
+
+    <link rel="stylesheet" type="text/css" href="../Librerias/css/fresco.css" />
+
+
+
+    <!-- Titulo -->
+
+    <title>SIG | SIGCARB</title>
+
+    <!--Fin titulo -->
+
+
+</head>
+
+<body>
+    <div class="container" id="info_Complementaria">
+
+
+
+        <!--Logo UNEG -->
+        <div align="center">
+            <img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+        </div>
+        <!--Fin logo UNEG -->
+
+        <!-- Encabezado -->
+        <div align="center">
+            <div> Universidad Nacional Experimental de Guayana. </div>
+            <div> Proyecto: Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+        </div>
+        <!-- Fin del Encabezado -->
+
+        <BR />
+        <h4 align="center">Gestión de Informacion Complementaria</h4>
+        <BR />
+
+        <div align="right">
+            <button type="button" class="btn btn-success" data-toggle="modal"
+                v-on:click="levantarModalRegistro()">Agregar</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Año</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in InfoCompl">
+                    <th scope="row">{{item.nombre_imagen}}</th>
+                    <td>{{item.año}}</td>
+                    <td>{{item.descripcion_imagen}}</td>
+                    <td>
+                        <a :href="NameCompleto(item.identificador)" class="fresco"
+                            :data-fresco-caption="desc(item.descripcion_imagen)" data-fresco-group="unique_name"><img
+                                :src="NameCompleto(item.identificador)" alt="imagen" height="42" width="42"
+                                class="intense"></a>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-info" v-on:click="MostrarUpdate(item.id)">Editar</button>
+                        <button type="button" class="btn btn-danger" v-on:click="Eliminar(item.id)">Eliminar</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <!--Modal Registro Espacio Muestreo-->
+        <div id="modal_registro_EspacioMuestreo" class="modal fade" role="dialog" data-backdrop="static"
+            data-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div id="header" class="modal-header">
+                        <div class="row">
+                            <div id="registro" class="col-md-12">
+                                <h4 class="modal-title" text-align="center"><label id="titulo"
+                                        class="label label-success">{{accion}} INFORMACION
+                                        COMPLEMENTARIA</label>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fondoVeg" class="modal-body">
+                        <div>
+
+                            <div id="parte1" class="row">
+                                <div id="colum" class="col-md-12">
+                                    <div class="row">
+                                        <div id="etiqueta" class="col-sm-4"><span>Nombre de Imagen:</span></div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="name_img"
+                                                placeholder="Nombre Imagen" required="true"
+                                                v-model="ObjectUnico.nombre_imagen" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="etiqueta" class="col-sm-4"><span>Año:</span></div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="ano_img"
+                                                placeholder="Año Imagen" required="true" v-model="ObjectUnico.año" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div id="etiqueta" class="col-sm-4"><span>Descripcion:</span></div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="desc_img"
+                                                placeholder="Descripcion Imagen" required="true"
+                                                v-model="ObjectUnico.descripcion_imagen" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="etiqueta" class="col-sm-4"><span>Selecciona Imagen:</span>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="file" name="image" id="image" ref="image"
+                                                v-on:change="handleFileUpload()" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="footer" class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal"
+                                v-on:click="Envio()">Registrar</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                v-on:click="VaciarObjeto()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!--JQuery-->
+    <script src="../Librerias/js/jquery.min.js"></script>
+    <!--Archivo Javascript de bootstrap minificado-->
+    <script src="../Librerias/js/bootstrap.min.js"></script>
+    <!-- Sweetalert-->
+    <script src="../Librerias/js/sweetalert.js"></script>
+
+    <script src="../Librerias/js/fresco.js"></script>
+
+    <!-- VUE JS-->
+    <script src="../Librerias/js/vue.js"></script>
+    <script src="../js/Informacion_Complementaria/Listar.js"></script>
+
+</body>
+
+</html>

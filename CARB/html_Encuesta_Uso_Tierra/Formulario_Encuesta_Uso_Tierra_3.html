@@ -1,0 +1,441 @@
+<html>
+
+<head>
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Uso_Tierra/Encuesta_Uso_Tierra.css">
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="formularioTercerUsoTierra">
+
+		<!-- Espacio -->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+		<!-- Objetivo de la encuesta -->
+		<div align="center">
+			<div> Objetivo: Estudio del uso de la tierra y dinámica de cambio de la cobertura vegetal en la Cuenca Alta
+				del Río Botanamo.</div>
+		</div>
+		<!-- Fin tìtulo del objetivo -->
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Encuesta uso de la tierra.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<!--Datos bàsicos -->
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!-- Fila 1 del formulario -->
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=left></div>
+				<div class="col-xs-5" align=left><label>Nº Encuesta: {{numero_encuesta | agregar}}</label></div>
+				<div class="col-xs-4" align=left><label>Fecha: {{fecha}}</label></div>
+			</div>
+		</div>
+		<!--Fin de la Fila2 del formulario-->
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=right></div>
+				<div class="col-xs-5" align=left><label>Latitud: {{latitud}}</label></div>
+				<div class="col-xs-4" align=left><label>Longitud: {{longitud}}</label></div>
+			</div>
+		</div>
+		<!--Fin datos bàsicos-->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<h3> SOCIOECONÓMICO.</h3>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<h4 align="center"> Agricultura </h4>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				22.Tipo de agricultura
+			</div>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>1. Subsistencia:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" v-model="respuestas[0].opcion"
+						value="Subsistencia" id="subsistencia"></div>
+				<div class="col-xs-2" align="left"><label>2. Comercial:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" v-model="respuestas[0].opcion"
+						value="comercial" id="comercial"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-7" align="left">
+				23.¿Qué tipo de actividades realiza en la preparación de las tierras?
+			</div>
+			<div id="dato" class="col-xs-5" align="left">
+				<input type="text" id="tenencia_otros" class="form-control" v-model="respuestas[1].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				24.Uso de fertilizantes
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>Tipo:</label></div>
+				<div id="dato" class="col-xs-2" align="left"><input type="text" id="tipo_fert" class="form-control"
+						v-model="respuestas[2].texto">
+				</div>
+				<div class="col-xs-2" align="right"><label>Cantidad:</label></div>
+				<div id="dato" class="col-xs-1" align="left"><input type="text" id="cantidad_fert" class="form-control"
+						v-model="respuestas[3].texto">
+				</div>
+				<div class="col-xs-2" align="right"><label>Frecuencia:</label></div>
+				<div id="dato" class="col-xs-1" align="left"><input type="text" id="frecuencia_fert"
+						class="form-control" v-model="respuestas[4].texto"></div>
+				<div class="col-xs-2" align="right"><label>Época del año:</label></div>
+				<div id="dato" class="col-xs-1" align="left"><input type="text" id="epoca_fert" class="form-control"
+						v-model="respuestas[5].texto">
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				25.Tipo de riego
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>Método:</label></div>
+				<div id="dato" class="col-xs-3" align="left"><input type="text" id="metodo_riego" class="form-control"
+						v-model="respuestas[6].texto">
+				</div>
+				<div class="col-xs-2" align="right"><label>Frecuencia:</label></div>
+				<div id="dato" class="col-xs-2" align="left"><input type="text" id="frecuencia_riego"
+						class="form-control" v-model="respuestas[7].texto"></div>
+				<div class="col-xs-2" align="right"><label>Cantidad:</label></div>
+				<div id="dato" class="col-xs-2" align="left"><input type="text" id="cantidad_riego" class="form-control"
+						v-model="respuestas[8].texto"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				26.Control de plagas
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>Cantidad:</label></div>
+				<div id="dato" class="col-xs-3" align="left"><input type="text" id="cantidad_insect"
+						class="form-control" v-model="respuestas[9].texto"></div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-3" align="right"><label>Tipo de Insecticida:</label></div>
+				<div id="dato" class="col-xs-3" align="left"><input type="text" id="tipo_insect" class="form-control"
+						v-model="respuestas[10].texto">
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>Frecuencia:</label></div>
+				<div id="dato" class="col-xs-3" align="left"><input type="text" id="frecuencia_insect"
+						class="form-control" v-model="respuestas[11].texto"></div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-3" align="right"><label>Época el año:</label></div>
+				<div id="dato" class="col-xs-3" align="left"><input type="text" id="epoca_insecticida"
+						class="form-control" v-model="respuestas[12].texto"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				27.Control de maleza
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>Cantidad:</label></div>
+				<div id="dato" class="col-xs-3" align="left"><input type="text" id="cantidad_herb" class="form-control"
+						v-model="respuestas[13].texto">
+				</div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-3" align="right"><label>Tipo de Herbicida:</label></div>
+				<div id="dato" class="col-xs-3" align="left"><input type="text" id="tipo_herb" class="form-control"
+						v-model="respuestas[14].texto">
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>Frecuencia:</label></div>
+				<div id="dato" class="col-xs-3" align="left"><input type="text" id="frecuencia_herb"
+						class="form-control" v-model="respuestas[15].texto"></div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-3" align="right"><label>Época el año:</label></div>
+				<div id="dato" class="col-xs-3" align="left"><input type="text" id="epoca_herb" class="form-control"
+						v-model="respuestas[16].texto">
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				28. Control de enfermedades
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="inline" align="center">
+				<div class="col-xs-2" align="left"><label>Producto:</label></div>
+				<div id="dato" class="col-xs-2" align="left"><input type="text" id="producto" class="form-control"
+						v-model="respuestas[17].texto">
+				</div>
+				<div class="col-xs-2" align="right"><label>Frecuencia:</label></div>
+				<div id="dato" class="col-xs-2" align="left"><input type="text" id="frecuencia_producto"
+						class="form-control" v-model="respuestas[18].texto"></div>
+				<div class="col-xs-2" align="right"><label>Dósis:</label></div>
+				<div id="dato" class="col-xs-2" align="left"><input type="text" id="dosis" class="form-control"
+						v-model="respuestas[19].texto"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div class="row">
+			<div class="col-xs-5" align="left">
+				29. ¿Quién lo asesora en el uso de los químicos?
+			</div>
+			<div id="dato" class="col-xs-7" align="left">
+				<input class="form-control" id="asesor" v-model="respuestas[20].texto">
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Botones -->
+		<div align="center">
+			<input class="btn btn-success" type="submit" value="Siguiente" v-on:click="Registrar()">
+		</div>
+		<!-- Fin botones -->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+	</div>
+
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Uso_Tierra/encuesta_uso_tierra3.js"></script>
+</body>
+
+</html>

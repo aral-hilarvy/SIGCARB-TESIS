@@ -1,0 +1,129 @@
+<html>
+
+<head>
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/estilo-Grupos_Funcionales.css">
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="../bootstrap-select-1.12.4/dist/css/bootstrap-select.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+
+	<!-- Titulo -->
+	<title>SIG | SIGCARB</title>
+	<!--Fin titulo -->
+
+</head>
+
+<body>
+	<div class="container" id="Edittar_Grupo_Funcional">
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto: Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Ecología Aplicada - Vegetación - Grupos Funcionales.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		</BR></BR></BR>
+		<div class="row">
+			<div id="etiqueta" class="col-xs-1"><label>Nº Col.</label></div>
+			<div id="etiqueta" class="col-xs-3"><label>Especie</label></div>
+			<div id="etiqueta" class="col-xs-2"><label>Periocidad de la Hoja</label></div>
+			<div id="etiqueta" class="col-xs-2"><label>Estado Sucesional</label></div>
+			<div id="etiqueta" class="col-xs-2"><label>Dispersión</label></div>
+			<div id="etiqueta" class="col-xs-2"><label>Ubicación</label></div>
+		</div>
+
+		<div class="row" id="grupo">
+			<div id="etiqueta" class="col-xs-1 coleccion"><label>{{nro_coleccion | agregar}}</label></div>
+			<div id="dato" class="col-xs-3">
+				<select class="form-control" v-model="id_especie" id="especie_1">
+					<option disabled selected value="0"> Seleccione</option>
+					<option v-for="item in especie_vegetacion" :value="item.id"> {{item.nombre_comun}}</option>
+				</select>
+			</div>
+			<div id="dato" class="col-xs-2">
+				<select id="periocidad_1" class="form-control" v-model="periocidad_hoja">
+					<option class="opt" disabled selected value=""> Seleccione</option>
+					<option class="opt" value="SV"> Siempre Verde</option>
+					<option class="opt" value="CD"> Caducifolia</option>
+				</select>
+			</div>
+			<div id="dato" class="col-xs-2">
+				<select id="estado_suc_1" class="form-control" v-model="estado_sucesional">
+					<option class="opt" disabled selected value=""> Seleccione</option>
+					<option class="opt" value="Sec. Tardia"> Sec. Tardia</option>
+					<option class="opt" value="Sec. Inicial"> Sec. Inicial</option>
+					<option class="opt" value="Climácica"> Climácica</option>
+				</select>
+			</div>
+			<div id="dato" class="col-xs-2">
+				<select id="dispersion_1" class="form-control selectpicker mult" multiple title="Seleccione"
+					data-style="mult" v-model="dispercion">
+					<option class="opt" disabled value=""> Seleccione</option>
+					<option value="Zoocoria"> Zoocoria</option>
+					<option value="Anemocoria"> Anemocoria</option>
+					<option value="Autocoria"> Autocoria</option>
+				</select>
+			</div>
+			<div id="dato" class="col-xs-2">
+				<input id="ubicacion_1" type="text" class="form-control" placeholder="Ubicación" v-model="ubicacion">
+			</div>
+		</div>
+		</BR></BR>
+		<div class="row etiqueta-bottom">
+			<div class="col-xs-12" style="text-align: center;">
+				<button type="button" class="btn btn-danger" id="" data-toggle="tooltip" title=""
+					onClick="window.location.href='indexUsuarioComun.html'">Cancelar</button>&nbsp;
+				<button type="button" class="btn btn-success" id="Guardar" data-toggle="tooltip" title="guardar"
+					v-on:click="Editar()">Guardar</button>
+			</div>
+		</div>
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+	<script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js "> </script>
+	<!-- VUE JS-->
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Grupo_Funcional/editar.js"></script>
+</body>
+
+</html>

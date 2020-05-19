@@ -1,0 +1,251 @@
+<html>
+
+<head>
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Valor_Economico/style_Valor_Economico.css ">
+
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="formularioSeisValorEconomico">
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Rìo Botanamo. </div>
+		</div>
+
+
+		<!-- Fin del Encabezado -->
+
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Encuesta sobre el valor econòmico de los árboles con uso medicinal en la Cuenca Alta del Rìo Botanamo
+				en la RFI estado Bolìvar.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<div align="center">
+			<!-- Datos basicos de la encuesta -->
+
+			<div class="row">
+
+				<div class="inline" align="center">
+
+					<div class="col-xs-1" style=" border:padding:0%" align="right">
+					</div>
+
+					<!--Columna 2 del encabezado de la encuesta Nro de la encuesta-->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong>Nro de encuesta : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{numero_encuesta | agregar}}</p>
+					</div>
+
+					<!--Columna 1 del encabezado de la encuesta Nombre del encuestador -->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong> Encuestador : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{nombre_encuestador}}</p>
+					</div>
+
+
+					<div class="col-xs-1" style="padding:0%">
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Fin datos bàsicos -->
+
+
+			<!-- Datos basicos de la encuesta -->
+
+			<div class="row">
+
+				<div class="inline">
+
+					<div class="col-xs-1" style=" border:padding:0%" align="right">
+					</div>
+
+					<!--Columna 2 del encabezado de la encuesta Nro de la encuesta-->
+
+					<div class="col-xs-3" style="padding:0%" align="right"><strong>Comunidad : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p>{{comunidad}}</p>
+					</div>
+
+					<!--Columna 1 del encabezado de la encuesta Nombre del encuestador -->
+
+					<div class="col-xs-3" style="padding:0%" align=right><strong>Tipo de asentamiento : </strong></div>
+					<div class="col-xs-2" style="padding:0%" align="left">
+						<p> {{tipo_asentamiento}}</p>
+					</div>
+
+
+					<div class="col-xs-1" style="padding:0%">
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Fin datos bàsicos -->
+
+
+		</div>
+
+
+		<!--Introducciòn-->
+
+		<h4 align="center"> Parte I:</h3>
+
+			<!--Pregunta -->
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div align="left">
+				<p> 2.Indique los árboles con uso medicinal, utilizados por UD. Especifique parte del árbol y enfermedad
+					para la cuál utiliza el árbol:</p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+
+			<!-- Fila 1 del formulario  alimentos-->
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+
+					<div class="col-xs-3" style="padding:0%" align=center><label align="center"> Medicinales</label>
+					</div>
+					<div class="col-xs-1" style="padding:0%" align=center><label align="center"> Corteza</label></div>
+					<div class="col-xs-1" style="padding:0%" align=center><label align="center"> Xilema</label></div>
+					<div class="col-xs-1" style="padding:0%" align=center><label align="center"> Flores</label></div>
+					<div class="col-xs-1" style="padding:0%" align=center><label align="center"> Raices</label></div>
+					<div class="col-xs-1" style="padding:0%" align=center><label align="center"> Hojas</label></div>
+					<div class="col-xs-2" style="padding:0%" align=center><label align="center"> Enfermedad</label>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="row" align="center">
+
+				<div class="inline" align="center">
+					<!--Columna 3 del encabezado de la encuesta hora de inicio -->
+
+					<div class="col-xs-3" style="padding:0%" align=center><input type="text" class="form-control"
+							id="alimento" placeholder="Alimento" v-model="respuestas[0].texto"></div>
+					<div class="col-xs-1" style="padding:0%" align=center><input type="radio"
+							v-model="respuestas[0].opcion" id="checkboxEnLinea1" value="Corteza"></div>
+					<div class="col-xs-1" style="padding:0%" align=center><input type="radio"
+							v-model="respuestas[0].opcion" id="checkboxEnLinea2" value="Xilema"></div>
+					<div class="col-xs-1" style="padding:0%" align=center><input type="radio"
+							v-model="respuestas[0].opcion" id="checkboxEnLinea3" value="Flores"></div>
+					<div class="col-xs-1" style="padding:0%" align=center><input type="radio"
+							v-model="respuestas[0].opcion" id="checkboxEnLinea4" value="Raices"></div>
+					<div class="col-xs-1" style="padding:0%" align=center><input type="radio"
+							v-model="respuestas[0].opcion" id="checkboxEnLinea5" value="Hojas"></div>
+					<div class="col-xs-3" style="padding:0%" align=center><input type="text" class="form-control"
+							id="alimento" placeholder="Enfermedad" v-model="respuestas[1].texto"></div>
+
+				</div>
+			</div>
+
+
+			<!-- Añadir fila-->
+
+			<div class="col-xs-12" align=right>
+
+				<img src="../Imagenes/add.png" value="Añadir" name="añadir" onClick=""></img>
+
+			</div>
+
+			<!-- Fin añadir fila-->
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+			<!--Botones -->
+
+			<div align="center">
+
+
+				<input class="btn btn-success" type="submit" value="Siguiente" v-on:click="Registrar()">
+
+			</div>
+
+			<!-- Fin botones -->
+
+			<div>
+				<p class="distancia"></p>
+			</div>
+			<div>
+				<p class="distancia"></p>
+			</div>
+
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Valor_Economico/encuesta_valor_economico6.js"></script>
+</body>
+
+</html>

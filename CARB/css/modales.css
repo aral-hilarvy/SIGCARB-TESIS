@@ -1,0 +1,145 @@
+#registro {
+	padding: 0%;
+	text-align: center;
+}
+
+#editar {
+	padding: 0%;
+	text-align: center;
+}
+
+#eliminar {
+	padding: 0%;
+	text-align: center;
+}
+
+#header {
+	background-color: #8BA6CB;
+	border: 1px solid white;
+
+
+
+}
+
+#titulo {
+	font-size: 100%;
+	background-color: #8BA6CB;
+	text-shadow: -4px -4px 4px black;
+
+}
+
+#parte1 {
+
+	background-color: #8BA6CB;
+	border: 1px solid black;
+	padding: 2.5%;
+	margin-left: 5%;
+	margin-right: 5%;
+
+}
+
+#header_parte {
+
+
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 0%;
+
+
+
+}
+
+#titul {
+	background-color: #D6E7CA;
+	border: 1px solid black;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	font-size: 100%;
+	font-weight: bold;
+	text-align: center;
+}
+
+#etiqueta {
+	margin-top: 3%;
+	font-size: 80%;
+	font-weight: bold;
+	text-align: left;
+}
+
+#etiqueta1 {
+
+	font-size: 80%;
+	font-weight: bold;
+}
+
+#linea {
+	margin-top: 1%;
+}
+
+#parte2 {
+	margin-top: 5%;
+}
+
+#colum {
+	padding: 0%;
+}
+
+.modal-footer {
+	text-align: center;
+	background-color: #D6E7CA;
+}
+
+.modal-dialog {
+	text-align: center;
+}
+
+#fondoVeg {
+	background-image: url('../Imagenes/fondo_vegetacion.jpg');
+	background-size: cover;
+}
+
+#fondoFau {
+	background-image: url('../Imagenes/fondo_fauna.jpg');
+	background-size: cover;
+}
+
+#header_confirm {
+	background: #8BA6CB;
+	color: white;
+	font-weight: bold;
+	text-shadow: -4px -4px 4px black;
+	text-align: center;
+
+}
+
+.ced {
+	padding-left: 0%;
+}
+
+.cedu {
+	padding-right: 0%;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+
+input[type=number]::-webkit-inner-spin-button {
+
+	-webkit-appearance: none;
+
+	margin: 0;
+
+}
+
+
+
+input[type=number] {
+
+	-moz-appearance: textfield;
+
+}
+
+.texto-borde {
+	color: rgb(255, 255, 255);
+	text-shadow: -4px -4px 4px black;
+
+}

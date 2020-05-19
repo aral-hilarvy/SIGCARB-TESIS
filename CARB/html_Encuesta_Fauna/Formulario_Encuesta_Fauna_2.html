@@ -1,0 +1,244 @@
+<html>
+
+<head>
+
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Fauna/Encuesta_Uso_Fauna.css ">
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="formularioPrimeroFauna">
+
+		<!-- Espacio -->
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Encuesta estudio del uso de la fauna.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<!--Datos bàsicos -->
+		<!-- Fila 1 del formulario -->
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=left><label></label></div>
+				<div class="col-xs-5" align=left><label>Nº Encuesta : {{numero_encuesta | agregar}}</label></div>
+
+				<div class="col-xs-4" align=left><label>Fecha : {{fecha}}</label></div>
+			</div>
+		</div>
+		<!--Fin de la Fila2 del formulario-->
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=right><label></label></div>
+				<div class="col-xs-5" align=left><label>Localidad : {{localidad}}</label></div>
+				<div class="col-xs-4" align=left><label>Zona : {{zona}}</label></div>
+			</div>
+		</div>
+		<!--Fin datos bàsicos-->
+
+		<BR />
+
+		<div align="left">
+			1. ¿Actividad que desempeña?
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>1.Forestal:</label></div>
+				<div class="col-xs-1 check" align="right"><input v-model="respuestas[0].opcion" type="radio"
+						value="Forestal" id="forestal"></div>
+				<div class="col-xs-1" align="left"><label>2.Agrícola:</label></div>
+				<div class="col-xs-1 check" align="right"><input v-model="respuestas[0].opcion" type="radio"
+						value="Agricola" id="agricola"></div>
+				<div class="col-xs-2" align="center"><label>3.Zona Urbana:</label></div>
+				<div class="col-xs-1 check" align="left"><input v-model="respuestas[0].opcion" type="radio"
+						value="Zona Urbana" id="urbana"></div>
+				<div class="col-xs-2" align="center"><label>4.Desempleado:</label></div>
+				<div class="col-xs-1 check" align="left"><input v-model="respuestas[0].opcion" type="radio"
+						value="Desempleado" id="desempleado"></div>
+				<div class="col-xs-1" align="center"><label>5.Otro:</label></div>
+				<div id="dato" class="col-xs-1" align="left"><input v-model="respuestas[0].texto" class="form-control"
+						id="otro_desempeño"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3" align="left">
+				2. ¿Lugar de nacimiento?
+			</div>
+			<div id="dato" class="col-xs-9" align="left">
+				<input type="text" id="lugar_nacimiento" class="form-control" v-model="respuestas[1].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2" align="left">3. ¿Edad?
+			</div>
+			<div id="dato" class="col-xs-10" align="left">
+				<input type="text" id="edad" class="form-control" v-model="respuestas[2].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3" align="left">
+				4. ¿Desde cuándo vive aquí?
+			</div>
+			<div id="dato" class="col-xs-9" align="left">
+				<input type="text" id="vive" class="form-control" v-model="respuestas[3].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4" align="left">
+				5. ¿Cuántas personas viven con usted?
+			</div>
+			<div id="dato" class="col-xs-8" align="left">
+				<input type=text class=form-control placeholder="" id="cant_personas" v-model="respuestas[4].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3" align="left">
+				6. ¿Cuántos son estudiantes?
+			</div>
+			<div id="dato" class="col-xs-9" align="left">
+				<input type="text" id="cuantos_estudiantes" class="form-control" v-model="respuestas[5].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				7. ¿Qué tipo de carne prefiere(ganado, chivo, pollos, cochino)?
+			</div>
+			<div id="dato" class="col-xs-6" align="left">
+				<input type="text" id="tipo_carne" class="form-control" v-model="respuestas[6].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-5" align="left">
+				8. ¿Cuántas veces a la semana come carne?
+			</div>
+			<div id="dato" class="col-xs-7" align="left">
+				<input type="text" id="carne_semana" class="form-control" v-model="respuestas[7].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				9. ¿Cuándo fue la última vez que comió carne de cacería? </div>
+			<div id="dato" class="col-xs-6" align="left">
+				<input type="text" id="fecha_comio" class="form-control" v-model="respuestas[8].texto" />
+			</div>
+		</div>
+
+		<BR />
+
+		<!--Botones -->
+		<div align="center">
+			<input class="btn btn-success" type="submit" value="Siguiente" v-on:click="Registrar()">
+		</div>
+		<!-- Fin botones -->
+
+		<BR />
+
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Fauna/encuesta_fauna2.js"></script>
+
+</body>
+
+</html>

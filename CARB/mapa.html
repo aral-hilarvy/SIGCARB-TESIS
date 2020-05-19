@@ -1,0 +1,261 @@
+<html>
+
+<head>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <link rel="stylesheet" href="./Librerias_Mapa/leaflet.css" />
+  <link rel="stylesheet" href="./Librerias_Mapa/L.Control.MousePosition.css" />
+  <link rel="stylesheet" href="./Librerias_Mapa/easy-button.css" />
+  <!-- Estilos css de bootstrap minificados-->
+  <link rel="stylesheet" href="./Librerias/css/bootstrap.min.css" />
+
+  <!--Estilo css personalizado -->
+  <link rel="stylesheet" href="./css/estilo_Levantamiento_Vegetacion_Registro.css" />
+
+  <!--Temas css de bootstrap minificados-->
+  <link rel="stylesheet" href="./Librerias/css/bootstrap-theme.min.css" />
+  <!-- FONT AWESOME CDN -->
+  <link rel="stylesheet" href="./Librerias_Mapa/Fuente/css/all.css" />
+  <!--<link rel="stylesheet" href="./Librerias_Mapa/leaflet.draw.css">-->
+  <link rel="stylesheet" href="./css/modales.css" />
+
+  <style>
+    /*@import url(./Librerias_Mapa/leaflet.css);*/
+    /*#mapid {
+        width: 100%;
+        height: 100%;
+        box-shadow: 5px 5px 5px #888;
+      }*/
+
+    .star {
+      font-size: 1.5em;
+    }
+
+    .tam {
+      font-size: 1.2em;
+    }
+
+    .button-state {
+      display: contents !important;
+    }
+
+    .info {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+
+    .info h4 {
+      margin: 0 0 5px;
+      color: #777;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    .mapContainer {
+      display: inline-block;
+      width: 50%;
+      height: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="Contenido">
+    <div id="mostrar" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div id="header" class="modal-header">
+            <div class="row">
+              <div id="eliminar" class="col-md-12">
+                <h4 class="modal-title" text-align="center">
+                  <label id="titulo" class="label label-success">Seleccione Año:</label>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div id="fondoVeg" class="modal-body">
+            <div>
+              <div id="header_parte" class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                  <select id="Consult_levantamiento" class="form-control" v-model="anio_consulta">
+                    <option v-for="item in array_anios" :value="item.anio">
+                      {{ item.anio }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-sm-1"></div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+          <div id="footer" class="modal-footer">
+            <button type="button" class="btn btn-success" id="Delet_GrupoFuncional" v-on:click="Bosque()">
+              Aceptar
+            </button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="Reset_Eli_GrupoFuncional">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mostrar-info" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div id="header" class="modal-header">
+            <div class="row">
+              <div id="eliminar" class="col-md-12">
+                <h4 class="modal-title" text-align="center">
+                  <label id="titulo" class="label label-success">Area Total de Capas de Estudio en Km2:</label>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div id="fondoVeg" class="modal-body">
+            <div>
+              <div id="header_parte" class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                  <select id="Consult_levantamiento" class="form-control" @change="onChange($event)">
+                    <option value="">Seleccione Capa a Consultar</option>
+                    <option value="1">Bosque</option>
+                    <option value="2">Sabana</option>
+                    <option value="3">Matorral</option>
+                    <option value="4">Pastizal</option>
+                    <option value="5">Centro Poblado</option>
+                    <option value="6">Cuerpo de Agua</option>
+                  </select>
+                  <h4 class="texto-borde">{{texto}}</h4>
+                </div>
+                <div class="col-sm-1"></div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+          <div id="footer" class="modal-footer">
+
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="Reset_Eli_GrupoFuncional"
+              v-on:click="ResetInfoKmCuadrados()">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="carga-info" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div id="header" class="modal-header">
+            <div class="row">
+              <div id="eliminar" class="col-md-12">
+                <h4 class="modal-title" text-align="center">
+                  <label id="titulo" class="label label-success">IMPORTAR SHAPEFILE:</label>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div id="fondoVeg" class="modal-body">
+            <div>
+              <div id="header_parte" class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+
+                </div>
+                <div class="col-sm-1"></div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+          <div id="footer" class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal" id="guardar_carga_file" v-on:click="cargaFile()">Aceptar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="Cerrar_carga_file">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ver-especies" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div id="header" class="modal-header">
+            <div class="row">
+              <div id="eliminar" class="col-md-12">
+                <h4 class="modal-title" text-align="center">
+                  <label id="titulo" class="label label-success">SELECCIONA ESPECIE:</label>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div id="fondoVeg" class="modal-body">
+            <div>
+              <div id="header_parte" class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                  <select id="Consult_levantamiento" class="form-control" v-model="id_especie_fl">
+                    <option v-for="item in marcadores_flora" :value="item.id">
+                      {{ item.nombre_especie }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-sm-1"></div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+          <div id="footer" class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal" id="mostrar_especies" v-on:click="VerMarcadoresEspecieFlora()">Aceptar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="Cerrar_carga_file">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mapid" v-bind:style="styleObject"></div>
+    <div id="map2" v-if="mostrado" v-bind:style="styleObject"></div>
+  </div>
+
+
+
+
+
+
+  <script src="./Librerias_Mapa/jquery-3.4.1.min.js"></script>
+  <!--Archivo Javascript de bootstrap minificado-->
+  <script src="./Librerias/js/bootstrap.min.js"></script>
+
+  <script src="./Librerias_Mapa/leaflet.js"></script>
+  <script src="./Librerias_Mapa/proj4.js"></script>
+  <script src="./Librerias_Mapa/proj4leaflet.js"></script>
+  <!-- VUE JS-->
+  <script src="./Librerias/js/vue.js"></script>
+  <script src="./Librerias_Mapa/L.Control.MousePosition.js"></script>
+  <script src="./Librerias_Mapa/easy-button.js"></script>
+
+  <!--slider lateral-->
+  <script src="./Librerias_Mapa/leaflet-side-by-side.js"></script>
+
+  <!--D3-->
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+
+  <!--COnversor de Shapefile a Geojson-->
+  <script src="https://unpkg.com/shpjs@latest/dist/shp.js"></script>
+
+  <script src="./Librerias_Mapa/turf.js"></script>
+  <script src="./Librerias_Mapa/FileSaver.min.js"></script>
+  <!--<script src="./Librerias_Mapa/leaflet.draw.js"></script>
+    <script src="./Librerias_Mapa/leaflet.toolbar.js"></script>-->
+  <script src="./js/Mapa/map.js"></script>
+
+
+</body>
+
+</html>

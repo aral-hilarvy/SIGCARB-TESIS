@@ -1,0 +1,145 @@
+ body {
+	margin:2.4%; 
+	border: 2px solid #A4A4A4;
+	padding:2px;
+}
+
+.container{
+	
+	width: 96%;
+	
+}
+.distancia{
+	
+	width:30%
+}
+
+#etiqueta-col1{
+	margin-top:0.5%;
+	text-align: right;
+}
+
+.row{
+	margin-top: 1%;
+}
+#boton{
+	padding: 10%;
+}
+.boton-center{
+	text-align: center;
+}
+#etiqueta{
+	text-align: center;
+}
+.etiqueta-bottom{
+	margin-bottom: 2.4%;
+}
+#dato{
+	padding: 0%;
+}
+#encabezado{
+	border: 0.5px solid #A4A4A4;
+	color: #A4A4A4;
+	font-size: small;
+}
+.etiqueta{
+	margin-top: 1.5%;
+}
+.coleccion{
+	margin-top: 1%;
+}
+#hora{
+	padding: 0.5%;
+	text-align: center;
+}
+#id{
+	padding: 0%;
+	text-align: center;
+	color: #A4A4A4;
+}
+.btn-danger{
+	background: white;
+}
+input[type=date]::-webkit-outer-spin-button,
+
+input[type=date]::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
+
+}
+
+ 
+
+input[type=date] {
+
+    -moz-appearance:textfield;
+
+}
+input[type=number]::-webkit-outer-spin-button,
+
+input[type=number]::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
+
+}
+
+ 
+
+input[type=number] {
+
+    -moz-appearance:textfield;
+
+}
+.mult{
+display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color:#555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(22, 116, 249,.075);
+    box-shadow: inset 0 1px 1px rgba(22, 116, 249,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+
+}
+select, option { 
+    color: silver;
+}
+.modal-footer{
+	text-align: center;
+	background-color: #D6E7CA;
+}
+.modal-dialog{
+	text-align: center;
+}
+#header_confirm{
+	background:  #8BA6CB;
+	color: white;
+	font-weight: bold;
+	text-shadow: -4px -4px 4px black;
+	text-align: center;
+
+}
+#nota{
+	text-align: center;
+	font-size: 80%;
+	color: red;
+}
+.editar{
+	border: 1px solid #A4A4A4;
+	margin-top:1.5px;
+	border-radius: 3px;
+	text-align: center;
+}

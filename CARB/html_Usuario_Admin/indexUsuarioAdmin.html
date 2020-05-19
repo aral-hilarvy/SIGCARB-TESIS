@@ -1,0 +1,3107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="../plugins/slick/slick.css">
+    <link rel="stylesheet" href="../plugins/slick/slick-theme.css">
+
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="../plugins/fancybox/jquery.fancybox.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/menus.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modales.css">
+
+    <!--VUE-->
+    <script src="../plugins/vue.js"></script>
+
+    <title>SIG | SIGCARB</title>
+
+</head>
+
+
+<body>
+    <div class="page-wrapper" id="wrapper">
+
+        <!--Header Upper-->
+        <section class="header-uper">
+            <div class="container clearfix">
+                <div class="row">
+                    <div class="logo logo-left col-xs-2 ">
+
+                        <figure>
+                            <a href="indexUsuarioAdmin.html">
+                                <img src="../Imagenes/logoUNEG.png" alt="" width="70">
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="col-xs-2">
+                    </div>
+                    <div class="titulo col-xs-4">
+                        <figure>
+                            <a href="indexUsuarioAdmin.html">
+                                <img src="../Imagenes/titulo.png" alt="" width="300">
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="col-xs-2">
+                    </div>
+                    <div class=" logo logo-right col-xs-2">
+                        <figure>
+                            <a href="indexUsuarioAdmin.html">
+                                <img src="../Imagenes/logoCIEG.png" alt="" width="70">
+                            </a>
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--Header Upper-->
+
+
+        <!--Menu-->
+        <nav class="navbar navbar-default" id="sesiones">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav margin-menu">
+                        <li class="active">
+                            <a href="indexUsuarioAdmin.html" class="margin-section">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#" class="margin-section dropdown-toggle" data-toggle="dropdown">Usuarios <b
+                                    class="caret"></b></a>
+                            <ul class="  dropdown-menu multi-level">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Gestión de
+                                        Usuarios</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_registro_usuario" id="RegistrarUsuario">Registrar
+                                                Usuario</a></li>
+                                        <li class="dropdown-submenu">
+                                            <a href="#" class="dropdown-toggle hover-color"
+                                                data-toggle="dropdown">Editar Usuario</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_editar_datosPersonales"
+                                                        id="EditarUsuarioPersonal">Datos Personales</a>
+                                                </li>
+                                                <li><a href="#" class="hover-color" data-toggle="modal"
+                                                        data-target="#modal_editar_datos_usuario"
+                                                        id="EditarUsuarioUsuario">Datos Usuarios</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_consultar_usuario" id="ConsultarUsuario">Consultar
+                                                Usuario</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_eliminar_usuario" id="EliminarUsuario">Eliminar
+                                                Usuario</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="margin-section dropdown-toggle" data-toggle="dropdown">Recursos <b
+                                    class="caret"></b></a>
+                            <ul class="  dropdown-menu multi-level">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Gestión de
+                                        Recursos Naturales</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_registro_recurso"
+                                                id="RegistrarRecursoNatural">Registrar Recurso Natural</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_editar_recurso" id="EditarRecursoNatural">Editar
+                                                Recurso Natural</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_consultar_recurso"
+                                                id="ConsultarRecursoNatural">Consultar Recurso Natural</a>
+                                        </li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_eliminar_recurso"
+                                                id="EliminarRecursoNatural">Eliminar Recurso Natural</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="margin-section dropdown-toggle" data-toggle="dropdown">Familias<b
+                                    class="caret"></b></a>
+                            <ul class="  dropdown-menu multi-level">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Gestión de
+                                        Familias</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_registro_familia"
+                                                id="RegistrarFamiliaModal">Registrar Familia</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_editar_familia" id="EditarFamiliaModal">Editar
+                                                Familia</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_consultar_familia"
+                                                id="ConsultarFamiliaModal">Consultar Familia</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_eliminar_familia" id="EliminarFamiliaModal">Eliminar
+                                                Familia</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="margin-section dropdown-toggle" data-toggle="dropdown">Géneros<b
+                                    class="caret"></b></a>
+                            <ul class="  dropdown-menu multi-level">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Gestión de
+                                        Géneros</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_registro_genero" id="RegistrarGenero">Registrar
+                                                Género</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_editar_genero" id="EditarGenero">Editar Género</a>
+                                        </li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_consultar_genero" id="ConsultarGenero">Consultar
+                                                Género</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_eliminar_genero" id="EliminarGenero">Eliminar
+                                                Género</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section" data-toggle="dropdown">Vegetación<b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Especie</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_registro_especie_veg"
+                                                id="RegistrarEspecie">Registrar Especie</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_editar_especie_veg" id="EditarEspecie">Editar
+                                                Especie</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_consultar_especie_veg"
+                                                id="ConsultarEspecie">Consultar Especie</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_eliminar_especie_veg" id="EliminarEspecie">Eliminar
+                                                Especie</a></li>
+
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section" data-toggle="dropdown">Fauna <b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle hover-color" data-toggle="dropdown">Especie</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_registro_especie_fau"
+                                                id="RegistrarEspecieFauna">Registrar Especie</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_editar_especie_fau" id="EditarEspecieFauna">Editar
+                                                Especie</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_consultar_especie_fau"
+                                                id="ConsultarEspecieFauna">Consultar Especie</a></li>
+                                        <li><a href="#" class="hover-color" data-toggle="modal"
+                                                data-target="#modal_eliminar_especie_fau"
+                                                id="EliminarEspecieFauna">Eliminar Especie</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="dropdown-toggle margin-section" data-toggle=" dropdown">Ayuda</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" style="margin-top:1.5%">
+                        <li><button type="button" id="logout" style="margin-left: 1%" class="btn btn-danger btn-circle"
+                                data-toggle="tooltip" title="Cerrar Sesion" v-on:click="logout()"> <i
+                                    class="glyphicon glyphicon-off"></i></button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </nav>
+
+
+        <!-- Carousel-->
+        <div class="hero-slider">
+            <!-- Slider Item -->
+            <div class="slider-item slide1" style="background-image:url(../Imagenes/slider/slider-1.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content style text-center">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(../Imagenes/slider/slider-2.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start-->
+                            <div class="content style text-center">
+                                <h2 class="text-white">SIGCARB</h2>
+                                <p class="tag-text">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo. </p>
+                            </div>
+                            <!-- Slide Content End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(../Imagenes/slider/slider-3.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(../Imagenes/slider/slider-4.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(../Imagenes/slider/slider-5.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Item -->
+            <div class="slider-item" style="background-image:url(../Imagenes/slider/slider-6.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Slide Content Start -->
+                            <div class="content text-center style">
+                                <h2 class="text-white text-bold mb-2">SIGCARB</h2>
+                                <p class="tag-text mb-5">Sistema de Información Geográfica para la Cuenca Alta del Río
+                                    Botanamo.</p>
+                            </div>
+                            <!-- Slide Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- footer-->
+        <footer class="footer-main">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-logo">
+                    </div>
+                    <ul class="location-link">
+                        <li class="item">
+                            <p><i class="fa fa-map-marker"></i> &nbsp; Urbanización Chilemex, Calle Chile, Sede UNEG,
+                                Puerto Ordaz, Estado Bolívar, Venezuela.</p>
+                        </li>
+                        <li class="item">
+
+                            <a href="#">
+                                <p> <i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; cieg@uneg.edu.ve</p>
+                            </a>
+                        </li>
+                        <li class="item">
+
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; 0286-9234786</p>
+                        </li>
+                    </ul>
+                    <ul class="list-inline social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container clearfix">
+                    <div class="copyright-text ">
+                        <p>&copy; Copyright 2019. SIGCARB.
+                            <a href="index.html">Todos los derechos reservados.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!--End pagewrapper-->
+
+    <div class="scroll-to-top scroll-to-target" data-target=".header-top">
+        <span class="icon fa fa-angle-up"></span>
+    </div>
+
+    <!--********************************************************  MODALES DE REGISTRO  **********************************************************-->
+
+
+    <!--Modal Registro Usuario-->
+    <div id="modal_registro_usuario" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered ">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="registro" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">REGISTRO DE USUARIO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form>
+                            <div id="header_parte" class="row">
+                                <div id="titul" class="col-md-12">
+                                    <span id="sub-titul">Datos Personales</span>
+                                </div>
+                            </div>
+                            <div id="parte1" class="row">
+                                <div id="colum" class="col-md-12">
+                                    <div class="row">
+                                        <div id="etiqueta" class="col-sm-3"><span>Cédula:</span></div>
+                                        <div class="col-sm-9">
+                                            <div class="row">
+                                                <div class=" cedu col-sm-5">
+                                                    <select id="ced" class="form-control" v-model="nacionalidad">
+                                                        <option>_</option>
+                                                        <option>V</option>
+                                                        <option>E</option>
+                                                    </select>
+                                                </div>
+                                                <div class=" ced col-sm-7">
+                                                    <input type="text" class="form-control" id="cedula"
+                                                        placeholder="Cédula" required pattern="[0-9]{6,8}"
+                                                        oninvalid="setCustomValidity('mensaje')"
+                                                        oninput="setCustomValidity('')" v-model="Usuario.cedula" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta" class="col-sm-3"><span>Nombre:</span></div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="nombre"
+                                                placeholder="Ingrese Nombre" required="true" v-model="Usuario.nombre" />
+                                        </div>
+                                    </div>
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta" class=" col-sm-3"><span>Apellido:</span></div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="apellido"
+                                                placeholder="Ingrese Apellido" required="true"
+                                                v-model="Usuario.apellido" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="parte2">
+                            <div id="header_parte" class="row">
+                                <div id="titul" class="col-md-12">
+                                    <span id="sub-titul">Datos de Usuario</span>
+                                </div>
+                            </div>
+                            <div id="parte1" class="row">
+                                <div id="colum" class="col-md-12">
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta" class=" col-sm-3"><span>Rol:</span></div>
+                                        <div class="col-sm-9">
+                                            <select id="rol" class="form-control" v-model="Usuario.rol"
+                                                @change="onChange($event)">
+                                                <option>Seleccione</option>
+                                                <option value="Administrador">Administrador</option>
+                                                <option value="Normal">Normal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta" class="col-sm-3"><span>Usuario:</span></div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="usuario"
+                                                placeholder="Ingrese Usuario" required="true"
+                                                v-model="Usuario.usuario" />
+                                        </div>
+                                    </div>
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta" class="col-sm-3"><span>Password:</span></div>
+                                        <div class="col-sm-9">
+                                            <input type="Password" class="form-control" id="password"
+                                                placeholder="Ingrese Password" required="true"
+                                                v-model="Usuario.password" />
+                                        </div>
+                                    </div>
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta1" class="col-sm-3"><span>Confirmar Password:</span></div>
+                                        <div class="col-sm-9">
+                                            <input type="Password" class="form-control" id="password1"
+                                                placeholder="Confirme Password" required="true" v-model="confirm_pw" />
+                                        </div>
+                                    </div>
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta1" class=" col-sm-3"><span>Recurso Natural:</span></div>
+                                        <div class="col-sm-9">
+                                            <select id="recurso" class="form-control"
+                                                v-model="Usuario.id_recurso_natural" :disabled="ad">
+                                                <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta" class=" col-sm-3"><span>Estatus:</span></div>
+                                        <div class="col-sm-9">
+                                            <select id="estatus" class="form-control" v-model="Usuario.status">
+                                                <option>Seleccione</option>
+                                                <option value="A">Activo</option>
+                                                <option value="I">Inactivo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="registrar_usuario"
+                        v-on:click="Registrar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Rg_Usuario">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Modal Registro Familia -->
+    <div id="modal_registro_familia" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog  modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="registro" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">REGISTRO DE FAMILIA</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nombre:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="familia"
+                                            placeholder="Ingrese Familia" required="true" v-model="nombre" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Tipo de Recurso:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="recursof" class="form-control" v-model="id_recurso_natural">
+                                            <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Descripción:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="descripcionf"
+                                            placeholder="Ingrese Descripción" v-model="descripcion" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="registrar_familia"
+                        v-on:click="Registrar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Rg_familia">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal Registro Genero -->
+    <div id="modal_registro_genero" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="registro" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">REGISTRO DE GÉNERO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Familia:</span></div>
+                                    <div class="col-sm-9">
+
+                                        <select id="familiag" class="form-control" v-model="id_familia">
+                                            <option v-for="familia in familias" :value="familia.id"> {{familia.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Género:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="genero" placeholder="Ingrese Genero"
+                                            required="true" v-model="nombre" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Descripción:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="descripciong"
+                                            placeholder="Ingrese Descripción" v-model="descripcion" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="registrar_genero"
+                        v-on:click="Registrar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="Reset_Rg_genero"
+                        v-on:click="VaciarForm()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--Modal Registro Especie Vegetación-->
+    <div id="modal_registro_especie_veg" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="registro" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">REGISTRO DE ESPECIE</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Género:</span></div>
+                                    <div class="col-sm-8">
+                                        <select id="generoev" class="form-control" v-model="Especie.id_genero">
+                                            <option v-for="genero in generos" :value="genero.id"> {{genero.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Especie:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="especieV"
+                                            placeholder="Ingrese Especie" required="true"
+                                            v-model="Especie.nombre_especie" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Nombre Común:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="NomComunV"
+                                            placeholder="Ingrese Nombre Común" required="true"
+                                            v-model="Especie.nombre_comun" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Nombre Científico:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="NomCienV"
+                                            placeholder="Ingrese Nombre Cientifico" required="true"
+                                            v-model="Especie.nombre_cientifico" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-4"><span>Descripción:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="descripcionev"
+                                            placeholder="Ingrese Descripción" v-model="Especie.descripcion_esp_flora" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="registrar_especie_veg"
+                        v-on:click="Registrar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Rg_Especiev">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Modal Registro Tipo Muestreo-->
+    <div id="modal_registro_tipoMuestreo" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="registro" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">REGISTRO DE TIPO DE MUESTREO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Tipo de Muestreo:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="TipoMuestreo"
+                                            placeholder="Ingrese tipo de muestreo" required="true" v-model="nombre" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="registrar_tipoMuestreo"
+                        v-on:click="Registrar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Rg_tipoMuestreo">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--Modal Registro Especie Fauna-->
+    <div id="modal_registro_especie_fau" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="registro" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">REGISTRO DE ESPECIE</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoFau" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Fauna</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Género:</span></div>
+                                    <div class="col-sm-8">
+                                        <select id="generoef" class="form-control" v-model="Especie.id_genero">
+                                            <option v-for="genero in generos" :value="genero.id"> {{genero.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Especie:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="especief"
+                                            placeholder="Ingrese Especie" required="true"
+                                            v-model="Especie.nombre_especie" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Nombre Común:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="NomComunF"
+                                            placeholder="Ingrese Nombre Común" required="true"
+                                            v-model="Especie.nombre_comun" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Nombre Científico:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="NomCienF"
+                                            placeholder="Ingrese Nombre Cientifico" required="true"
+                                            v-model="Especie.nombre_cientifico" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-4"><span>Descripción:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="descripcionef"
+                                            placeholder="Ingrese Descripción" v-model="Especie.descripcion" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="registrar_especie_fau"
+                        v-on:click="Registrar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" id="Reset_Rg_Especief"
+                        data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal Registro Recurso Natural-->
+    <div id="modal_registro_recurso" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="registro" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">REGISTRO DE RECURSO NATURAL</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Recurso Natural:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="recursoN"
+                                            placeholder="Ingrese nombre del recurso natural" required="true"
+                                            v-model="nombre" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="registrar_recurso"
+                        v-on:click="Registrar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="Reset_Rg_recurso"
+                        v-on:click="VaciarForm()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ************************************************************* MODALES ELIMINAR  ***********************************************************-->
+
+    <!--Modal Eliminar Usuario-->
+    <div id="modal_eliminar_usuario" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN DE USUARIO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Usuario</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <select id="Eli_usuario" class="form-control" v-model="id_usuario_selected">
+                                            <option v-for="usuario in usuarios" :value="usuario.id"> {{usuario.usuario}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_Usuario"
+                        v-on:click="Eliminar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_Usuario">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal Eliminar Familia -->
+    <div id="modal_eliminar_familia" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN DE FAMILIA</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Familia:</span></div>
+                                    <div class="col-sm-9">
+
+                                        <select id="Eli_familia" class="form-control" v-model="id_familia">
+                                            <option v-for="familia in familias" :value="familia.id"> {{familia.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_familia"
+                        v-on:click="Eliminar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_familia">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Modal Eliminar Genero-->
+    <div id="modal_eliminar_genero" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN DE GÉNERO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Género:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="Eli_genero" class="form-control" v-model="id_genero">
+                                            <option v-for="genero in generos" :value="genero.id"> {{genero.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_genero"
+                        v-on:click="Eliminar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_genero">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal Eliminar Especie Vegetación-->
+    <div id="modal_eliminar_especie_veg" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN DE ESPECIE</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Especie:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="Eli_especiev" class="form-control" v-model="id_especie">
+                                            <option v-for="especie in especies" :value="especie.id">
+                                                {{especie.nombre_comun}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_especiev"
+                        v-on:click="Eliminar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_especiev">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--Modal Eliminar Tipo de Muestreo-->
+    <div id="modal_eliminar_tipoMuestreo" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN DE TIPO DE MUESTREO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Tipo de Muestreo:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="Eli_tipoMuestreo" class="form-control" v-model="id_tipo_muestreo">
+                                            <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_tipoMuestreo"
+                        v-on:click="Eliminar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_tipoMuestreo">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--Modal Eliminar Especie Fauna-->
+    <div id="modal_eliminar_especie_fau" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN DE ESPECIE</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoFau" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Fauna</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Especie:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="Eli_especief" class="form-control" v-model="id_especie">
+                                            <option v-for="especie in especies" :value="especie.id">
+                                                {{especie.nombre_comun}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_especief"
+                        v-on:click="Eliminar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_especief">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal Eliminar Recurso Natural-->
+    <div id="modal_eliminar_recurso" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="eliminar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">ELIMINACIÓN DE RECURSO NATURAL</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Recurso Natural:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="Eli_recurso" class="form-control" v-model="id_recurso_natural">
+                                            <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="Delet_recurso"
+                        v-on:click="Eliminar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Eli_recurso">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--***************************************************  MODALES EDITAR DATOS  ***************************************************-->
+
+    <!--Modal  Editar Datos Personales Usuario-->
+    <div id="modal_editar_datosPersonales" class="modal fade" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICIÓN DE USUARIO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Usuario</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <select id="ED_usuarioEDP" @change="SeleccionarUsuario()" class="form-control"
+                                            v-model="id_usuario_selected">
+                                            <option v-for="usuario in usuarios" :value="usuario.id"> {{usuario.usuario}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Datos Personales</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Cédula:</span></div>
+                                    <div class="col-sm-9">
+                                        <div class="row">
+                                            <div class=" cedu col-sm-5">
+                                                <select id="cedEDP" class="form-control" disabled="true"
+                                                    v-model="nacionalidad">
+                                                    <option>_</option>
+                                                    <option>V</option>
+                                                    <option>E</option>
+                                                </select>
+                                            </div>
+                                            <div class=" ced col-sm-7">
+                                                <input type="text" class="form-control" id="cedulaEDP"
+                                                    placeholder="Cédula" pattern="[0-9]{6,8}" required="true"
+                                                    disabled="true" v-model="cedula" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nombre:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="nombreEDP"
+                                            placeholder="Ingrese Nombre" required="true" disabled="true"
+                                            v-model="nombre" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Apellido:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="apellidoEDP"
+                                            placeholder="Ingrese Apellido" required="true" disabled="true"
+                                            v-model="apellido" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" v-on:click="Editar()" class="btn btn-success" id="editar_datos_personales"
+                        disabled="true">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="reset_Ed_datos_personales">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal  Editar Datos  Usuario-->
+    <div id="modal_editar_datos_usuario" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICIÓN DE USUARIO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Usuario</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <select id="ED_usuarioEDU" @change="SeleccionarUsuario()" class="form-control"
+                                            v-model="id_usuario_selected">
+                                            <option v-for="usuario in usuarios" :value="usuario.id"> {{usuario.usuario}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Datos de Usuario</span>
+                            </div>
+                        </div>
+
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta1" class=" col-sm-3"><span>Recurso Natural:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="recursoEDU" class="form-control"
+                                            v-model="Usuario.id_recurso_natural" :disabled="active">
+                                            <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Usuario:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="usuarioEDU"
+                                            placeholder="Ingrese Usuario" required="true" disabled="true"
+                                            v-model="Usuario.usuario" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Password:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="Password" class="form-control" id="passwordEDU"
+                                            placeholder="Ingrese Password" required="true" disabled="true"
+                                            v-model="password" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta1" class="col-sm-3"><span>Confirmar Password:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="Password" class="form-control" id="password1EDU"
+                                            placeholder="Confirme Password" required="true" disabled="true"
+                                            v-model="repeat_pw" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Rol:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="rolEDU" class="form-control" disabled="true" v-model="Usuario.rol">
+                                            <option value="Administrador">Administrador</option>
+                                            <option value="Normal">Normal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Estatus:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="estatusEDU" class="form-control" disabled="true"
+                                            v-model="Usuario.status">
+                                            <option value="A">Activo</option>
+                                            <option value="I">Inactivo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="editar_datos_usuario" disabled="true"
+                        v-on:click="Editar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="reset_Ed_datos_usuario">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Editar Datos Familia-->
+    <div id="modal_editar_familia" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICIÓN DE FAMILIA</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Familia:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="ED_familia" @change="SeleccionarFamilia()" class="form-control"
+                                            v-model="id_familia_selected">
+                                            <option v-for="familia in familias" :value="familia.id"> {{familia.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nombre:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="Efamilia"
+                                            placeholder="Ingrese Familia" required="true" disabled="true"
+                                            v-model="Familia.nombre" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Tipo de Recurso:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="Erecursof" class="form-control"
+                                            v-model="Familia.id_tipo_recurso_natural">
+                                            <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Descripción:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="Edescripcionf"
+                                            placeholder="Ingrese Descripción" disabled="true"
+                                            v-model="Familia.descripcion" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="editar_familia" disabled="true"
+                        v-on:click="Editar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Ed_familia">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal Editar Datos Genero Vegetación-->
+    <div id="modal_editar_genero" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICIÓN DE GÉNERO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Género:</span></div>
+                                    <div class="col-sm-9">
+
+                                        <select id="ED_genero" @change="SeleccionarGenero()" class="form-control"
+                                            v-model="id_genero_selected">
+                                            <option v-for="genero in generos" :value="genero.id"> {{genero.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Familia:</span></div>
+                                    <div class="col-sm-9">
+
+                                        <select id="Efamiliag" class="form-control" v-model="Genero.id_familia"
+                                            disabled="true">
+                                            <option v-for="familia in familias" :value="familia.id"> {{familia.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Género:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="Egenero"
+                                            placeholder="Ingrese Genero" required="true" disabled="true"
+                                            v-model="Genero.nombre" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Descripción:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="Edescripciong"
+                                            placeholder="Ingrese Descripción" disabled="true"
+                                            v-model="Genero.descripcion" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="editar_genero"
+                        v-on:click="Editar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="Reset_Ed_genero"
+                        v-on:click="VaciarForm()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Modal Edición Especie Vegetación-->
+    <div id="modal_editar_especie_veg" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICIÓN DE ESPECIE</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Especie:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="ED_especiev" @change="SeleccionarEspecie()" class="form-control"
+                                            v-model="id_especie_selected">
+                                            <option v-for="especie in especies" :value="especie.id">
+                                                {{especie.nombre_comun}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Género:</span></div>
+                                    <div class="col-sm-8">
+
+                                        <select id="Egeneroev" class="form-control" v-model="Especie.id_genero"
+                                            disabled="true">
+                                            <option v-for="genero in generos" :value="genero.id"> {{genero.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Especie:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="EespecieV"
+                                            placeholder="Ingrese Especie" required="true" disabled="true"
+                                            v-model="Especie.nombre_especie" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Nombre Común:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="ENomComunV"
+                                            placeholder="Ingrese Nombre Común" required="true" disabled="true"
+                                            v-model="Especie.nombre_comun" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Nombre Científico:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="ENomCienV"
+                                            placeholder="Ingrese Nombre Cientifico" required="true" disabled="true"
+                                            v-model="Especie.nombre_cientifico" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-4"><span>Descripción:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="Edescripcionev"
+                                            placeholder="Ingrese Descripción" disabled="true"
+                                            v-model="Especie.descripcion_esp_flora" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="editar_especie_veg" disabled="true"
+                        v-on:click="Editar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Ed_especiev">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal Editar Datos Tipo Muestreo-->
+    <div id="modal_editar_tipoMuestreo" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICIÓN DE TIPO DE MUESTREO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Tipo de Muestreo:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="ED_tipoMuestreo" class="form-control" v-model="id_tipo_muestreo">
+                                            <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nombre:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="EtipoMuestreo"
+                                            placeholder="Ingrese Familia" required="true" disabled="true"
+                                            v-model="nombre" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="editar_tipoMuestreo" disabled="true"
+                        v-on:click="Editar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Ed_tipoMuestreo">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--Modal Edición Especie Fauna-->
+    <div id="modal_editar_especie_fau" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICION DE ESPECIE</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoFau" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Fauna</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Especie:</span></div>
+                                    <div class="col-sm-9">
+
+                                        <select id="ED_especief" @change="SeleccionarEspecie()" class="form-control"
+                                            v-model="id_especie_selected">
+                                            <option v-for="especie in especies" :value="especie.id">
+                                                {{especie.nombre_especie}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Genero:</span></div>
+                                    <div class="col-sm-8">
+                                        <select id="Egeneroef" class="form-control" v-model="Especie.id_genero"
+                                            disabled="true">
+                                            <option v-for="genero in generos" :value="genero.id"> {{genero.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Especie:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="Eespecief"
+                                            placeholder="Ingrese Especie" required="true" disabled="true"
+                                            v-model="Especie.nombre_especie" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Nombre Común:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="ENomComunF"
+                                            placeholder="Ingrese Nombre Común" required="true" disabled="true"
+                                            v-model="Especie.nombre_comun" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-4"><span>Nombre Científico:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="ENomCienF"
+                                            placeholder="Ingrese Nombre Cientifico" required="true" disabled="true"
+                                            v-model="Especie.nombre_cientifico" />
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-4"><span>Descripción:</span></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="Edescripcionef"
+                                            placeholder="Ingrese Descripción" disabled="true"
+                                            v-model="Especie.descripcion" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="editar_especie_fau" disabled="true"
+                        v-on:click="Editar()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Ed_especief">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal Editar Datos Recurso Natural-->
+    <div id="modal_editar_recurso" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">EDICIÓN DE RECURSO NATURAL</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Recurso Natural:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="ED_recurso" class="form-control" v-model="id_recurso_natural">
+                                            <option v-for="item in items" :value="item.id"> {{item.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nombre:</span></div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="Erecurso"
+                                            placeholder="Ingrese Recurso Natural" required="true" disabled="true"
+                                            v-model="nombre" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-success" id="editar_recurso" disabled="true"
+                        v-on:click="Editar">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_Ed_recurso">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--_________________________________________________________________ MODALES CONSULTAR ______________________________________________________________-->
+
+    <!--Modal seleccionar usuario a consultar-->
+    <div id="modal_consultar_usuario" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">CONSULTA DE USUARIO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Usuario</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <select id="CS_usuario" @change="SeleccionarUsuario()" class="form-control"
+                                            v-model="id_usuario_selected">
+                                            <option v-for="usuario in usuarios" :value="usuario.id"> {{usuario.usuario}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Datos Personales</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Cédula:</span></div>
+                                    <div class="col-sm-9">
+                                        <label id="cedulaConsul" class="form-control"> {{Usuario.cedula}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nombre:</span></div>
+                                    <div class="col-sm-9">
+                                        <label type="text" class="form-control"
+                                            id="nombreConsul">{{Usuario.nombre}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Apellido:</span></div>
+                                    <div class="col-sm-9">
+                                        <label type="text" class="form-control"
+                                            id="apellidoConsul">{{Usuario.apellido}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="parte2">
+                            <div id="header_parte" class="row">
+                                <div id="titul" class="col-md-12">
+                                    <span id="sub-titul">Datos de Usuario</span>
+                                </div>
+                            </div>
+                            <div id="parte1" class="row">
+                                <div id="colum" class="col-md-12">
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta1" class=" col-sm-3"><span>Recurso Natural:</span></div>
+                                        <div class="col-sm-9">
+                                            <label id="recursoConsul"
+                                                class="form-control">{{name_recurso_natural}}</label>
+                                        </div>
+                                    </div>
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta" class="col-sm-3"><span>Usuario:</span></div>
+                                        <div class="col-sm-9">
+                                            <label class="form-control" id="usuarioConsul">{{Usuario.usuario}}</label>
+                                        </div>
+                                    </div>
+                                    <!-- <div id="linea" class="row">
+                                        <div id="etiqueta" class="col-sm-3"><span>Password:</span></div>
+                                        <div class="col-sm-9">
+                                            <label class="form-control" id="passwordConsul"></label>
+                                        </div>
+                                    </div>-->
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta" class=" col-sm-3"><span>Rol:</span></div>
+                                        <div class="col-sm-9">
+                                            <label id="rolConsul" class="form-control">
+                                                {{Usuario.rol}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div id="linea" class="row">
+                                        <div id="etiqueta" class=" col-sm-3"><span>Estatus:</span></div>
+                                        <div class="col-sm-9">
+                                            <label id="estatusConsul" class="form-control">
+                                                {{Usuario.status}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="Reset_CS_Usu"
+                        v-on:click="VaciarForm()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal seleccionar Familia Vegetación-->
+    <div id="modal_consultar_familia" class="modal fade" role="dialog" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog  modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">CONSULTA DE FAMILIA</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Familia:</span></div>
+                                    <div class="col-sm-9">
+
+                                        <select id="CS_familia" @change="SeleccionarFamilia()" class="form-control"
+                                            v-model="id_familia_selected">
+                                            <option v-for="familia in familias" :value="familia.id"> {{familia.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nombre:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" id="familiaConsul">{{Familia.nombre}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Tipo de Recurso:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" id="recursofConsul">{{name_recurso_natural}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Descripción:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control"
+                                            id="descripcionfConsul">{{Familia.descripcion}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_CS_familia">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal seleccionar Genero a consultar-->
+    <div id="modal_consultar_genero" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">CONSULTA DE GÉNERO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Género:</span></div>
+                                    <div class="col-sm-9">
+
+                                        <select id="CS_genero" @change="SeleccionarGenero()" class="form-control"
+                                            v-model="id_genero_selected">
+                                            <option v-for="genero in generos" :value="genero.id"> {{genero.nombre}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Nombre:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" id="generoConsul">{{Genero.nombre}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Familia:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" id="familiagConsul">{{name_familia}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Tipo de Recurso:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" id="recursogConsul">{{name_recurso_natural}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Descripción:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control"
+                                            id="descripciongConsul">{{Genero.descripcion}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="Reset_CS_genero"
+                        v-on:click="VaciarForm()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal seleccionar Especie Vegetación a consultar-->
+    <div id="modal_consultar_especie_veg" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">CONSULTA DE ESPECIE</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Especie:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="CS_especiev" @change="SeleccionarEspecie()" class="form-control"
+                                            v-model="id_especie_selected">
+                                            <option v-for="especie in especies" :value="especie.id">
+                                                {{especie.nombre_comun}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Familia:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" id="familiaEVConsul">{{name_familia}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Género:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" id="generoEVConsul">{{name_genero}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Nombre Común:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control"
+                                            id="NombreComEVConsul">{{Especie.nombre_comun}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Nombre Científico:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control"
+                                            id="NombreCieEVConsul">{{Especie.nombre_cientifico}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Descripción:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control"
+                                            id="descripcionEVConsul">{{Especie.descripcion_esp_flora}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_CS_especiev">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal seleccionar Tipo Muestreo a CONSULTAR-->
+    <div id="modal_consultar_tipoMuestreo" class="modal fade" role="dialog" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">CONSULTA DE TIPO DE MUESTREO</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoVeg" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Vegetación</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="tabla-bold tabla-just">TIPOS DE MUESTREO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="item in items">
+                                            <td class="tabla-just">{{item.nombre}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal seleccionar Especie Fauna a consultar-->
+    <div id="modal_consultar_especie_fau" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo" class="label label-success">
+                                    CONSULTA DE ESPECIE</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondoFau" class="modal-body">
+                    <div>
+                        <div id="header_parte" class="row">
+                            <div id="titul" class="col-md-12">
+                                <span id="sub-titul">Fauna</span>
+                            </div>
+                        </div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Especie:</span></div>
+                                    <div class="col-sm-9">
+                                        <select id="CS_especief" @change="SeleccionarEspecie()" class="form-control"
+                                            v-model="id_especie_selected">
+                                            <option v-for="especie in especies" :value="especie.id">
+                                                {{especie.nombre_especie}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Familia:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" id="familiaEFConsul">{{name_familia}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class="col-sm-3"><span>Género:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" id="generoEFConsul">{{name_genero}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Nombre Común:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control"
+                                            id="NombreComEFConsul">{{Especie.nombre_comun}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Nombre Científico:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control"
+                                            id="NombreCieEFConsul">{{Especie.nombre_cientifico}}</label>
+                                    </div>
+                                </div>
+                                <div id="linea" class="row">
+                                    <div id="etiqueta" class=" col-sm-3"><span>Descripción:</span></div>
+                                    <div class="col-sm-9">
+                                        <label class="form-control"
+                                            id="descripcionEFConsul">{{Especie.descripcion}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="Reset_CS_especief">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Modal seleccionar Recurso Natural a CONSULTAR-->
+    <div id="modal_consultar_recurso" class="modal fade" role="dialog" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div id="header" class="modal-header">
+                    <div class="row">
+                        <div id="editar" class="col-md-12">
+                            <h4 class="modal-title" text-align="center"><label id="titulo"
+                                    class="label label-success">CONSULTA DE RECURSO NATURAL</label></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="parte1" class="row">
+                            <div id="colum" class="col-md-12">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="tabla-bold tabla-just">RECURSOS NATURALES</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="item in items">
+                                            <td class="tabla-just">{{item.nombre}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="../plugins/jquery.js"></script>
+    <script src="../plugins/bootstrap.min.js"></script>
+    <script src="../plugins/bootstrap-select.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="../plugins/slick/slick.min.js"></script>
+    <!-- FancyBox -->
+    <script src="../plugins/fancybox/jquery.fancybox.min.js"></script>
+    <!-- Google Map -->
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLuWemUhh8dHFt_enjYa5wTyRQyfiOmvk"></script>
+    <script src="plugins/google-map/gmap.js"></script>-->
+    <!-- Alerts -->
+    <script src="../plugins/sweetalert.js"></script>
+    <script src="../plugins/validate.js"></script>
+    <script src="../plugins/wow.js"></script>
+    <script src="../plugins/jquery-ui.js"></script>
+    <script src="../plugins/timePicker.js"></script>
+    <script src="../js/script.js"></script>
+
+
+
+
+    <!--***************Scripts funcionalidades vuejs*******************-->
+
+    <!--****************GESTION DE USUARIO********************************-->
+    <script src="../js/GestionUsuarios/sesiones.js"></script>
+
+    <script src="../js/GestionUsuarios/registrar_usuario.js"></script>
+    <script src="../js/GestionUsuarios/editar_datos_personales.js"></script>
+    <script src="../js/GestionUsuarios/editar_datos_usuario.js"></script>
+    <script src="../js/GestionUsuarios/consultar_usuario.js"></script>
+    <script src="../js/GestionUsuarios/eliminar_usuario.js"></script>
+
+    <!-- ****************GESTION DE RECURSO NATURAL********************** -->
+    <script src="../js/GestionRecursosNaturales/resgistrar_recurso_natural.js"></script>
+    <script src="../js/GestionRecursosNaturales/editar_recurso_natural.js"></script>
+    <script src="../js/GestionRecursosNaturales/consultar_recurso_natural.js"></script>
+    <script src="../js/GestionRecursosNaturales/eliminar_recurso_natural.js"></script>
+
+    <!-- -------------------- GESTION DE FAMILIA ---------------------- -->
+    <script src="../js/Familia/registrar_familia.js"></script>
+    <script src="../js/Familia/editar_familia.js"></script>
+    <script src="../js/Familia/consultar_familia.js"></script>
+    <script src="../js/Familia/eliminar_familia.js"></script>
+
+    <!-- -------------------- GESTION DE GENERO ---------------------- -->
+    <script src="../js/Genero/registrar_genero.js"></script>
+    <script src="../js/Genero/editar_genero.js"></script>
+    <script src="../js/Genero/consultar_genero.js"></script>
+    <script src="../js/Genero/eliminar_genero.js"></script>
+
+    <!-- ******************GESTION DE VEGETACION ********************** -->
+
+    <!-- -------------------- GESTION DE ESPECIE ---------------------- -->
+    <script src="../js/Vegetacion/Especie/registrar_especie.js"></script>
+    <script src="../js/Vegetacion/Especie/editar_especie.js"></script>
+    <script src="../js/Vegetacion/Especie/consultar_especie.js"></script>
+    <script src="../js/Vegetacion/Especie/eliminar_especie.js"></script>
+
+    <!-- ------------------ GESTION DE TIPO DE MUESTREO ----------------- -->
+    <script src="../js/Vegetacion/TipoMuestreo/registrar_tipo_muestreo.js"></script>
+    <script src="../js/Vegetacion/TipoMuestreo/editar_tipo_muestreo.js"></script>
+    <script src="../js/Vegetacion/TipoMuestreo/consultar_tipo_muestreo.js"></script>
+    <script src="../js/Vegetacion/TipoMuestreo/eliminar_tipo_muestreo.js"></script>
+
+
+    <!-- ******************GESTION DE FAUNA ********************** -->
+    <!-- -------------------- GESTION DE ESPECIE ---------------------- -->
+    <script src="../js/Fauna/Especie/registrar_especie.js"></script>
+    <script src="../js/Fauna/Especie/editar_especie.js"></script>
+    <script src="../js/Fauna/Especie/consultar_especie.js"></script>
+    <script src="../js/Fauna/Especie/eliminar_especie.js"></script>
+
+
+
+    <!------------------ EVENTOS AL DISPARAR MODALES-------------------------->
+    <script>
+        //--------------GESTION USUARIO----------------
+        $("#RegistrarUsuario").on("click", function () {
+            modal_registro_usuario.inicializarRecursoNatural();
+        });
+        $("#EditarUsuarioPersonal").on("click", function () {
+            modal_editar_datosPersonales.inicializarUsuarios();
+        });
+        $("#EditarUsuarioUsuario").on("click", function () {
+            modal_editar_datos_usuario.inicializarRecursoNatural();
+            modal_editar_datos_usuario.inicializarUsuarios();
+        });
+        $("#ConsultarUsuario").on("click", function () {
+            modal_consultar_usuario.inicializarUsuarios();
+        });
+        $("#EliminarUsuario").on("click", function () {
+            modal_eliminar_usuario.inicializarUsuarios();
+        });
+
+        //--------------GESTION RECURSO NATURAL----------------
+        $("#RegistrarRecursoNatural").on("click", function () {
+            // modal_registro_recurso.inicializarRecursoNatural();
+        });
+        $("#EditarRecursoNatural").on("click", function () {
+            modal_editar_recurso.inicializarRecursoNatural();
+        });
+        $("#ConsultarRecursoNatural").on("click", function () {
+            modal_consultar_recurso.inicializarRecursoNatural();
+        });
+        $("#EliminarRecursoNatural").on("click", function () {
+            modal_eliminar_recurso.inicializarRecursoNatural();
+        });
+
+        //--------------GESTION FAMILIA----------------
+        $("#RegistrarFamiliaModal").on("click", function () {
+            modal_registro_familia.inicializarRecursoNatural();
+        });
+        $("#EditarFamiliaModal").on("click", function () {
+            modal_editar_familia.inicializarRecursoNatural();
+            modal_editar_familia.InicializarFamilias();
+        });
+        $("#ConsultarFamiliaModal").on("click", function () {
+            modal_consultar_familia.InicializarFamilias();
+            modal_consultar_familia.inicializarRecursoNatural();
+        });
+        $("#EliminarFamiliaModal").on("click", function () {
+            modal_eliminar_familia.InicializarFamilias();
+        });
+
+        //--------------GESTION GENERO----------------
+        $("#RegistrarGenero").on("click", function () {
+            modal_registro_genero.InicializarFamilias();
+        });
+        $("#EditarGenero").on("click", function () {
+            modal_editar_genero.inicializarGenero();
+            modal_editar_genero.InicializarFamilias();
+        });
+        $("#ConsultarGenero").on("click", function () {
+            modal_consultar_genero.InicializarFamilias();
+            modal_consultar_genero.inicializarGenero();
+        });
+        $("#EliminarGenero").on("click", function () {
+            modal_eliminar_genero.InicializarGeneros();
+        });
+
+        //--------------GESTION ESPECIE FLORA----------------
+        $("#RegistrarEspecie").on("click", function () {
+            modal_registro_especie_veg.inicializarGenero();
+        });
+        $("#EditarEspecie").on("click", function () {
+            modal_editar_especie_veg.InicializarGeneros();
+            modal_editar_especie_veg.inicializarEspecies();
+        });
+        $("#ConsultarEspecie").on("click", function () {
+            modal_consultar_especie_veg.inicializarEspecies();
+            modal_consultar_especie_veg.inicializarGenero();
+        });
+        $("#EliminarEspecie").on("click", function () {
+            modal_eliminar_especie_veg.InicializarEpecies();
+        });
+
+        //--------------GESTION TIPO MUESTREO----------------
+        $("#RegistrarTipoMuestreo").on("click", function () {
+            //modal_registro_tipoMuestreo.inicializarGenero();
+        });
+        $("#EditarTipoMuestreo").on("click", function () {
+            modal_editar_tipoMuestreo.inicializarTipoMuestreo();
+        });
+        $("#ConsultarTipoMuestreo").on("click", function () {
+            modal_consultar_tipoMuestreo.inicializarTipoMuestreo();
+        });
+        $("#EliminarTipoMuestreo").on("click", function () {
+            modal_eliminar_tipoMuestreo.inicializarTipoMuestreo();
+        });
+
+        //--------------GESTION ESPECIE FAUNA----------------
+        $("#RegistrarEspecieFauna").on("click", function () {
+            modal_registro_especie_fau.inicializarGenero();
+        });
+        $("#EditarEspecieFauna").on("click", function () {
+            modal_editar_especie_fau.inicializarGenero();
+            modal_editar_especie_fau.inicializarEspecies();
+        });
+        $("#ConsultarEspecieFauna").on("click", function () {
+            modal_consultar_especie_fau.inicializarEspecies();
+            modal_consultar_especie_fau.inicializarGeneros();
+        });
+        $("#EliminarEspecieFauna").on("click", function () {
+            modal_eliminar_especie_fau.InicializarEpecies();
+        });
+    </script>
+
+
+
+
+    <!--_________________________________________________________ SELECT EDICION_____________________________________________-->
+
+    <!--Select Editar Usuario Datos Personales-->
+    <script type="text/javascript">
+        $('select#ED_usuarioEDP').on('change', function () {
+            var valor = $(this).val();
+            //alert(valor);
+            if (valor != 'Seleccione') {
+
+                document.getElementById("cedEDP").disabled = false;
+                document.getElementById("cedulaEDP").disabled = false;
+                document.getElementById("nombreEDP").disabled = false;
+                document.getElementById("apellidoEDP").disabled = false;
+                document.getElementById("editar_datos_personales").disabled = false;
+            }
+
+        });
+    </script>
+
+    <!--Select Editar Usuario Datos Usuario-->
+    <script type="text/javascript">
+        $('select#ED_usuarioEDU').on('change', function () {
+            var valor = $(this).val();
+            //alert(valor);
+            if (valor != 'Seleccione') {
+
+
+                document.getElementById("recursoEDU").disabled = false;
+                document.getElementById("usuarioEDU").disabled = false;
+                document.getElementById("passwordEDU").disabled = false;
+                document.getElementById("password1EDU").disabled = false;
+                document.getElementById("rolEDU").disabled = false;
+                document.getElementById("estatusEDU").disabled = false;
+                document.getElementById("editar_datos_usuario").disabled = false;
+            }
+
+        });
+    </script>
+
+    <!--Select Editar Familia-->
+    <script type="text/javascript">
+        $('select#ED_familia').on('change', function () {
+            var valor = $(this).val();
+            //alert(valor);
+            if (valor != 'Seleccione') {
+                document.getElementById("Efamilia").disabled = false;
+                document.getElementById("Edescripcionf").disabled = false;
+                document.getElementById("Erecursof").disabled = false;
+                document.getElementById("editar_familia").disabled = false;
+            }
+
+        });
+    </script>
+
+    <!--Select Editar Género -->
+    <script type="text/javascript">
+        $('select#ED_genero').on('change', function () {
+            var valor = $(this).val();
+            //alert(valor);
+            if (valor != 'Seleccione') {
+                document.getElementById("Efamiliag").disabled = false;
+                document.getElementById("Egenero").disabled = false;
+                document.getElementById("Edescripciong").disabled = false;
+                document.getElementById("editar_genero").disabled = false;
+            }
+
+        });
+    </script>
+
+    <!--Select Editar Especie Vegetación-->
+    <script type="text/javascript">
+        $('select#ED_especiev').on('change', function () {
+            var valor = $(this).val();
+            //alert(valor);
+            if (valor != 'Seleccione') {
+                document.getElementById("Egeneroev").disabled = false;
+                document.getElementById("EespecieV").disabled = false;
+                document.getElementById("ENomComunV").disabled = false;
+                document.getElementById("ENomCienV").disabled = false;
+                document.getElementById("Edescripcionev").disabled = false;
+                document.getElementById("editar_especie_veg").disabled = false;
+            }
+
+        });
+    </script>
+
+
+    <!--Select Editar Tipo Muestreo-->
+    <script type="text/javascript">
+        $('select#ED_tipoMuestreo').on('change', function () {
+            var valor = $(this).val();
+            //alert(valor);
+            if (valor != 'Seleccione') {
+                document.getElementById("EtipoMuestreo").disabled = false;
+                document.getElementById("editar_tipoMuestreo").disabled = false;
+            }
+
+        });
+    </script>
+
+    <!--Select Editar Especie Fauna-->
+    <script type="text/javascript">
+        $('select#ED_especief').on('change', function () {
+            var valor = $(this).val();
+            //alert(valor);
+            if (valor != 'Seleccione') {
+                document.getElementById("Egeneroef").disabled = false;
+                document.getElementById("Eespecief").disabled = false;
+                document.getElementById("ENomComunF").disabled = false;
+                document.getElementById("ENomCienF").disabled = false;
+                document.getElementById("Edescripcionef").disabled = false;
+                document.getElementById("editar_especie_fau").disabled = false;
+            }
+
+        });
+    </script>
+
+    <!--Select Editar Recurso Natural-->
+    <script type="text/javascript">
+        $('select#ED_recurso').on('change', function () {
+            var valor = $(this).val();
+            //alert(valor);
+            if (valor != 'Seleccione') {
+                document.getElementById("Erecurso").disabled = false;
+                document.getElementById("editar_recurso").disabled = false;
+            }
+
+        });
+    </script>
+
+
+    <!--Select Editar Recurso Natural-->
+    <script type="text/javascript">
+        $('select#ED_recurso').on('change', function () {
+            var valor = $(this).val();
+            //alert(valor);
+            if (valor != 'Seleccione') {
+                document.getElementById("Erecurso").disabled = false;
+                document.getElementById("editar_recurso").disabled = false;
+            }
+
+        });
+    </script>
+
+
+    <!--__________________________________________________________________REGISTRO________________________________________________________________-->
+
+
+
+    <!--_________________________________________________________CANCELAR REGISTRO_____________________________________________-->
+
+    <!--Cancelar Registro Usuario-->
+    <script type="text/javascript">
+        $("#Reset_Rg_Usuario").click(function () {
+            $('#ced').val("_");
+            $('#cedula').val("");
+            $('#nombre').val("");
+            $('#apellido').val("");
+            $('#recurso').val("Seleccione");
+            $('#usuario').val("");
+            $('#password').val("");
+            $('#password1').val("");
+            $('#rol').val("Seleccione");
+            $('#estatus').val("Seleccione");
+        });
+    </script>
+
+    <!--Cancelar registro de familia-->
+    <script type="text/javascript">
+        $("#Reset_Rg_familia").click(function () {
+            $('#familia').val("");
+            $('#descripcionf').val("");
+            $('#recursof').val("Seleccione");
+        });
+    </script>
+
+    <!--Cancelar registro genero-->
+    <script type="text/javascript">
+        $("#Reset_Rg_genero").click(function () {
+            $('#familiag').val("Seleccione");
+            $('#genero').val("");
+        });
+    </script>
+
+    <!--Cancelar registro tipo muestreo vegetación-->
+    <script type="text/javascript">
+        $("#Reset_Rg_tipoMuestreo").click(function () {
+            $('#TipoMuestreo').val("");
+        });
+    </script>
+
+    <!--Cancelar registro especie vegetacion-->
+    <script type="text/javascript">
+        $("#Reset_Rg_Especiev").click(function () {
+            $('#generoev').val("Seleccione");
+            $('#especieV').val("");
+            $('#NomComunV').val("");
+            $('#NomCienV').val("");
+            $('#descripcionev').val("");
+        });
+    </script>
+
+    <!--Cancelar registro de especie fauna-->
+    <script type="text/javascript">
+        $("#Reset_Rg_Especief").click(function () {
+            $('#generoef').val("Seleccione");
+            $('#especief').val("");
+            $('#NomComunF').val("");
+            $('#NomCienF').val("");
+            $('#descripcionef').val("");
+        });
+    </script>
+
+
+    <!--Cancelar registro recurso natural-->
+    <script type="text/javascript">
+        $("#Reset_Rg_recurso").click(function () {
+            $('#recursoN').val("");
+        });
+    </script>
+
+    <!--_________________________________________________________________________EDITAR____________________________________________________________-->
+
+
+
+
+    <!--_________________________________________________________CANCELAR EDITAR_______________________________________________-->
+
+    <!--CANCELAR EDITAR USUARIO DATOS PERSONALES-->
+    <script type="text/javascript">
+        $("#reset_Ed_datos_personales").click(function () {
+            $('#cedEDP').val("_");
+            $('#cedulaEDP').val("");
+            $('#nombreEDP').val("");
+            $('#apellidoEDP').val("");
+            $('#ED_usuarioEDP').val("Seleccione");
+            document.getElementById("cedEDP").disabled = true;
+            document.getElementById("cedulaEDP").disabled = true;
+            document.getElementById("nombreEDP").disabled = true;
+            document.getElementById("apellidoEDP").disabled = true;
+            document.getElementById("editar_datos_personales").disabled = true;
+        })
+    </script>
+
+
+    <!--CANCELAR EDITAR USUARIO DATOS CUENTA USUARIO-->
+    <script type="text/javascript">
+        $("#reset_Ed_datos_usuario").click(function () {
+            $('#recursoEDU').val("Seleccione");
+            $('#usuarioEDU').val("");
+            $('#passwordEDU').val("");
+            $('#password1EDU').val("");
+            $('#rolEDU').val("Seleccione");
+            $('#estatusEDU').val("Seleccione");
+            $('#ED_usuarioEDU').val("Seleccione");
+            document.getElementById("recursoEDU").disabled = true;
+            document.getElementById("usuarioEDU").disabled = true;
+            document.getElementById("passwordEDU").disabled = true;
+            document.getElementById("password1EDU").disabled = true;
+            document.getElementById("rolEDU").disabled = true;
+            document.getElementById("estatusEDU").disabled = true;
+            document.getElementById("editar_datos_usuario").disabled = true;
+        })
+    </script>
+
+
+    <!--CANCELAR EDITAR FAMILIA VEGETACIÓN-->
+    <script type="text/javascript">
+        $("#Reset_Ed_familia").click(function () {
+            $('#Efamilia').val("");
+            $('#Edescripcionf').val("");
+            $('#ED_familia').val("Seleccione");
+            $('#Erecursof').val("Seleccione");
+            document.getElementById("Erecursof").disabled = true;
+            document.getElementById("Efamilia").disabled = true;
+            document.getElementById("Edescripcionf").disabled = true;
+            document.getElementById("editar_familia").disabled = true;
+        })
+    </script>
+
+
+    <!--CANCELAR EDITAR GÉNERO VEGETACIÓN-->
+    <script type="text/javascript">
+        $("#Reset_Ed_genero").click(function () {
+            $('#ED_genero').val("Seleccione");
+            $('#Efamiliag').val("Seleccione");
+            $('#Egenero').val("");
+            $('#Edescripciong').val("");
+            document.getElementById("Efamiliag").disabled = true;
+            document.getElementById("Egenero").disabled = true;
+            document.getElementById("Edescripciong").disabled = true;
+            document.getElementById("editar_genero").disabled = true;
+        })
+    </script>
+
+
+    <!--CANCELAR EDITAR ESPECIE VEGETACIÓN-->
+    <script type="text/javascript">
+        $("#Reset_Ed_especiev").click(function () {
+            $('#ED_especiev').val("Seleccione");
+            $('#Egeneroev').val("Seleccione");
+            $('#EespecieV').val("");
+            $('#ENomComunV').val("")
+            $('#ENomCienV').val("")
+            $('#Edescripcionev').val("");
+            document.getElementById("Egeneroev").disabled = true;
+            document.getElementById("EespecieV").disabled = true;
+            document.getElementById("ENomComunV").disabled = true;
+            document.getElementById("ENomCienV").disabled = true;
+            document.getElementById("Edescripcionev").disabled = true;
+            document.getElementById("editar_especie_veg").disabled = true;
+        })
+    </script>
+
+
+    <!--CANCELAR EDITAR TIPO MUESTREO-->
+    <script type="text/javascript">
+        $("#Reset_Ed_tipoMuestreo").click(function () {
+            $('#EtipoMuestreo').val("");
+            $('#ED_tipoMuestreo').val("Seleccione");
+            document.getElementById("EtipoMuestreo").disabled = true;
+            document.getElementById("editar_tipoMuestreo").disabled = true;
+        })
+    </script>
+
+
+
+    <!--CANCELAR EDITAR ESPECIE FAUNA-->
+    <script type="text/javascript">
+        $("#Reset_Ed_especief").click(function () {
+            $('#ED_especief').val("Seleccione");
+            $('#Egeneroef').val("Seleccione");
+            $('#Eespecief').val("");
+            $('#ENomComunF').val("")
+            $('#ENomCienF').val("")
+            $('#Edescripcionef').val("");
+            document.getElementById("Egeneroef").disabled = true;
+            document.getElementById("Eespecief").disabled = true;
+            document.getElementById("ENomComunF").disabled = true;
+            document.getElementById("ENomCienF").disabled = true;
+            document.getElementById("Edescripcionef").disabled = true;
+            document.getElementById("editar_especie_fau").disabled = true;
+        })
+    </script>
+
+    <!--CANCELAR EDITAR RECURSO NATURAL-->
+    <script type="text/javascript">
+        $("#Reset_Ed_recurso").click(function () {
+            $('#Erecurso').val("");
+            $('#ED_recurso').val("Seleccione");
+            document.getElementById("Erecurso").disabled = true;
+            document.getElementById("editar_recurso").disabled = true;
+        })
+    </script>
+
+
+
+    <!--_____________________________________________________________ELIMINAR_____________________________________________________________________-->
+
+
+
+    <!--_________________________________________________________CANCELAR ELIMINAR_____________________________________________-->
+
+    <!--CANCELAR ELIMINAR USUARIO  -->
+    <script type="text/javascript">
+        $("#Reset_Eli_Usuario").click(function () {
+            $('#Eli_usuario').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR ELIMINAR ESPECIE FAUNA -->
+    <script type="text/javascript">
+        $("#Reset_Eli_especief").click(function () {
+            $('#Eli_especief').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR ELIMINAR ESPECIE VEGETACION -->
+    <script type="text/javascript">
+        $("#Reset_Eli_especiev").click(function () {
+            $('#Eli_especiev').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR ELIMINAR FAMILIA-->
+    <script type="text/javascript">
+        $("#Reset_Eli_familia").click(function () {
+            $('#Eli_familia').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR ELIMINAR GENERO-->
+    <script type="text/javascript">
+        $("#Reset_Eli_genero").click(function () {
+            $('#Eli_genero').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR ELIMINAR TIPO DE MUESTREO -->
+    <script type="text/javascript">
+        $("#Reset_Eli_tipoMuestreo").click(function () {
+            $('#Eli_tipoMuestreo').val("Seleccione");
+        });
+    </script>
+
+    <!--CANCELAR ELIMINAR RECURSO NATURAL -->
+    <script type="text/javascript">
+        $("#Reset_Eli_recurso").click(function () {
+            $('#Eli_recurso').val("Seleccione");
+        });
+    </script>
+
+    <!-- SCRIPT PARA EL MENU MULTIPLE -->
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-submenu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+
+                e.preventDefault();
+            });
+        });
+    </script>
+
+
+    <!--_________________________________________________________CERRAR CONSULTAS_____________________________________________-->
+
+    <!--CERRAR CONSULTA USUARIO -->
+    <script type="text/javascript">
+        $("#Reset_CS_Usu").click(function () {
+            $('#CS_usuario').val("Seleccione");
+            $('#cedulaConsul').val("");
+            $('#nombreConsul').val("");
+            $('#apellidoConsul').val("");
+            $('#recursoConsul').val("");
+            $('#usuarioConsul').val("");
+            $('#passwordConsul').val("");
+            $('#rolConsul').val("");
+            $('#estatusConsul').val("");
+        });
+    </script>
+
+    <!--CERRAR CONSULTA ESPECIE FAUNA -->
+    <script type="text/javascript">
+        $("#Reset_CS_especief").click(function () {
+            $('#CS_especief').val("Seleccione");
+            $('#familiaEFConsul').val("");
+            $('#generoEFConsul').val("");
+            $('#NombreComEFConsul').val("");
+            $('#NombreCieEFConsul').val("");
+            $('#descripcionEFConsul').val("");
+        });
+    </script>
+
+    <!--CERRAR CONSULTA ESPECIE VEGETACION -->
+    <script type="text/javascript">
+        $("#Reset_CS_especiev").click(function () {
+            $('#CS_especiev').val("Seleccione");
+            $('#familiaEVConsul').val("");
+            $('#generoEVConsul').val("");
+            $('#NombreComEVConsul').val("");
+            $('#NombreCieEVConsul').val("");
+            $('#descripcionEVConsul').val("");
+
+        });
+    </script>
+
+    <!--CERRAR CONSULTA FAMILIA -->
+    <script type="text/javascript">
+        $("#Reset_CS_familia").click(function () {
+            $('#CS_familia').val("Seleccione");
+            $('#familiaConsul').val("");
+            $('#recursofConsul').val("");
+            $('#descripcionfConsul').val("");
+        });
+    </script>
+
+    <!--CERRAR CONSULTA GENERO-->
+    <script type="text/javascript">
+        $("#Reset_CS_genero").click(function () {
+            $('#CS_genero').val("Seleccione");
+            $('#familiagConsul').val("");
+            $('#generoConsul').val("");
+            $('#recursogConsul').val("");
+            $('descripciongConsul').val("");
+        });
+    </script>
+
+</body>
+
+</html>

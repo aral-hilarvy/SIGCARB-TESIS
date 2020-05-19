@@ -1,0 +1,362 @@
+<html>
+
+<head>
+
+
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="../Librerias/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="../Librerias/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="../Librerias/css/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="../Librerias/css/bootstrap.min.css">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/estilo_Levantamiento_Vegetacion_Registro.css">
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="../Librerias/css/bootstrap-theme.min.css">
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="Consultar_Levantamiento_Flora">
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto: Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Ecología Aplicada - Levantamiento de Vegetación - Transecta.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<div class="row">
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Nº&nbsp;Levantamiento:</label></div>
+			<div class="col-xs-2 encabezado"><label class="etiqueta">
+					{{Encab_Levant_Flora.nro_levantamiento | agregar}}</label>
+			</div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Responsable:</label></div>
+			<div class="col-xs-2 encabezado"><label class="etiqueta">{{Encab_Levant_Flora.responsable}}</label></div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Fecha:</label></div>
+			<div class="col-xs-2 encabezado"><label class="etiqueta">{{Encab_Levant_Flora.fecha}}</label></div>
+
+		</div>
+
+		<div class="row">
+
+			<div id="" class="col-xs-2 etiqueta-col1"><label> Localidad</label></div>
+			<div class="col-xs-2 encabezado"><label class="etiqueta">{{Encab_Levant_Flora.localidad }}</label></div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Uso&nbsp;Asociado:</label></div>
+			<div class="col-xs-2 encabezado"><label class="etiqueta">{{Encab_Levant_Flora.uso_asociado }}</label></div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Tipo&nbsp;Perturbación:</label></div>
+			<div class="col-xs-2 encabezado"><label class="etiqueta">{{Encab_Levant_Flora.tipo_perturbacion }}</label>
+			</div>
+
+		</div>
+
+
+		<div class="row">
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Latitud:</label></div>
+			<div class="col-xs-2 encabezado"><label class="etiqueta">{{Encab_Levant_Flora.latitud}}</label></div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Longitud:</label></div>
+			<div class="col-xs-2 encabezado"><label class="etiqueta">{{Encab_Levant_Flora.longitud}}</label></div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Tipo&nbsp;de&nbsp;Bosque:</label></div>
+			<div class="col-xs-2 encabezado"><label class="etiqueta">{{Encab_Levant_Flora.tipo_bosque}}</label></div>
+		</div>
+
+
+		<div class="row">
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Espacio&nbsp;Muestreo:</label></div>
+			<div class="col-xs-2 encabezado"><label class="etiqueta">{{Encab_Levant_Flora.cod_espacio_muestreo}}</label>
+			</div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Nro Transecta:</label></div>
+			<div class="col-xs-2 encabezado">
+				<label class="etiqueta">
+					{{Encab_Levant_Flora.nro_transecta}}
+				</label>
+			</div>
+			<div id="" class="col-xs-2 etiqueta-col1"><label>Dir.&nbsp;Transecta:</label></div>
+			<div class="col-xs-2 encabezado">
+				<label class="etiqueta">
+					{{Encab_Levant_Flora.direccion_transecta}}
+				</label>
+			</div>
+		</div>
+		<BR />
+		<BR />
+
+		<div class="row">
+			<div id="" class="col-xs-1 etiqueta margen-left">
+				<div class="row">
+					<div class="col-xs-6 margen-left">
+						<label>Est.</label>
+					</div>
+					<div id="" class="col-xs-6 margen-left">
+						<label>Cua.</label>
+					</div>
+				</div>
+			</div>
+			<div id="" class="col-xs-2 etiqueta"><label>Nombre Común</label></div>
+			<div id="" class="col-xs-1 etiqueta"><label>DAP</label></div>
+			<div id="" class="col-xs-1 etiqueta"><label>Ht</label></div>
+			<div id="" class="col-xs-1 etiqueta"><label>Dist.</label></div>
+			<div id="" class="col-xs-1 etiqueta"><label>PS</label></div>
+			<div id="" class="col-xs-2 etiqueta"><label>% Cobertura Gap/Dosel</label></div>
+			<div id="" class="col-xs-2 etiqueta"><label>Observación</label></div>
+			<div id="" class="col-xs-1 etiqueta"><label>P%</label></div>
+		</div>
+		<div id="" class="row grupo">
+			<div class="row">
+				<div id="" class="col-xs-1 dato">
+					<div class="col-sm-6 Estacion">
+						<label class="margen-top">{{estacion}}</label>
+					</div>
+					<div class="col-sm-6 Cuadrante">
+						<label class="margen-top">{{registros[0].cuadrante}}</label>
+					</div>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[0].nombre_comun}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[0].dap}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[0].ht}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[0].dist}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[0].ps | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[0].gab_dosel | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[0].observacion | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{pendiente}}
+					</label>
+				</div>
+
+			</div>
+			<div class="row">
+				<div id="" class="col-xs-1 dato">
+					<div class="col-sm-6 Estacion">
+						<label class="margen-top">{{estacion}}</label>
+					</div>
+					<div class="col-sm-6 Cuadrante">
+						<label class="margen-top">{{registros[1].cuadrante}}</label>
+					</div>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[1].nombre_comun}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[1].dap}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[1].ht}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[1].dist}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[1].ps | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[1].gab_dosel | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[1].observacion | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{pendiente}}
+					</label>
+				</div>
+
+			</div>
+			<div class="row">
+				<div id="" class="col-xs-1 dato">
+					<div class="col-sm-6 Estacion">
+						<label class="margen-top">{{estacion}}</label>
+					</div>
+					<div class="col-sm-6 Cuadrante">
+						<label class="margen-top">{{registros[2].cuadrante}}</label>
+					</div>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[2].nombre_comun}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[2].dap}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[2].ht}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[2].dist}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[2].ps | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[2].gab_dosel | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[2].observacion | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{pendiente}}
+					</label>
+				</div>
+
+			</div>
+			<div class="row">
+				<div id="" class="col-xs-1 dato">
+					<div class="col-sm-6 Estacion">
+						<label class="margen-top">{{estacion}}</label>
+					</div>
+					<div class="col-sm-6 Cuadrante">
+						<label class="margen-top">{{registros[3].cuadrante}}</label>
+					</div>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[3].nombre_comun}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[3].dap}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[3].ht}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[3].dist}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{registros[3].ps | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[3].gab_dosel | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-2 dato editar">
+					<label class="margen-top">
+						{{registros[3].observacion | rellenar}}
+					</label>
+				</div>
+				<div id="" class="col-xs-1 dato editar">
+					<label class="margen-top">
+						{{pendiente}}
+					</label>
+				</div>
+
+			</div>
+		</div>
+		</BR>
+		<div class="row etiqueta-bottom">
+			<div class="col-xs-12 boton-center">
+				<a href=" indexUsuarioComun.html" class=" btn btn-danger" role="button">Cancelar</a>
+				<a v-on:click="Consultar()" class=" btn btn-success" role="button" :disabled="disable_b">Continuar</a>
+			</div>
+		</div>
+		</BR>
+
+	</div>
+
+
+	<!--JQuery-->
+	<script src="../Librerias/js/jquery.min.js"></script>
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="../Librerias/js/bootstrap.min.js"></script>
+	<!-- Sweetalert-->
+	<script src="../Librerias/js/sweetalert.js"></script>
+	<!-- VUE JS-->
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/LevantamientoVegetacion/consultar.js"></script>
+
+</body>
+
+</html>

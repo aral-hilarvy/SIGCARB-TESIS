@@ -1,0 +1,369 @@
+<html>
+
+<head>
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/Encuesta_Fauna/Encuesta_Uso_Fauna.css ">
+
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+
+	<title>SIG | SIGCARB</title>
+
+	<!--Fin titulo -->
+
+
+</head>
+
+<body>
+	<div class="container" id="formularioTerceroFauna">
+
+		<!-- Espacio -->
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+
+		<!--Logo UNEG -->
+		<div align="center">
+			<img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+		</div>
+		<!--Fin logo UNEG -->
+
+		<!-- Encabezado -->
+		<div align="center">
+			<div> Universidad Nacional Experimental de Guayana. </div>
+			<div> Proyecto Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+		</div>
+		<!-- Fin del Encabezado -->
+
+		<!-- Tìtulo de la encuesta -->
+		<div align="center">
+			<div> Encuesta estudio del uso de la fauna.</div>
+		</div>
+		<!-- Fin tìtulo de la encuesta -->
+
+		<!--Datos bàsicos -->
+		<!-- Fila 1 del formulario -->
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=left><label></label></div>
+				<div class="col-xs-5" align=left><label>Nº Encuesta : {{numero_encuesta | agregar}}</label></div>
+				<div class="col-xs-4" align=left><label>Fecha : {{fecha}}</label></div>
+			</div>
+		</div>
+		<!--Fin de la Fila2 del formulario-->
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-3" align=right><label></label></div>
+				<div class="col-xs-5" align=left><label>Localidad : {{localidad}}</label></div>
+				<div class="col-xs-4" align=left><label>Zona : {{zona}}</label></div>
+			</div>
+		</div>
+		<BR />
+
+		<div class="row">
+			<div class="col-xs-4" align="left">
+				18.¿Qué peces en particular pesca?
+			</div>
+			<div id="dato" class="col-xs-8" align="left">
+				<input type="text" id="peces" class="form-control" v-model="respuestas[0].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="justify">
+				19.¿Conoce o sabe de alguien que haya visitado la zona en los últimos seis meses con intenciones de
+				recreación (turismo, tomar fotos, ver aves, pesca o cacería deportiva)?
+			</div>
+			<div id="dato" class="col-xs-6" align="left">
+				<input type="text" id="peces" class="form-control" v-model="respuestas[1].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6" align="justify">
+				20.¿Qué actividad realizó?
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>1.Turismo:</label></div>
+				<div class="col-xs-1 check" align="right"><input type="radio" v-model="respuestas[2].opcion"
+						value="Turismo" id="turismo"></div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-3" align="center"><label>2.Observación de aves:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" v-model="respuestas[2].opcion"
+						value="Observación de Aves" id="observacion_aves"></div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-3" align="center"><label>3.Busqueda de animales:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" v-model="respuestas[2].opcion"
+						value="Busqueda de animales" id="busqueda_animales"></div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row" align="center">
+			<div class="inline" align="center">
+				<div class="col-xs-1" align="left"><label>4.Pesca:</label></div>
+				<div class="col-xs-1 check" align="right"><input type="radio" v-model="respuestas[2].opcion"
+						value="Pesca" id="pesca"></div>
+				<div class="col-xs-2"></div>
+				<div class="col-xs-2" align="center"><label>5.Fotografía:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" v-model="respuestas[2].opcion"
+						value="Fotografía" id="fotografia"></div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-3" align="center"><label>6.Cacería deportiva:</label></div>
+				<div class="col-xs-1 check" align="left"><input type="radio" v-model="respuestas[2].opcion"
+						value="Cacería Deportiva" id="caceria">
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-5" align="justify">
+				21.¿Para usted y su comunidad es eso importante?
+			</div>
+			<div id="dato" class="col-xs-7" align="left">
+				<input type="text" id="ud_comunidad_import" class="form-control" v-model="respuestas[3].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-7" align="justify">
+				22.¿Qué cree usted que le sucedería al bosque, si se acabaran los animales?
+			</div>
+			<div id="dato" class="col-xs-5" align="left">
+				<input type="text" id="peces" class="form-control" v-model="respuestas[4].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-7" align="justify">
+				23.¿Qué cree usted que le sucedería a los animales, si le eliminan el bosque?
+			</div>
+			<div id="dato" class="col-xs-5" align="left">
+				<input type="text" id="peces" class="form-control" v-model="respuestas[5].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" align="justify">
+				24.¿Si usted comercializara con animales de monte, a cuanto las venderías?
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2" align="left">
+				<label>Guacharaca:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="guacharaca" class="form-control"
+					v-model="respuestas_ultima[0].texto" />
+			</div>
+			<div class="col-xs-1"></div>
+			<div class="col-xs-1" align="left">
+				<label>Venado:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="venado" class="form-control" v-model="respuestas_ultima[1].texto" />
+			</div>
+			<div class="col-xs-1"></div>
+			<div class="col-xs-1" align="right">
+				<label>Picure:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="picure" class="form-control" v-model="respuestas_ultima[2].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2" align="left">
+				<label>Pichón de loro:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="pichon_loro" class="form-control"
+					v-model="respuestas_ultima[3].texto" />
+			</div>
+			<div class="col-xs-1"></div>
+			<div class="col-xs-1" align="left">
+				<label>Lapa:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="lapa" class="form-control" v-model="respuestas_ultima[4].texto" />
+			</div>
+			<div class="col-xs-1"></div>
+			<div class="col-xs-1" align="right">
+				<label>Paují:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="pauji" class="form-control" v-model="respuestas_ultima[5].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2" align="left">
+				<label>Pava de monte:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="pava_monte" class="form-control"
+					v-model="respuestas_ultima[6].texto" />
+			</div>
+			<div class="col-xs-2" align="right">
+				<label>Morrocoy:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="morrocoy" class="form-control" v-model="respuestas_ultima[7].texto" />
+			</div>
+			<div class="col-xs-1"></div>
+			<div class="col-xs-1" align="right">
+				<label>Monos:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="mono" class="form-control" v-model="respuestas_ultima[8].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2" align="left">
+				<label>Chacharo:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="chacharo" class="form-control" v-model="respuestas_ultima[9].texto" />
+			</div>
+			<div class="col-xs-2" align="right">
+				<label>Cachicamos:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="cachicamo" class="form-control"
+					v-model="respuestas_ultima[10].texto" />
+			</div>
+			<div class="col-xs-1"></div>
+			<div class="col-xs-1" align="right">
+				<label>Tucán:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="tucan" class="form-control" v-model="respuestas_ultima[11].texto" />
+			</div>
+		</div>
+
+		<div>
+			<p class="distancia"></p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3" align="left">
+				<label>Pichón de Guacamayas:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="pichon_guacamayas" class="form-control"
+					v-model="respuestas_ultima[12].texto" />
+			</div>
+			<div class="col-xs-2"></div>
+			<div class="col-xs-3" align="right">
+				<label>Pájaros para jaula:</label>
+			</div>
+			<div id="dato" class="col-xs-2" align="left">
+				<input type="number" min="1" id="pajaro_jaula" class="form-control"
+					v-model="respuestas_ultima[13].texto" />
+			</div>
+		</div>
+
+		<BR />
+
+		<!--Botones -->
+		<div align="center">
+			<input class="btn btn-success" type="submit" value="Finalizar" v-on:click="Registrar()">
+		</div>
+		<!-- Fin botones -->
+
+		<BR />
+	</div>
+
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+
+	<script src="../Librerias/js/vue.js"></script>
+	<script src="../js/Encuesta_Fauna/encuesta_fauna4.js"></script>
+</body>
+
+</html>

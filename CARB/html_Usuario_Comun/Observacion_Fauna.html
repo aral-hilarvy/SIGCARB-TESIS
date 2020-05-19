@@ -1,0 +1,125 @@
+<html>
+	<head>
+	
+	<!--Permite el uso de Caracteres especiales-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+
+	<!--Fuentes de letras Topografias-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css ">
+
+	<!--Estilos css para iconos de social-media-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+	<!-- Estilos css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+	<!--Estilo css personalizado -->
+	<link rel="stylesheet" href="../css/estilo-Observacion_Fauna.css">
+
+	
+	<!--Temas css de bootstrap minificados-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Titulo -->
+	
+	<title> Observacion de Fauna </title>
+	
+	<!--Fin titulo -->
+	<script type="text/javascript">
+		function deshabilitaRetroceso(){
+    window.location.hash="no-back-button";
+    window.location.hash="Again-No-back-button" //chrome
+    window.onhashchange=function(){window.location.hash="no-back-button";}
+}
+	</script>
+	
+	</head>
+
+	<body onload="deshabilitaRetroceso()">
+		<div class="container">
+	
+			<!--Logo UNEG -->
+					<div align="center">
+						 <img src="../Imagenes/uneg.png" width=75 height=60 align="middle"></img>
+    				</div>
+			<!--Fin logo UNEG -->
+	
+			<!-- Encabezado -->
+					<div align="center">
+	 						 <div> Universidad Nacional Experimental de Guayana. </div>
+	 						 <div> Proyecto: Biocomplejidad en la Cuenca Alta del Río Botanamo. </div>
+					</div>		
+			<!-- Fin del Encabezado -->
+	
+			<!-- Tìtulo de la encuesta -->
+					<div align="center">
+	 						 <div> Ecología Aplicada - Observación de Fauna - Datos Crudos.</div>
+					</div>
+			<!-- Fin tìtulo de la encuesta -->
+					<form id="Observacion_Fauna">
+					<div class="row">
+					        <div id="etiqueta-col1" class="col-xs-3" ><label>Nro. Observación:</label></div>
+							<div class="col-xs-3"><label></label></div>
+							<div id="etiqueta-col1" class="col-xs-2"><label>Observador:</label></div>
+							<div class="col-xs-3">
+									<select class="form-control" id="encuestador">
+			       						<option> Seleccione</option>
+			       						<option> Pedro Perez</option>
+			    					</select>
+							</div>
+							<div class="col-xs-1" ></div>
+					</div>
+
+					<div class="row">
+							<div class="col-xs-1" ></div>
+					        <div id="etiqueta-col1" class="col-xs-2" ><label>Localidad:</label></div>
+							<div class="col-xs-3"><input id="localidad" type="text" class="form-control" placeholder="Localidad" ></div>
+							<div id="etiqueta-col1" class="col-xs-2"><label>Sector:</label></div>
+							<div class="col-xs-3"><input id="sector" type="text" class="form-control" placeholder="Sector"></div>
+							<div class="col-xs-1" ></div>
+					</div>
+					<div class="row">
+							<div class="col-xs-1"></div>
+							<div id="etiqueta-col1" class="col-xs-2" ><label>Fecha:</label></div>
+							<div class="col-xs-3"><input id="fecha" type="date" class="form-control"></div>
+							<div id="etiqueta-col1" class="col-xs-2" ><label>Paisaje Funcional:</label></div>
+							<div class="col-xs-3"><input id="paisaje" type="text" class="form-control" placeholder="Paisaje Funcional"></div>
+							<div class="col-xs-1" ></div>
+					</div>
+					<BR>
+					<div class="row">
+							<div class="col-xs-5"></div>
+							<div class="col-xs-1" > <button id="boton" type="button" class="btn btn-danger" onClick="window.location='indexUsuarioComun.html'">Cancelar</button></div>
+							<div class="col-xs-1"><button  id="boton" type="button" class="btn btn-success" onclick="myFunction()">Continuar</button></div>
+							<div class="col-xs-5"></div>
+					</div>	
+					</form>				
+		</div>
+	
+	<script>
+		function myFunction() {
+  			var localidad = $('#localidad').val();
+			var sector = $('#sector').val();
+			var paisaje = $('#paisaje').val();
+			var encuestador = $('#encuestador').val();
+			var fecha= $('#fecha').val();
+			if((localidad === '')|| (sector === '') || (paisaje === '')||(encuestador === 'Seleccione')||(fecha === '')){
+ 				swal("¡ATENCIÓN!", "Debe introducir todos los datos solicitados.", "error");
+				return false;
+			}else{
+ 				location.href = "Observacion_Fauna_Registro.html";
+ 				$('#Observacion_Fauna').trigger("reset");
+			};
+		}
+	</script>
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--Archivo Javascript de bootstrap minificado-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js "> </script> 
+
+	</body>
+	</html>

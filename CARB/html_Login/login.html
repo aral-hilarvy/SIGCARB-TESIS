@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="fullscreen-bg">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <!-- VENDOR CSS -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../assets/vendor/linearicons/style.css" />
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+  <link rel="stylesheet" href="../assets/css/demo.css" />
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" />
+  <!-- ICONS -->
+  <script src="../plugins/vue.js"></script>
+  <title>Login | SIGCARB</title>
+
+</head>
+
+<body>
+  <!-- WRAPPER -->
+  <div id="wrapper">
+    <div class="vertical-align-wrap">
+      <div class="vertical-align-middle">
+        <div class="auth-box ">
+          <div class="left">
+            <div class="content">
+              <div class="header">
+                <div class="logo text-center">
+                  <img src="../assets/img/titulo.png" alt="titulo" width="60%" />
+                </div>
+                <p class="lead">Ingrese a su cuenta</p>
+              </div>
+
+              <div class="form-group">
+                <label for="signin-email" class="control-label sr-only">Email</label>
+                <input type="email" v-model="usuario" class="form-control" id="signin-email" placeholder="Email" />
+              </div>
+              <div class="form-group">
+                <label for="signin-password" class="control-label sr-only">Password</label>
+                <input type="password" v-model="clave" class="form-control" id="signin-password" placeholder="Password"
+                  v-on:keyup.enter="EnviarForm" />
+              </div>
+              <button @click="EnviarForm" class="btn btn-lg btn-block login">
+                LOGIN
+              </button>
+            </div>
+          </div>
+          <div class=" right">
+            <div class="overlay"></div>
+            <div class="content text">
+              <h1 class="heading text-center ">
+                Gestor del Sistema de Información Geográfica para la Cuenca Alta del Río Botanamo.
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END WRAPPER -->
+  <script src="../plugins/jquery.js"></script>
+  <script src="../plugins/bootstrap.min.js"></script>
+  <script src="../plugins/bootstrap-select.min.js"></script>
+  <script src="../plugins/sweetalert.js"></script>
+  <script src="../js/Login/Login.js"></script>
+
+</body>
+
+</html>
