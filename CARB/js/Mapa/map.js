@@ -71,7 +71,12 @@ var Contenido = new Vue({
     texto: '',
     nuevoLayer: null,
     PruebaLayer: null,
-    marker: []
+    marker: [],
+    shape:null,
+    layerControl:null,
+    primeraVez:true,
+    primeraVez2:true,
+    type_file_export:''
   },
   mounted() {
     this.InitSelectAnios();
@@ -331,13 +336,21 @@ var Contenido = new Vue({
         overlayMaps[keyCA] = CuerpoA;
 
         if ($this.parte_accion == 0) {
-          layerControl = L.control
-            .layers(this.baseMaps, overlayMaps, {
-              collapsed: false
-            })
-            .addTo(this.mymap);
+          if(!this.primeraVez){
+           // $(".leaflet-control-layers-expanded").remove();
+           document.getElementById('mapid').getElementsByClassName('leaflet-control-layers leaflet-control-layers-expanded leaflet-control')[0].remove()
+          }
+          let element = $('#mapid'); 
+          
+          console.log(document.getElementById('mapid').getElementsByClassName('leaflet-control-layers leaflet-control-layers-expanded leaflet-control'));
+          this.layerControl = L.control.layers(this.baseMaps, overlayMaps, {collapsed: false}).addTo(this.mymap);
+          console.log(this.layerControl)
           $this.BotonDinamico(false);
         } else {
+          if(!this.primeraVez2){
+            // $(".leaflet-control-layers-expanded").remove();
+            document.getElementById('map2').getElementsByClassName('leaflet-control-layers leaflet-control-layers-expanded leaflet-control')[0].remove()
+           }
           layerControl2 = L.control
             .layers(this.baseMaps, overlayMaps)
             .addTo(this.mymap2);
@@ -419,7 +432,7 @@ var Contenido = new Vue({
         var cities = L.layerGroup($this.array_poligono_base);
 
         this.baseMaps = {
-          "Capas de Estudio (2011)": mapaFondo
+          "Capas de Estudio": mapaFondo
         };
 
         this.mymap = new L.map(id_div, {
@@ -494,7 +507,7 @@ var Contenido = new Vue({
         var cities2 = L.layerGroup($this.array_poligono_base2);
 
         this.baseMaps = {
-          "Capas de Estudio (2017)": mapaFondo
+          "Capas de Estudio": mapaFondo
         };
 
         this.mymap2 = new L.map(id_div, {
@@ -543,146 +556,162 @@ var Contenido = new Vue({
     BotonDinamico(lado) {
 
       $this = this;
-      var stateChangingButton = L.easyButton({
-        states: [{
+      if(this.primeraVez==true){
+        var stateChangingButton = L.easyButton({
+          states: [{
+              stateName: "estado-activar", // name the state
+              icon: "fas fa-info star", // and define its properties
+              title: "Activar Informacion Espacio Muestreo", // like its title
+              onClick: function (btn, map) {
+                // and its callback
+                btn.state("estado_cancelar"); // change state on click!
+
+                $this.InfoCapas();
+                $this.Cancelado = false;
+              }
+            },
+            {
+              stateName: "estado_cancelar",
+              icon: "fas fa-times star",
+              title: "Desactivar Informacion Espacio Muestreo",
+              onClick: function (btn, map) {
+                btn.state("estado-activar");
+                $this.RemoverInfo();
+              }
+            }
+          ]
+        });
+        var distanciaBtn = L.easyButton({
+          states: [{
+              stateName: "estado-activar", // name the state
+              icon: "fas fa-ruler tam", // and define its properties
+              title: "Calculo De Distancia Entre Dos Puntos", // like its title
+              onClick: function (btn, map) {
+                btn.state("estado_cancelar"); // change state on click!
+                $this.band_dist_pt = true;
+              }
+            },
+            {
+              stateName: "estado_cancelar",
+              icon: "fas fa-times star",
+              title: "Desactivar Calculo De Distancia Entre Dos Puntos",
+              onClick: function (btn, map) {
+                btn.state("estado-activar");
+                $this.RemoverLinea();
+                $this.Reseteo();
+                $this.band_dist_pt = false;
+                $this.cont_terc = 0;
+              }
+            }
+          ]
+        });
+
+        var comparar = L.easyButton({
+          states: [{
+              stateName: "estado-activar", // name the state
+              icon: "fas fa-not-equal tam", // and define its properties
+              title: "Comparar Mapas", // like its title
+              onClick: function (btn, map) {
+                btn.state("estado_cancelar"); // change state on click!
+                $this.descriptionStyles(true);
+              }
+            },
+            {
+              stateName: "estado_cancelar",
+              icon: "fas fa-times star",
+              title: "Desactivar Comparar Mapas",
+              onClick: function (btn, map) {
+                btn.state("estado-activar");
+                $this.descriptionStyles(false);
+              }
+            }
+          ]
+        });
+
+        var areas = L.easyButton({
+          states: [{
             stateName: "estado-activar", // name the state
-            icon: "fas fa-info star", // and define its properties
-            title: "Activar Informacion Espacio Muestreo", // like its title
+            icon: "fas fa-autoprefixer tam", // and define its properties
+            title: "Informacion Areas", // like its title
             onClick: function (btn, map) {
-              // and its callback
-              btn.state("estado_cancelar"); // change state on click!
+              $this.InfoKmCuadrados();
+            }
+          }]
+        });
 
-              $this.InfoCapas();
-              $this.Cancelado = false;
-            }
-          },
-          {
-            stateName: "estado_cancelar",
-            icon: "fas fa-times star",
-            title: "Desactivar Informacion Espacio Muestreo",
-            onClick: function (btn, map) {
-              btn.state("estado-activar");
-              $this.RemoverInfo();
-            }
-          }
-        ]
-      });
-      var distanciaBtn = L.easyButton({
-        states: [{
+        var importar = L.easyButton({
+          states: [{
             stateName: "estado-activar", // name the state
-            icon: "fas fa-ruler tam", // and define its properties
-            title: "Calculo De Distancia Entre Dos Puntos", // like its title
+            icon: "fas fa-upload tam", // and define its properties
+            title: "Importar Archivo", // like its title
             onClick: function (btn, map) {
-              btn.state("estado_cancelar"); // change state on click!
-              $this.band_dist_pt = true;
+              $this.CargarModalImport();
             }
-          },
-          {
-            stateName: "estado_cancelar",
-            icon: "fas fa-times star",
-            title: "Desactivar Calculo De Distancia Entre Dos Puntos",
-            onClick: function (btn, map) {
-              btn.state("estado-activar");
-              $this.RemoverLinea();
-              $this.Reseteo();
-              $this.band_dist_pt = false;
-              $this.cont_terc = 0;
-            }
-          }
-        ]
-      });
+          }]
+        });
 
-      var comparar = L.easyButton({
-        states: [{
+        var exportar = L.easyButton({
+          states: [{
             stateName: "estado-activar", // name the state
-            icon: "fas fa-not-equal tam", // and define its properties
-            title: "Comparar Mapas", // like its title
+            icon: "fas fa-download tam", // and define its properties
+            title: "Exportar Mapa", // like its title
             onClick: function (btn, map) {
-              btn.state("estado_cancelar"); // change state on click!
-              $this.descriptionStyles(true);
+              $this.CargarModalExportar();
             }
-          },
-          {
-            stateName: "estado_cancelar",
-            icon: "fas fa-times star",
-            title: "Desactivar Comparar Mapas",
-            onClick: function (btn, map) {
-              btn.state("estado-activar");
-              $this.descriptionStyles(false);
-            }
-          }
-        ]
-      });
+          }]
+        });
 
-      var areas = L.easyButton({
-        states: [{
-          stateName: "estado-activar", // name the state
-          icon: "fas fa-autoprefixer tam", // and define its properties
-          title: "Informacion Areas", // like its title
-          onClick: function (btn, map) {
-            $this.InfoKmCuadrados();
-          }
-        }]
-      });
-
-      var importar = L.easyButton({
-        states: [{
-          stateName: "estado-activar", // name the state
-          icon: "fas fa-upload tam", // and define its properties
-          title: "Importar Archivo", // like its title
-          onClick: function (btn, map) {
-            $this.CargarModalImport();
-          }
-        }]
-      });
-
-      var exportar = L.easyButton({
-        states: [{
-          stateName: "estado-activar", // name the state
-          icon: "fas fa-download tam", // and define its properties
-          title: "Exportar Mapa", // like its title
-          onClick: function (btn, map) {
-            $this.Exportar();
-          }
-        }]
-      });
-
-      var mostrar_especie = L.easyButton({
-        states: [{
-          stateName: "estado-activar", // name the state
-          icon: "fas fa-map-marker-alt tam", // and define its properties
-          title: "Visualizar Especie", // like its title
-          onClick: function (btn, map) {
-            $this.Ver_especies();
-          }
-        }]
-      });
-
-      var espacioMuestreoBtn = L.easyButton({
-        states: [{
+        var mostrar_especie = L.easyButton({
+          states: [{
             stateName: "estado-activar", // name the state
-            icon: "fas fa-stop-circle tam", // and define its properties
-            title: "Espacio Muestreo", // like its title
+            icon: "fas fa-map-marker-alt tam", // and define its properties
+            title: "Visualizar Especie", // like its title
             onClick: function (btn, map) {
-              btn.state("estado_cancelar"); // change state on click!
-              $this.ConsultarEspacioMuestreo();
+              $this.Ver_especies();
             }
-          },
-          {
-            stateName: "estado_cancelar",
-            icon: "fas fa-times star",
-            title: "Desactivar Espacio Muestreo",
+          }]
+        });
+
+        var espacioMuestreoBtn = L.easyButton({
+          states: [{
+              stateName: "estado-activar", // name the state
+              icon: "fas fa-stop-circle tam", // and define its properties
+              title: "Espacio Muestreo", // like its title
+              onClick: function (btn, map) {
+                btn.state("estado_cancelar"); // change state on click!
+                $this.ConsultarEspacioMuestreo();
+              }
+            },
+            {
+              stateName: "estado_cancelar",
+              icon: "fas fa-times star",
+              title: "Desactivar Espacio Muestreo",
+              onClick: function (btn, map) {
+                btn.state("estado-activar");
+
+              }
+            }
+          ]
+        });
+
+        var mostrar_reporte = L.easyButton({
+          states: [{
+            stateName: "estado-activar", // name the state
+            icon: "fas fa-chart-bar tam", // and define its properties
+            title: "Visualizar Especie", // like its title
             onClick: function (btn, map) {
-              btn.state("estado-activar");
-
+              $this.redirectReporte()
             }
-          }
-        ]
-      });
+          }]
+        });
+
+
+      }
 
 
 
-      if ($this.parte_accion == 0) {
+      if (($this.parte_accion == 0) && (this.primeraVez==true)){
+
         stateChangingButton.addTo(this.mymap);
         distanciaBtn.addTo(this.mymap);
         comparar.addTo(this.mymap);
@@ -691,10 +720,18 @@ var Contenido = new Vue({
         exportar.addTo(this.mymap);
         mostrar_especie.addTo(this.mymap);
         espacioMuestreoBtn.addTo(this.mymap);
+        mostrar_reporte.addTo(this.mymap);
+        this.primeraVez=false;
       } else {
-        //stateChangingButton.addTo(this.mymap2);
-        //distanciaBtn.addTo(this.mymap2);
+        if((this.primeraVez2==true)){
+          this.primeraVez2=false;
+        }
+        
       }
+    },
+
+    redirectReporte(){
+      window.open('file:///home/rendallrojas/Desarrollos_Node/TESIS/CARB/estadisticas.html');
     },
 
     ConsultarEspacioMuestreo() {
@@ -803,6 +840,9 @@ var Contenido = new Vue({
     CargarModalImport() {
       $("#carga-info").modal("show");
     },
+    CargarModalExportar() {
+      $("#select_type_file").modal("show");
+    },
     Exportar() {
       this.PruebaLayer.addLayer($this.Bosq);
       this.PruebaLayer.addLayer($this.Sabana);
@@ -812,7 +852,11 @@ var Contenido = new Vue({
       this.PruebaLayer.addLayer($this.CuerpoA);
 
       console.log(this.PruebaLayer.toGeoJSON());
-      this.saveToFile(this.PruebaLayer.toGeoJSON(), 'dataMap');
+      if(this.type_file_export=='geo'){
+        this.saveToFile(this.PruebaLayer.toGeoJSON(), 'dataMap');
+      }else{
+        this.saveToShapeFIle(this.PruebaLayer.toGeoJSON(), 'dataMap');
+      }
     },
     saveToFile(content, filename) {
       var file = filename + '.geojson';
@@ -822,7 +866,52 @@ var Contenido = new Vue({
 
       this.PruebaLayer.clearLayers();
     },
-    cargaFile() {
+    saveToShapeFIle(content, filename){
+
+      var options = {
+          folder: 'myshapes',
+          types: {
+              point: 'mypoints',
+              polygon: 'mypolygons',
+              line: 'mylines'
+          }
+      }
+      // a GeoJSON bridge for features
+      shpwrite.download(content, options);
+      /*shpwrite.zip(content, options).then(function(content) {
+        saveAs(content, 'dataMap.zip');
+      });*/
+    },
+
+    handleFileUpload() {
+      this.shape = this.$refs.file.files[0];
+    },
+
+    SubirShapefile(){
+        console.log(this.shape)
+        $this=this
+        let formData = new FormData();
+        formData.append('shape', this.shape);
+
+            axios.post(this.uri + "shape/subir",
+              formData,
+              {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+              }
+            ).then(function(res){
+              console.log('SUCCESS!!');
+              console.log(res)
+              $this.cargaFile(res.data)
+            })
+            .catch(function(){
+              console.log('FAILURE!!');
+            });
+      
+    },
+    cargaFile(data) {
+      console.log(data)
       /*shp("http://localhost:3978/images/ne_110m_admin_0_countries").then(function(geojson){
     		console.log(geojson)
     	});*/
@@ -839,11 +928,21 @@ var Contenido = new Vue({
           }
         }
       }).addTo(this.mymap);
-      var base = 'http://localhost:3978/images/Regiones_Naturales_Venezuela';
-      shp(base).then(function (data) {
-        console.log(data);
-        geo.addData(data);
-      });
+      
+        if(data.obj_res.ext=='geojson'){
+          geo.addData(data.obj_res.data_res);
+        }else{
+          try {
+            var base = data.uri;
+            shp(base).then(function (data) {
+              geo.addData(data);
+            });
+          } catch (error) {
+            console.log(error)
+          }
+        }
+          
+      
     },
     ResetInfoKmCuadrados() {
       if (this.nuevoLayer) {

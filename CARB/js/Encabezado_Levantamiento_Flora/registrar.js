@@ -2,7 +2,7 @@ var Encabezado_Levantamiento_Flora = new Vue({
     el: "#Encabezado_Levantamiento_Flora",
     data: {
         uri: "http://localhost:3978/api/",
-        ubicacion: "/home/rendallrojas/Desarrollos_Node/TESIS/CARB/",
+        ubicacion: window.location.href.split("/").slice(0, window.location.href.split("/").length-2).join('/')+'/',
         esp_muestreo: null,
         id_usuario: "",
         token: '',
@@ -89,51 +89,59 @@ var Encabezado_Levantamiento_Flora = new Vue({
             console.log(data);
             if (validate) {
 
-                fetch(this.uri + "encabezadolf/registrar", {
-                        method: "POST", // or 'PUT'
-                        body: JSON.stringify(data), // data can be `string` or {object}!
-                        headers: {
-                            "Content-Type": "application/json"
-                        }
-                    })
-                    .then(res => res.json())
-                    .catch(error => console.error("Error:", error))
-                    .then(response => {
-                        localStorage.id_encabezado_levantamiento_flora = response.resultado.id;
+                var reg = new RegExp("^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}");
+                if( (this.latitud <= 90 && this.latitud >= -90) && (this.longitud <= 180 && this.longitud >= -180)) {
+                    
+                    fetch(this.uri + "encabezadolf/registrar", {
+                            method: "POST", // or 'PUT'
+                            body: JSON.stringify(data), // data can be `string` or {object}!
+                            headers: {
+                                "Content-Type": "application/json"
+                            }
+                        })
+                        .then(res => res.json())
+                        .catch(error => console.error("Error:", error))
+                        .then(response => {
+                            localStorage.id_encabezado_levantamiento_flora = response.resultado.id;
 
-                        fetch(`${this.uri}user/update_levantamientos/${this.id_usuario}`, {
-                                method: "PUT", // or 'PUT'
-                                body: JSON.stringify(this.deta), // data can be `string` or {object}!
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    "Authorization": this.token
-                                }
-                            })
-                            .then(res => res.json())
-                            .catch(error => console.error("Error:", error))
-                            .then(response => {
+                            fetch(`${this.uri}user/update_levantamientos/${this.id_usuario}`, {
+                                    method: "PUT", // or 'PUT'
+                                    body: JSON.stringify(this.deta), // data can be `string` or {object}!
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "Authorization": this.token
+                                    }
+                                })
+                                .then(res => res.json())
+                                .catch(error => console.error("Error:", error))
+                                .then(response => {
 
-                                fetch(`${this.uri}tipo_muestreo/update_transectas/${this.tipo_muestreo}`, {
-                                        method: "PUT", // or 'PUT'
-                                        body: JSON.stringify({
-                                            cant_transectas: this.cant_transectas
-                                        }), // data can be `string` or {object}!
-                                        headers: {
-                                            "Content-Type": "application/json",
-                                            "Authorization": this.token
-                                        }
-                                    })
-                                    .then(res => res.json())
-                                    .catch(error => console.error("Error:", error))
-                                    .then(response => {
-                                        console.log(response);
-                                        window.location.href = this.ubicacion + "html_Usuario_Comun/Levantamiento_Vegetacion_Registro.html";
-                                    });
+                                    fetch(`${this.uri}tipo_muestreo/update_transectas/${this.tipo_muestreo}`, {
+                                            method: "PUT", // or 'PUT'
+                                            body: JSON.stringify({
+                                                cant_transectas: this.cant_transectas
+                                            }), // data can be `string` or {object}!
+                                            headers: {
+                                                "Content-Type": "application/json",
+                                                "Authorization": this.token
+                                            }
+                                        })
+                                        .then(res => res.json())
+                                        .catch(error => console.error("Error:", error))
+                                        .then(response => {
+                                            console.log(response);
+                                            window.location.href = this.ubicacion + "html_Usuario_Comun/Levantamiento_Vegetacion_Registro.html";
+                                        });
 
-                            });
-
-
-                    });
+                                });
+                        });
+                }else{
+                    this.AlertStyle(
+                        "¡ATENCIÓN!",
+                        "Debe introducir Formato de coordenadas valido.",
+                        "error"
+                      );
+                }
             }
         },
         AccionTipoBosque() {

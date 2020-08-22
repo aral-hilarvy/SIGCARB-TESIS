@@ -2,7 +2,7 @@ var formularioSegundoValorEconomico = new Vue({
     el: "#formularioSegundoValorEconomico",
     data: {
         uri: "http://localhost:3978/api/",
-        ubicacion: "/home/rendallrojas/Desarrollos_Node/TESIS/CARB/",
+        ubicacion: window.location.href.split("/").slice(0, window.location.href.split("/").length-2).join('/')+'/',
         numero_encuesta: 0,
         nombre_encuestador: "",
         comunidad: "",

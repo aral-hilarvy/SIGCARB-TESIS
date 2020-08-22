@@ -2,7 +2,7 @@ var Editar_Levantamiento_Flora = new Vue({
     el: "#Editar_Levantamiento_Flora",
     data: {
         uri: "http://localhost:3978/api/",
-        ubicacion: "/home/rendallrojas/Desarrollos_Node/TESIS/CARB/",
+        ubicacion: window.location.href.split("/").slice(0, window.location.href.split("/").length-2).join('/')+'/',
         Encab_Levant_Flora: {
             id: 0,
             localidad: "",

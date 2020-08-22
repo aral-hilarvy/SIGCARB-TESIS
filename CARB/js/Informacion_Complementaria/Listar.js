@@ -28,7 +28,6 @@ var info_Complementaria = new Vue({
     methods: {
 
         getInitInfoComplementariaUser() {
-
             let $this = this;
             if (localStorage.id) {
                 fetch(this.uri + "img/list_user/" + localStorage.id)

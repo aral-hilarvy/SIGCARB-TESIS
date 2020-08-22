@@ -6,8 +6,11 @@ var app = express();
 var path = require('path');
 
 var cors = require('cors')
+app.use(cors())
 
 app.use(express.static('public'));
+
+var shape = require('./routes/shape');
 
 //cargar rutas
 var user_routes = require('./routes/user');
@@ -41,10 +44,15 @@ var map_routes = require('./routes/map');
 
 
 //congiguarcion de bodyparser
-app.use(bodyParser.urlencoded({
+/*app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
+*/
+
+app.use(express.urlencoded());
+app.use(express.json());
+
 //configurar las cabeceras http
 app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -73,6 +81,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //rutas base
+
+app.use('/api/shape', shape);
 app.use('/api/user', user_routes);
 app.use('/api/familia', familia_routes);
 app.use('/api/genero', genero_routes);

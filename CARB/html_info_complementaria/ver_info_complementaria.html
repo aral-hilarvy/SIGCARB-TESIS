@@ -1,11 +1,6 @@
 <html>
 
 <head>
-
-
-
-
-
     <!--Permite el uso de Caracteres especiales-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -61,37 +56,38 @@
         <BR />
         <h4 align="center">Informacion Complementaria</h3>
             <BR />
-
-
-
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Año</th>
-                        <th scope="col">Descripcion</th>
-                        <th scope="col">Imagen</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="item in InfoCompR">
-                        <th scope="row">{{item.nombre_imagen}}</th>
-                        <td>{{item.año}}</td>
-                        <td>{{item.descripcion_imagen}}</td>
-                        <td>
-                            <a :href="NameCompleto(item.identificador)" class="fresco"
-                                :data-fresco-caption="desc(item.descripcion_imagen)"
-                                data-fresco-group="unique_name"><img :src="NameCompleto(item.identificador)"
-                                    alt="imagen" height="42" width="42" class="intense"></a>
-                        </td>
-
-                    </tr>
-
-                </tbody>
-            </table>
-
-
+            
+            <div v-if="InfoCompR.length > 0">
+                <table class="table" >
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Imagen</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr v-for="item in InfoCompR">
+                            <th scope="row">{{item.nombre_imagen}}</th>
+                            <td>{{item.año}}</td>
+                            <td>{{item.descripcion_imagen}}</td>
+                            <td>
+                                <a :href="NameCompleto(item.identificador)" class="fresco"
+                                    :data-fresco-caption="desc(item.descripcion_imagen)"
+                                    data-fresco-group="unique_name"><img :src="NameCompleto(item.identificador)"
+                                        alt="imagen" height="42" width="42" class="intense"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div v-else class="mt-5">
+                <div class="alert alert-danger mt-5" role="alert">
+                    No posee informacion complementaria registrada.
+                  </div>
+            </div>
+            
 
             <!--Modal Registro Espacio Muestreo-->
             <div id="modal_registro_EspacioMuestreo" class="modal fade" role="dialog" data-backdrop="static"

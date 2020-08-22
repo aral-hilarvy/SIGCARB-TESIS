@@ -58,40 +58,46 @@
         <h4 align="center">Gestión de Informacion Complementaria</h4>
         <BR />
 
-        <div align="right">
+        <div align="right" class="mb-5">
             <button type="button" class="btn btn-success" data-toggle="modal"
                 v-on:click="levantarModalRegistro()">Agregar</button>
         </div>
+            <div v-if="InfoCompl.length > 0">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in InfoCompl">
+                            <th scope="row">{{item.nombre_imagen}}</th>
+                            <td>{{item.año}}</td>
+                            <td>{{item.descripcion_imagen}}</td>
+                            <td>
+                                <a :href="NameCompleto(item.identificador)" class="fresco"
+                                    :data-fresco-caption="desc(item.descripcion_imagen)" data-fresco-group="unique_name"><img
+                                        :src="NameCompleto(item.identificador)" alt="imagen" height="42" width="42"
+                                        class="intense"></a>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-info" v-on:click="MostrarUpdate(item.id)">Editar</button>
+                                <button type="button" class="btn btn-danger" v-on:click="Eliminar(item.id)">Eliminar</button>
+                            </td>
+                        </tr>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Año</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Imagen</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="item in InfoCompl">
-                    <th scope="row">{{item.nombre_imagen}}</th>
-                    <td>{{item.año}}</td>
-                    <td>{{item.descripcion_imagen}}</td>
-                    <td>
-                        <a :href="NameCompleto(item.identificador)" class="fresco"
-                            :data-fresco-caption="desc(item.descripcion_imagen)" data-fresco-group="unique_name"><img
-                                :src="NameCompleto(item.identificador)" alt="imagen" height="42" width="42"
-                                class="intense"></a>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-info" v-on:click="MostrarUpdate(item.id)">Editar</button>
-                        <button type="button" class="btn btn-danger" v-on:click="Eliminar(item.id)">Eliminar</button>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
+                    </tbody>
+                </table>
+            </div>
+            <div v-else class="mt-5">
+                <div class="alert alert-danger mt-5" role="alert">
+                    No posee informacion complementaria registrada.
+                  </div>
+            </div>
 
         <!--Modal Registro Espacio Muestreo-->
         <div id="modal_registro_EspacioMuestreo" class="modal fade" role="dialog" data-backdrop="static"

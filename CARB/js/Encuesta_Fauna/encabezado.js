@@ -2,7 +2,7 @@ var modal_consultar_EspacioMuestreo = new Vue({
   el: "#encabezado",
   data: {
     uri: "http://localhost:3978/api/",
-    ubicacion: "/home/rendallrojas/Desarrollos_Node/TESIS/CARB/",
+    ubicacion: window.location.href.split("/").slice(0, window.location.href.split("/").length-2).join('/')+'/',
     numero_encuesta: 0,
     fecha: "",
     localidad: "",

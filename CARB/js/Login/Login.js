@@ -4,7 +4,7 @@ var modal_registro_usuario = new Vue({
     mensaje: "algo",
     uri: "http://localhost:3978/api/",
     posterior_uri: "user/login",
-    ubicacion: "/home/rendallrojas/Desarrollos_Node/TESIS/CARB/",
+    ubicacion: window.location.href.split("/").slice(0, window.location.href.split("/").length-2).join('/')+'/',
     Usuario: {
       cedula: "",
       nombre: "",
@@ -61,6 +61,13 @@ var modal_registro_usuario = new Vue({
           .catch(error => console.error("Error:", error))
           .then(response => {
             console.log(response);
+            if(response.status == "error"){
+              this.AlertStyle(
+                "¡ATENCIÓN!",
+                response.message,
+                response.status
+              );
+            }
             this.token = response.token;
             var data = {
               usuario: this.usuario,
@@ -84,18 +91,25 @@ var modal_registro_usuario = new Vue({
                 localStorage.apellido = response.usuario.apellido;
                 localStorage.id = response.usuario.id;
                 localStorage.id_recurso_natural =
-                  response.usuario.id_recurso_natural;
+                response.usuario.id_recurso_natural;
                 localStorage.rol_usuario = response.usuario.rol_usuario;
                 localStorage.status = response.usuario.status;
                 localStorage.usuario = response.usuario.usuario;
+                /*var res = window.location.href.split("/");
+                res = res.slice(0, res.length-3)
+                res = res.join('/')
+                console.log()*/
+
                 if (response.usuario.rol_usuario == "Administrador") {
                   window.location.href =
                     this.ubicacion +
                     "html_Usuario_Admin/indexUsuarioAdmin.html";
+                    localStorage.usuario_invitado = false;
                 } else {
                   window.location.href =
                     this.ubicacion +
                     "html_Usuario_Comun/indexUsuarioComun.html";
+                    localStorage.usuario_invitado = false;
                 }
               });
             //$this.AlertStyle(response.title, response.message, response.status);

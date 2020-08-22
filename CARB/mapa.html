@@ -166,8 +166,15 @@
             <div>
               <div id="header_parte" class="row">
                 <div class="col-sm-1"></div>
-                <div class="col-sm-10">
+                <div class="col-sm-10 text-white">
 
+
+                  <label style="color:white">Archivo
+                    <input type="file" id="file" ref="file" v-on:change="handleFileUpload()"/>
+                  </label>
+                  
+                    
+                    
                 </div>
                 <div class="col-sm-1"></div>
               </div>
@@ -175,7 +182,7 @@
             </div>
           </div>
           <div id="footer" class="modal-footer">
-            <button type="button" class="btn btn-success" data-dismiss="modal" id="guardar_carga_file" v-on:click="cargaFile()">Aceptar</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal" id="guardar_carga_file" v-on:click="SubirShapefile()">Aceptar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal" id="Cerrar_carga_file">Cerrar</button>
           </div>
         </div>
@@ -219,6 +226,47 @@
       </div>
     </div>
 
+
+      <div id="select_type_file" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div id="header" class="modal-header">
+              <div class="row">
+                <div id="eliminar" class="col-md-12">
+                  <h4 class="modal-title" text-align="center">
+                    <label id="titulo" class="label label-success">Seleccione Tipo Archivo:</label>
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div id="fondoVeg" class="modal-body">
+              <div>
+                <div id="header_parte" class="row">
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-10">
+                    <select id="Consult_levantamiento" class="form-control" v-model="type_file_export">
+                      <option value="shp">Shapefile-Zip</option>
+                      <option value="geo">GeoJson</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-1"></div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+            <div id="footer" class="modal-footer">
+              <button type="button" class="btn btn-success" id="Delet_GrupoFuncional" v-on:click="Exportar()">
+                Aceptar
+              </button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" id="Reset_Eli_GrupoFuncional">
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <div id="mapid" v-bind:style="styleObject"></div>
     <div id="map2" v-if="mostrado" v-bind:style="styleObject"></div>
   </div>
@@ -235,6 +283,9 @@
   <script src="./Librerias_Mapa/leaflet.js"></script>
   <script src="./Librerias_Mapa/proj4.js"></script>
   <script src="./Librerias_Mapa/proj4leaflet.js"></script>
+
+    <!-- JQuery
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
   <!-- VUE JS-->
   <script src="./Librerias/js/vue.js"></script>
   <script src="./Librerias_Mapa/L.Control.MousePosition.js"></script>
@@ -249,10 +300,14 @@
   <!--COnversor de Shapefile a Geojson-->
   <script src="https://unpkg.com/shpjs@latest/dist/shp.js"></script>
 
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
+
   <script src="./Librerias_Mapa/turf.js"></script>
   <script src="./Librerias_Mapa/FileSaver.min.js"></script>
   <!--<script src="./Librerias_Mapa/leaflet.draw.js"></script>
     <script src="./Librerias_Mapa/leaflet.toolbar.js"></script>-->
+    <script src="./js/Mapa/shpwrite.js"></script>
   <script src="./js/Mapa/map.js"></script>
 
 

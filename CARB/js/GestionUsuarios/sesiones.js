@@ -1,7 +1,7 @@
 var sesiones = new Vue({
     el: "#sesiones",
     data: {
-        ubicacion: "/home/rendallrojas/Desarrollos_Node/TESIS/CARB/",
+        ubicacion: window.location.href.split("/").slice(0, window.location.href.split("/").length-2).join('/')+'/',
         uri: "http://localhost:3978/api/",
         posterior_uri: "recurso_natural/list/",
         recurso_natural: ''
