@@ -10,7 +10,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 ### Pre-requisitos 📋
 
 _Node.js_
-_Postgres SQL_
+_Postgres SQL (preferiblemente versión 9) _
 _Postgis (Complemento de postgres para el uso de datos geograficos)_
 
 
