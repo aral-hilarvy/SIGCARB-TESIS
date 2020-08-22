@@ -34,13 +34,13 @@ _importar el backup ubicado en el directorio:_
  API_Postgres/DB/gisdata.backup
 ```
 
-_Ubicarse dentro de la carpeta del proyecto e instalar las dependencias_
+_Ubicarse dentro de la carpeta del proyecto desde la terminal o cdm  e instalar las dependencias_
 
 ```
  npm i
 ```
 
-_Ubicarse dentro de la carpeta API_Postgres y cambiar los datos de conexion:_
+_Ubicarse dentro de la carpeta API_Postgres y cambiar los datos de conexion editando el archivo conection.js _
 
 ```
 const db = new Sequelize('postgresql://NOMBREUSUARIODB:CLAVEDB@localhost:5432/gisdata');
@@ -48,7 +48,7 @@ const db = new Sequelize('postgresql://NOMBREUSUARIODB:CLAVEDB@localhost:5432/gi
 
 _En donde: NOMBREUSUARIODB es el usuario de su db y CLAVEDB es la clave de su bd_
 
-_arrancar el servidor con el comando:_
+_Ubicarse desde la terminal en el directorio API_Postgres/ y arrancar el servidor con el comando:_
 
 ```
  npm start
